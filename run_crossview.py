@@ -13,8 +13,8 @@ from datetime import datetime
 from c3d_helper import delete_files_with_extension_in_folder
 import pdb
 
-def dump_plot_to_image_file(train_list, test_list, max_iter, snapshot_iter, train_label, test_label, plot_title, out_dir):
-    t = np.arange(snapshot_iter, max_iter+1, snapshot_iter)
+def dump_plot_to_image_file(train_list, test_list, max_iter, snapshot, train_label, test_label, plot_title, out_dir):
+    t = np.arange(snapshot, max_iter+1, snapshot)
     fig = plt.figure()    
     plt.plot(t, train_list,color =  'b',label = train_label)
     plt.plot(t, test_list, color = 'orange', label = test_label)
@@ -153,12 +153,14 @@ if __name__ == "__main__":
     # Leave one out
     # subject_list = list_all_folders_in_a_directory(config_params.c3d_data_dir)
    
-    subject_list = ['Thuan','Binh', 'Giang', 'Tan', 'Hung']
+    subject_list = ['Binh', 'Giang', 'Hung', 'Tan','Thuan']
+    #subject_test=['Binh', 'Giang', 'Hung', 'Tan','Thuan'] #default for test
+    subject_test=['Hung']
 
     subject_list = list(subject_list) 
     num_of_subjects = len(subject_list)
     kinect_train = config_params.kinect_train 
-    snapshot_iter = config_params.snapshot
+    snapshot = config_params.snapshot
     max_iter = config_params.max_iter
     
     for kinect_test in config_params.kinect_test_list:
@@ -172,7 +174,7 @@ if __name__ == "__main__":
                     config_params.output_dir, 
                     "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                     subject))   
-            for iter_ in range(snapshot_iter, max_iter+1, snapshot_iter):
+            for iter_ in range(snapshot, max_iter+1, snapshot):
                 create_folder(
                     os.path.join(
                         config_params.output_dir, 
@@ -185,6 +187,15 @@ if __name__ == "__main__":
     for test_subject in subject_list:
         train_list = []
         test_list = [test_subject]
+        #CuongND
+        continue_test=False
+        for subject in subject_test:
+            if(test_subject==subject):
+                continue_test=True
+                break
+        if (continue_test==False):
+            continue
+
         for train_subject in subject_list:
             if train_subject == test_subject:
                 continue
@@ -206,7 +217,7 @@ if __name__ == "__main__":
                     r1_["train"].loss_list, 
                     r1_["test"].loss_list, 
                     config_params.max_iter,
-                    config_params.snapshot_iter,
+                    config_params.snapshot,
                     "Train",
                     "Test",
                     "Loss",
@@ -223,7 +234,7 @@ if __name__ == "__main__":
                     r1_["train"].acc_list, 
                     r1_["test"].acc_list, 
                     config_params.max_iter,
-                    config_params.snapshot_iter,
+                    config_params.snapshot,
                     "Train",
                     "Test",
                     "Accuracy",
@@ -293,7 +304,7 @@ if __name__ == "__main__":
                 list(r1_["train"]/ (1.0 * num_of_subjects)), 
                 list(r1_["test"] / (1.0 * num_of_subjects)), 
                 config_params.max_iter,
-                config_params.snapshot_iter,
+                config_params.snapshot,
                 "Train",
                 "Test",
                 "Average accuracy",
@@ -304,7 +315,7 @@ if __name__ == "__main__":
             np.savetxt(
                 os.path.join(
                     config_params.output_dir,
-                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.datesnapsho_time),
                     "%s_train_accuracy.txt" % (classification_method)),
                 list(r1_["train"] / (1.0 * num_of_subjects)), 
                 delimiter = ' ', 

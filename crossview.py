@@ -664,7 +664,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
         # for kinect_test in kinect_test_list:
             # subprocess.check_output(['python','/home/dangmanhtruong95/Truong_Python_run_scripts/Useful_code/delete_all_files_except_images.py', 
                 # kinect_run_list[kinect_test].c3d_test_data_dir])
-        c3d_pretrained_model = config_params.c3d_snapshot_prefix + "_iter_" + str(iter_)
+        c3d_pretrained_model = config_params.snapshot_prefix + "_iter_" + str(iter_)
 
         if (server == True):
             print "EXTRACT FEATURES ON TRAIN SET"
