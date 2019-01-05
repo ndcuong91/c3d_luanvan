@@ -29,8 +29,11 @@ class ConfigParams(object):
     """
     num_of_actions = 5 
     image_type = "jpg"
-    max_iter = 500
-    snapshot_iter = 100
+    base_lr= 0.0001
+    gamma= 0.1
+    step_size= 500
+    max_iter = 800
+    snapshot = 100
     batch_size = 20 # For feature extraction
     server=False
     crossview.server=server
@@ -65,7 +68,6 @@ class ConfigParams(object):
     c3d_feature_extraction_for_test_dir = os.path.join(c3d_files_dir, "feature_extraction_for_test")
     c3d_intermediate_model_snapshot_dir = os.path.join(c3d_files_dir, "intermediate_model_snapshot")
 
-    c3d_snapshot_prefix =  os.path.join(c3d_intermediate_model_snapshot_dir,"c3d_sport1m_finetune_whole")
 
     c3d_compute_volume_mean_sh = os.path.join(c3d_pretrained_model_and_volume_mean_dir, "c3d_sport1m_compute_volume_mean.sh")
     c3d_pretrained_model = os.path.join(c3d_pretrained_model_and_volume_mean_dir, "conv3d_deepnetA_sport1m_iter_1900000")
@@ -80,7 +82,8 @@ class ConfigParams(object):
     c3d_feature_extraction_test_prototxt = os.path.join(c3d_feature_extraction_for_test_dir,"c3d_sport1m_feature_extractor_frm_test.prototxt")
     c3d_feature_extraction_test_sh =  os.path.join(c3d_feature_extraction_for_test_dir,"c3d_sport1m_feature_extractor_test.sh")
 
-    c3d_intermediate_model_snapshot = c3d_snapshot_prefix + "_iter_" + str(snapshot_iter)
+    snapshot_prefix =  os.path.join(c3d_intermediate_model_snapshot_dir,"c3d_sport1m_finetune_whole")
+    c3d_intermediate_model_snapshot = snapshot_prefix + "_iter_" + str(snapshot)
     c3d_intermediate_model_snapshot_solverstate = c3d_intermediate_model_snapshot + ".solverstate"
 
     c3d_train_01 = os.path.join(c3d_files_dir, "train_01.lst")  
@@ -112,7 +115,7 @@ class ConfigParams(object):
 
 if __name__ == "__main__":
     config_params = ConfigParams
-    num_of_iters = config_params.max_iter / config_params.snapshot_iter
+    num_of_iters = config_params.max_iter / config_params.snapshot
 
     #CuongND. Don't clean up output folder beforehand
     # if os.path.exists(config_params.output_dir):
@@ -120,6 +123,7 @@ if __name__ == "__main__":
     # os.makedirs(config_params.output_dir)
 
     #CuongND. delete all .fc6, .fc7, .prob in old training
+
     result_dir= os.path.join(config_params.c3d_data_root,
                             config_params.kinect_train +'_'+config_params.data_type,
                             config_params.output_result_ext)
@@ -154,7 +158,7 @@ if __name__ == "__main__":
     subject_list = list(subject_list) 
     num_of_subjects = len(subject_list)
     kinect_train = config_params.kinect_train 
-    snapshot_iter = config_params.snapshot_iter
+    snapshot_iter = config_params.snapshot
     max_iter = config_params.max_iter
     
     for kinect_test in config_params.kinect_test_list:
@@ -313,8 +317,7 @@ if __name__ == "__main__":
                 list(r1_["test"] / (1.0 * num_of_subjects)), 
                 delimiter = ' ', 
                 fmt = "%f" ) 
-    
-    
+
                    
 
     

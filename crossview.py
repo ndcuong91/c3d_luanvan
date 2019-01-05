@@ -58,7 +58,7 @@ class C3DNetwork(object):
         """
         with open(output_file, "wt") as f, open(template_file,"rt") as f_read:
             formatted_content = f_read.read()
-            print >>f, formatted_content % input_params   
+            print >>f, formatted_content % input_params
 
     def __init__(self):       
         pass
@@ -160,11 +160,14 @@ class C3DNetwork(object):
         volume_mean_file, \
         pretrained_model_file, \
         finetuning_solver_file, \
-        finetuning_prototxt_file, \
         finetuning_sh_file, \
+        finetuning_prototxt_file, \
+        base_lr, \
+        gamma, \
+        step_size, \
+        max_iter, \
+        snapshot, \
         snapshot_prefix,
-        num_of_iters_until_stop, \
-        num_of_iters_until_periodic_snapshot, \
         num_of_classes):
         """
         This method performs finetuning for a number of iterations then stop and save the model
@@ -181,8 +184,8 @@ class C3DNetwork(object):
         """   
 
         # Solver file
-        input_params = (finetuning_prototxt_file, num_of_iters_until_stop, \
-            num_of_iters_until_periodic_snapshot, snapshot_prefix)
+        input_params = (finetuning_prototxt_file, base_lr, gamma, step_size, max_iter, \
+                        snapshot, snapshot_prefix)
         self.__print_params_to_file__(input_params, self.template_finetuning_solver_file, finetuning_solver_file)
 
         # Prototxt file
@@ -493,8 +496,8 @@ def plot_embedding(X, y, output_dir, title=None):
     plt.savefig(output_dir)
     plt.close(fig)
 
-def dump_plot_to_image_file(train_list, test_list, max_iter, snapshot_iter, train_label, test_label, plot_title, out_dir):
-    t = np.arange(snapshot_iter, max_iter+1, snapshot_iter)
+def dump_plot_to_image_file(train_list, test_list, max_iter, snapshot, train_label, test_label, plot_title, out_dir):
+    t = np.arange(snapshot, max_iter+1, snapshot)
     fig = plt.figure()    
     plt.plot(t, train_list,color =  'b',label = train_label)
     plt.plot(t, test_list, color = 'orange', label = test_label)
@@ -537,8 +540,8 @@ def c3d_train_and_test(train_list, test_list, config_params):
     
     num_of_actions = config_params.num_of_actions
     max_iter = config_params.max_iter
-    snapshot_iter = config_params.snapshot_iter
-    num_of_iters = max_iter / snapshot_iter
+    snapshot = config_params.snapshot
+    num_of_iters = max_iter / snapshot
     image_type = config_params.image_type
     batch_size = config_params.batch_size
     c3d_files_dir = config_params.c3d_files_dir
@@ -553,7 +556,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
     
     # Create train_01.lst, train_01_output.lst, test_01.lst, test_01_output.lst     
     c3d_train_data_dir = os.path.join(c3d_data_root, kinect_train + "_" + data_type)      
-    train_numlines = create_lst_files(config_params, c3d_train_data_dir, train_list, "train_01", num_of_actions, image_type)
+    train_numlines = create_lst_files(config_params, c3d_files_dir, c3d_train_data_dir, train_list, "train_01", num_of_actions, image_type)
     num_of_train_batches = train_numlines / batch_size
     if (num_of_train_batches * batch_size < train_numlines):
         num_of_train_batches = num_of_train_batches + 1 
@@ -597,20 +600,18 @@ def c3d_train_and_test(train_list, test_list, config_params):
 
 
     # Finetune on train_01.lst. Output (e.g): c3d_sport1m_finetune_whole_iter_20000 
-    # Periodic finetuning on train_01.lst: After each snapshot_iter iterations, save model to file, 
+    # Periodic finetuning on train_01.lst: After each snapshot iterations, save model to file,
     # then extract features from train and test files (including prob layer)
     # Then predict train and test and output loss and confusion matrix using features (fc6, fc7, and prob)
     pretrained_model_fulldir = os.path.join(config_params.c3d_pretrained_model_and_volume_mean_dir, 
         "conv3d_deepnetA_sport1m_iter_1900000")
-    # This file is created after each snapshot_iter iterations
-    #intermediate_model_fulldir = config_params.c3d_snapshot_prefix + "_iter_" + str(snapshot_iter)
+    # This file is created after each snapshot iterations
+    #intermediate_model_fulldir = config_params.c3d_snapshot_prefix + "_iter_" + str(snapshot)
     #temp = intermediate_model_fulldir + "_temp"
     input_model_fulldir = pretrained_model_fulldir
-    num_of_iters = max_iter / snapshot_iter
+    num_of_iters = max_iter / snapshot
 
     c3d_pretrained_model = config_params.c3d_pretrained_model
-    total_train_time = 0
-    total_test_time = 0
     if(server==True):
         start_train = time.time()
         # Perform finetuning on train set
@@ -620,18 +621,21 @@ def c3d_train_and_test(train_list, test_list, config_params):
             config_params.c3d_volume_mean_file,
             c3d_pretrained_model,
             config_params.c3d_finetuning_solver,
-            config_params.c3d_finetuning_train,
             config_params.c3d_finetuning_sh,
-            config_params.c3d_snapshot_prefix,
-            max_iter,
-            snapshot_iter,
+            config_params.c3d_finetuning_train,
+            config_params.base_lr,
+            config_params.gamma,
+            config_params.step_size,
+            config_params.max_iter,
+            config_params.snapshot,
+            config_params.snapshot_prefix,
             num_of_actions)
         elapsed_train = time.time() - start_train
         print "CuongND. Finetuning time: %d" % (elapsed_train)
 
 
     start_test = time.time()
-    for iter_ in range(snapshot_iter, max_iter+1, snapshot_iter):
+    for iter_ in range(snapshot, max_iter+1, snapshot):
         result = {}        
         for kinect_test in config_params.kinect_test_list:
             result[kinect_test] = {}
@@ -839,7 +843,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                 dict_test_instances_misclassified)
     
             print "Print confusion matrix and list of misclassified examples"
-            # Print confusion matrix and list of misclassified examples for each snapshot_iter iterations
+            # Print confusion matrix and list of misclassified examples for each snapshot iterations
             # for kinect_test, r0_ in result.iteritems():
             for classification_method, r1_ in result[kinect_test].iteritems():
                 for data_type, r2_ in r1_.iteritems():                     
