@@ -1,0 +1,5 @@
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Thuan/5/5/ 5 4
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Thuan/5/3/ 5 4
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Thuan/5/4/ 5 3
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Thuan/5/1/ 5 3
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Thuan/5/2/ 5 2

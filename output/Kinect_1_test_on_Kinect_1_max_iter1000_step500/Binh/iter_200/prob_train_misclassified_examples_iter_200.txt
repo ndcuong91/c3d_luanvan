@@ -1,0 +1,7 @@
+/media/data2/users/dangmanhtruong95/Kinect_1_original/output/Hung/5/1/ 5 4
+/media/data2/users/dangmanhtruong95/Kinect_1_original/output/Hung/5/2/ 5 4
+/media/data2/users/dangmanhtruong95/Kinect_1_original/output/Tan/5/5/ 5 4
+/media/data2/users/dangmanhtruong95/Kinect_1_original/output/Thuan/5/1/ 5 3
+/media/data2/users/dangmanhtruong95/Kinect_1_original/output/Hung/5/3/ 5 4
+/media/data2/users/dangmanhtruong95/Kinect_1_original/output/Tan/5/3/ 5 3
+/media/data2/users/dangmanhtruong95/Kinect_1_original/output/Tan/5/1/ 5 4

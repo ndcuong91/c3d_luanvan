@@ -9,6 +9,8 @@ import random
 #import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 plt.switch_backend('agg')
+from datetime import datetime
+from c3d_helper import delete_files_with_extension_in_folder
 import pdb
 
 def dump_plot_to_image_file(train_list, test_list, max_iter, snapshot_iter, train_label, test_label, plot_title, out_dir):
@@ -23,37 +25,36 @@ def dump_plot_to_image_file(train_list, test_list, max_iter, snapshot_iter, trai
 
 class ConfigParams(object):
     """
-    Written by Dang Manh Truong (dangmanhtruong@gmail.com)
-    All the garbage goes here .....
+    Written by Dang Manh Truong (dangmanhtruong@gmail.com), modified by CuongND (nguyenduycuong2004@gmail.com)
     """
     num_of_actions = 5 
     image_type = "jpg"
     max_iter = 500
     snapshot_iter = 100
     batch_size = 20 # For feature extraction
-    server=True
+    server=False
     crossview.server=server
 
     # Cuong thay doi rieng thu muc ouput va template
-    output_dir = "/home/titikid/PycharmProjects/c3d_luanvan/Cuong_Output"
-    template_dir = "/home/titikid/PycharmProjects/c3d_luanvan/Cuong_Template"
+    output_dir = "/home/titikid/PycharmProjects/c3d_luanvan/output"
+    template_dir = "/home/titikid/PycharmProjects/c3d_luanvan/template"
     c3d_data_root = "/home/titikid/PycharmProjects/c3d_luanvan"
-    c3d_files_dir = "/home/titikid/PycharmProjects/c3d_luanvan/Cuong_C3D_files"
+    c3d_files_dir = "/home/titikid/PycharmProjects/c3d_luanvan/c3d_files"
     if(server==True):
         #Cuong thay doi rieng thu muc ouput va template
-        output_dir = "/home/dangmanhtruong95/Cuong/Cuong_Output"
-        template_dir = "/home/dangmanhtruong95/Cuong/Cuong_Template"
+        output_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/output"
+        template_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/template"
         c3d_data_root = "/media/data2/users/dangmanhtruong95"
-        c3d_files_dir = "/home/dangmanhtruong95/Cuong/Cuong_C3D_files"
+        c3d_files_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/c3d_files"
 
     #thay doi Kinect can train hoac test
     kinect_train = "Kinect_1"
     #kinect_test_list = ["Kinect_1","Kinect_3", "Kinect_5"]
-    #kinect_test_list = ["Kinect_3", "Kinect_5"]
     kinect_test_list = ["Kinect_1"]
     #data_type = "segmented" 
-    data_type = "original_augmented_padding" 
-
+    data_type = "original"
+    output_result_ext='output'
+    date_time=datetime.now().strftime('%d-%m-%Y_%H.%M.%S') #date time when start training
 
     # c3d_feature_dir = "/home/dangmanhtruong95/Truong_Python_run_scripts/C3D_twostream_finetuning_with_confusion_matrix_and_loss_for_train_and_test/C3D_feature_dir"
     c3d_template_dir = os.path.join(template_dir, "Original")
@@ -113,10 +114,18 @@ if __name__ == "__main__":
     config_params = ConfigParams
     num_of_iters = config_params.max_iter / config_params.snapshot_iter
 
-    # Clean up output folder beforehand
-    if os.path.exists(config_params.output_dir):
-        shutil.rmtree(config_params.output_dir)
-    os.makedirs(config_params.output_dir)
+    #CuongND. Don't clean up output folder beforehand
+    # if os.path.exists(config_params.output_dir):
+    #     shutil.rmtree(config_params.output_dir)
+    # os.makedirs(config_params.output_dir)
+
+    #CuongND. delete all .fc6, .fc7, .prob in old training
+    result_dir= os.path.join(config_params.c3d_data_root,
+                            config_params.kinect_train +'_'+config_params.data_type,
+                            config_params.output_result_ext)
+    delete_files_with_extension_in_folder(result_dir,'.fc6')
+    delete_files_with_extension_in_folder(result_dir,'.fc7')
+    delete_files_with_extension_in_folder(result_dir,'.prob')
 
     avg_result = {}    
     for kinect_test in config_params.kinect_test_list:
@@ -141,9 +150,7 @@ if __name__ == "__main__":
     # subject_list = list_all_folders_in_a_directory(config_params.c3d_data_dir)
    
     subject_list = ['Thuan','Binh', 'Giang', 'Tan', 'Hung']
-    
-    
-    # subject_list = ['Binh', 'Giang']
+
     subject_list = list(subject_list) 
     num_of_subjects = len(subject_list)
     kinect_train = config_params.kinect_train 
@@ -154,23 +161,23 @@ if __name__ == "__main__":
         create_folder(
             os.path.join(
                 config_params.output_dir, 
-                "%s_test_on_%s" % (kinect_train, kinect_test)))
+                "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time)))
         for subject in subject_list:
             create_folder(
                 os.path.join(
                     config_params.output_dir, 
-                    "%s_test_on_%s" % (kinect_train, kinect_test), 
+                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                     subject))   
             for iter_ in range(snapshot_iter, max_iter+1, snapshot_iter):
                 create_folder(
                     os.path.join(
                         config_params.output_dir, 
-                        "%s_test_on_%s" % (kinect_train, kinect_test), 
+                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                         subject,
                         "iter_%d" % (iter_)))
 
-    random.shuffle(subject_list)
-    count=0    
+    #random.shuffle(subject_list)
+    count=1
     for test_subject in subject_list:
         train_list = []
         test_list = [test_subject]
@@ -179,10 +186,9 @@ if __name__ == "__main__":
                 continue
             train_list.append(train_subject)
             
-        print "TEST SUBJECT MOD: "
-        print str(count)+': '+test_subject
-	count+=1
-        print "BEGINS"
+        print "\n\nTEST SUBJECT " + str(count)+': '+test_subject +' ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
+        print "BEGINS\n\n"
+        count+=1
         # Train and Classify
         (result_list) = c3d_train_and_test(train_list, test_list, config_params) 
 
@@ -202,7 +208,7 @@ if __name__ == "__main__":
                     "Loss",
                     os.path.join(
                         config_params.output_dir, 
-                        "%s_test_on_%s" % (kinect_train, kinect_test),
+                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                         test_subject,                        
                         file_name))
         
@@ -219,7 +225,7 @@ if __name__ == "__main__":
                     "Accuracy",
                     os.path.join(
                         config_params.output_dir, 
-                        "%s_test_on_%s" % (kinect_train, kinect_test),
+                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                         test_subject,                        
                         file_name))
                 
@@ -227,7 +233,7 @@ if __name__ == "__main__":
                 np.savetxt(
                     os.path.join(
                         config_params.output_dir,
-                        "%s_test_on_%s" % (kinect_train, kinect_test),
+                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                         test_subject,
                         "%s_train_accuracy.txt" % (classification_method)),
                     r1_["train"].acc_list, 
@@ -236,7 +242,7 @@ if __name__ == "__main__":
                 np.savetxt(
                     os.path.join(
                         config_params.output_dir,
-                        "%s_test_on_%s" % (kinect_train, kinect_test),
+                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                         test_subject,
                         "%s_test_accuracy.txt" % (classification_method)),
                     r1_["test"].acc_list, 
@@ -245,7 +251,7 @@ if __name__ == "__main__":
                 np.savetxt(
                     os.path.join(
                         config_params.output_dir,
-                        "%s_test_on_%s" % (kinect_train, kinect_test),
+                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                         test_subject,
                         "%s_train_loss.txt" % (classification_method)),
                     r1_["train"].loss_list, 
@@ -254,7 +260,7 @@ if __name__ == "__main__":
                 np.savetxt(
                     os.path.join(
                         config_params.output_dir,
-                        "%s_test_on_%s" % (kinect_train, kinect_test),
+                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                         test_subject,
                         "%s_test_loss.txt" % (classification_method)),
                     r1_["test"].loss_list, 
@@ -289,12 +295,12 @@ if __name__ == "__main__":
                 "Average accuracy",
                 os.path.join(
                     config_params.output_dir,
-                    "%s_test_on_%s" % (kinect_train, kinect_test),
+                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                     file_name))
             np.savetxt(
                 os.path.join(
                     config_params.output_dir,
-                    "%s_test_on_%s" % (kinect_train, kinect_test),
+                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                     "%s_train_accuracy.txt" % (classification_method)),
                 list(r1_["train"] / (1.0 * num_of_subjects)), 
                 delimiter = ' ', 
@@ -302,7 +308,7 @@ if __name__ == "__main__":
             np.savetxt(
                 os.path.join(
                     config_params.output_dir,
-                    "%s_test_on_%s" % (kinect_train, kinect_test),
+                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                     "%s_test_accuracy.txt" % (classification_method)),
                 list(r1_["test"] / (1.0 * num_of_subjects)), 
                 delimiter = ' ', 

@@ -1,0 +1,6 @@
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Tan/1/1/ 1 2
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Tan/4/5/ 4 2
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Tan/5/3/ 5 2
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Tan/4/2/ 4 2
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Tan/1/4/ 1 2
+/media/data2/users/dangmanhtruong95/Kinect_1_original/Tan/1/3/ 1 4

@@ -1,0 +1,4 @@
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented/output/Tan/1/4_5/ 1 5
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented/output/Tan/2/2_4/ 2 1
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented/output/Tan/5/2_5/ 5 1
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented/output/Tan/1/4_1/ 1 5

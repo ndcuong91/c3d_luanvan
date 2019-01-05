@@ -5,6 +5,7 @@ from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import SVC
 from sklearn import preprocessing
 from sklearn.metrics import log_loss, confusion_matrix
+import os
 from sklearn import datasets
 from pprint import pprint
 import pdb
@@ -221,9 +222,9 @@ def classification_routine(X_train, Y_train, X_test, Y_test, feature_type, svm_t
         dict_train_misclassified, dict_test_misclassified)    
     
 
-def find_files_to_read(input_dir):
+def find_files_to_read(input_dir, separate_output=True):
     """
-    Written by Dang Manh Truong (dangmanhtruong@gmail.com)
+    Written by Dang Manh Truong (dangmanhtruong@gmail.com), modify by CuongND
 
     Find files to read using C3D input text file, whose structure is:
 
@@ -253,6 +254,8 @@ def find_files_to_read(input_dir):
 
     D. Tran, L. Bourdev, R. Fergus, L. Torresani, and M. Paluri, 
     Learning Spatiotemporal Features with 3D Convolutional Networks, ICCV 2015
+
+    separate_output: use when file .fc6, .fc7, .prob in another folder, a little bit tricky base on name of subject: Binh, Giang, Tan, Thuan, Hung
     """
 
     with open(input_dir) as f:
@@ -262,6 +265,8 @@ def find_files_to_read(input_dir):
             line = line.rstrip() # Remove trailing \n           
             line_splitted = line.split(' ')            
             directory = line_splitted[0]
+            if(separate_output==True):
+                directory=directory.replace('Binh','output/Binh').replace('Giang','output/Giang').replace('Tan','output/Tan').replace('Thuan','output/Thuan').replace('Hung','output/Hung')
             label = line_splitted[2]
             dict_dir_to_label[directory] = label
             directory_list.add(directory)           
@@ -352,6 +357,14 @@ def load_data_for_classification(train_01_fulldir, test_01_fulldir, feature_type
     Y_test = np.array(Y_test)
     return (X_train, Y_train, X_test, Y_test, train_mapped_to_dir, test_mapped_to_dir)
 
+def delete_files_with_extension_in_folder(folder, extension):
+    #CuongND
+    for path, subdirs, files in os.walk(folder):
+        for name in files:
+            if name.endswith(extension):
+                os.remove(os.path.join(path, name))
+    print('Finish delete all '+extension+' files in folder '+folder)
+
 
 if __name__ == "__main__":
     # Test modules
@@ -413,7 +426,6 @@ if __name__ == "__main__":
     except :
         print "hahaha"
         pass
-    print "fdssfsdf"
     pass
 
 

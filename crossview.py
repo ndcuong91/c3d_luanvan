@@ -284,7 +284,7 @@ class KinectRunner(object):
 
 
 
-def create_lst_files(c3d_files_dir, data_dir, subject_list, name, num_of_actions, image_type):
+def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name, num_of_actions, image_type):
     in_name = name + ".lst"
     out_name = name + "_output.lst"
     in_fullpath = os.path.join(c3d_files_dir, in_name)
@@ -295,7 +295,7 @@ def create_lst_files(c3d_files_dir, data_dir, subject_list, name, num_of_actions
     with open(in_fullpath, "wt") as f_in, open(out_fullpath, "wt") as f_out:
         for subject_name in subject_list:
             fullpath_subject = os.path.join(data_dir, subject_name)
-            new_output_subject=os.path.join(data_dir,'output', subject_name) #CuongND. New folder for output
+            new_output_subject=os.path.join(data_dir,config_params.output_result_ext, subject_name) #CuongND. New folder for output
             for action_id in range(num_of_actions):
                 action_id = action_id + 1 #0,1,2,... -> 1,2,3....
                 fullpath_subject_action = os.path.join(fullpath_subject, str(action_id))
@@ -336,7 +336,7 @@ def create_lst_files(c3d_files_dir, data_dir, subject_list, name, num_of_actions
                     counter = 1
                     for _ in range(num_of_batches_of_16_images):                        
                         # Input
-                        in_text = "%s/ %d %d\n" % (new_output_dir_action_epoch, counter, action_id - 1) # CuongND. New folder for input
+                        in_text = "%s/ %d %d\n" % (fullpath_subject_action_epoch, counter, action_id - 1) # CuongND. New folder for input
                         f_in.write(in_text)
                         # Output
                         # out_text = "%s/%06d\n" % (fullpath_subject_action_epoch, counter)
@@ -351,7 +351,7 @@ def create_lst_files(c3d_files_dir, data_dir, subject_list, name, num_of_actions
                     if (num_of_batches_of_16_images * 16) < num_of_images:
                         counter = num_of_images - 15
                         # Input
-                        in_text = "%s/ %d %d\n" % (new_output_dir_action_epoch, counter, action_id - 1) # CuongND. New folder for input
+                        in_text = "%s/ %d %d\n" % (fullpath_subject_action_epoch, counter, action_id - 1) # CuongND. New folder for input
                         f_in.write(in_text)
                         # Output
                         # out_text = "%s/%06d\n" % (fullpath_subject_action_epoch, counter)
@@ -553,14 +553,14 @@ def c3d_train_and_test(train_list, test_list, config_params):
     
     # Create train_01.lst, train_01_output.lst, test_01.lst, test_01_output.lst     
     c3d_train_data_dir = os.path.join(c3d_data_root, kinect_train + "_" + data_type)      
-    train_numlines = create_lst_files(c3d_files_dir, c3d_train_data_dir, train_list, "train_01", num_of_actions, image_type)
+    train_numlines = create_lst_files(config_params, c3d_train_data_dir, train_list, "train_01", num_of_actions, image_type)
     num_of_train_batches = train_numlines / batch_size
     if (num_of_train_batches * batch_size < train_numlines):
         num_of_train_batches = num_of_train_batches + 1 
         
     for kinect_test in kinect_test_list:
         kinect_run_list[kinect_test].c3d_test_data_dir = os.path.join(c3d_data_root, kinect_test + "_"  + data_type)
-        kinect_run_list[kinect_test].test_numlines = create_lst_files(
+        kinect_run_list[kinect_test].test_numlines = create_lst_files(config_params,
                 c3d_files_dir, 
                 kinect_run_list[kinect_test].c3d_test_data_dir , 
                 test_list, 
@@ -614,7 +614,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
     if(server==True):
         start_train = time.time()
         # Perform finetuning on train set
-        print "CuongND. Finetune on train set. Move outside loop"
+        print "CuongND. Finetune on train set. Move outside loop to increase performance"
         original_network.finetune(
             config_params.c3d_train_01,
             config_params.c3d_volume_mean_file,
@@ -627,10 +627,10 @@ def c3d_train_and_test(train_list, test_list, config_params):
             snapshot_iter,
             num_of_actions)
         elapsed_train = time.time() - start_train
-        print "CuongND. finetuning time: %d" % (elapsed_train)
+        print "CuongND. Finetuning time: %d" % (elapsed_train)
 
 
-
+    start_test = time.time()
     for iter_ in range(snapshot_iter, max_iter+1, snapshot_iter):
         result = {}        
         for kinect_test in config_params.kinect_test_list:
@@ -650,8 +650,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
             result[kinect_test]["fc7_rbf"]["test"] = Result()
             result[kinect_test]["prob"]["train"] = Result()
             result[kinect_test]["prob"]["test"] = Result()
-        
-        
+
 
         # os.makedirs(os.path.join(config_params.output_dir, "iter_%d" % (iter_)))
         # output_iter_dir = os.path.join(config_params.output_dir, "iter_%d" % (iter_))
@@ -661,10 +660,10 @@ def c3d_train_and_test(train_list, test_list, config_params):
         # for kinect_test in kinect_test_list:
             # subprocess.check_output(['python','/home/dangmanhtruong95/Truong_Python_run_scripts/Useful_code/delete_all_files_except_images.py', 
                 # kinect_run_list[kinect_test].c3d_test_data_dir])
-        intermediate_model_fulldir = config_params.c3d_snapshot_prefix + "_iter_" + str(iter_)
+        c3d_pretrained_model = config_params.c3d_snapshot_prefix + "_iter_" + str(iter_)
 
         if (server == True):
-            print "Extract features on train"
+            print "EXTRACT FEATURES ON TRAIN SET"
             print "Model %s" % (c3d_pretrained_model)
             original_network.feature_extraction(
                 config_params.c3d_train_01,
@@ -676,15 +675,12 @@ def c3d_train_and_test(train_list, test_list, config_params):
                 batch_size,
                 num_of_train_batches,
                 num_of_actions)
-        total_train_time += 0
 
 
         for kinect_test in kinect_test_list:
-            print "Extract features on test (view: %s)" % (kinect_test)
-            print "Model %s" % (c3d_pretrained_model)
-
             if (server == True):
-                start_test = time.time()
+                print "EXTRACT FEATURE ON TEST SET (view: %s)" % (kinect_test)
+                print "Model %s" % (c3d_pretrained_model)
                 original_network.feature_extraction(
                     os.path.join(c3d_files_dir, "test_01_%s.lst" % (kinect_test)),
                     os.path.join(c3d_files_dir, "test_01_%s_output.lst" % (kinect_test)),
@@ -697,13 +693,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                     batch_size,
                     kinect_run_list[kinect_test].num_of_test_batches,
                     num_of_actions)
-                elapsed_test = time.time() - start_test
 
-            if kinect_test == kinect_train:
-                total_test_time += 0
-            
-
-            c3d_pretrained_model = intermediate_model_fulldir
     
             print "CLASSIFICATION!"
             # Use the extracted features (fc6, fc7, prob) to calculate loss, confusion matrix and accuracy
@@ -734,12 +724,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                         "linear",                         
                         train_mapped_to_dir, 
                         test_mapped_to_dir)   
-            
-            if kinect_train == kinect_test:
-                # if iter_ == max_iter:
-                #     pdb.set_trace()
-                total_train_time += svm_train_time
-                total_test_time += svm_test_time
+
 
             result[kinect_test]["fc6_linear"]["train"].set_value(
                 acc_train, 
@@ -868,7 +853,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                         # os.path.join(output_iter_dir,file_name),
                         os.path.join(
                             output_dir, 
-                            "%s_test_on_%s" % (kinect_train, kinect_test),
+                            "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                             test_subject,
                             "iter_%d" % (iter_),
                             file_name),
@@ -885,7 +870,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                         r2_.misclassified_dict,
                         os.path.join(
                             output_dir, 
-                            "%s_test_on_%s" % (kinect_train, kinect_test),
+                            "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                             test_subject,
                             "iter_%d" % (iter_),
                             file_name))                        
@@ -893,13 +878,11 @@ def c3d_train_and_test(train_list, test_list, config_params):
             for classification_method, r1_ in result[kinect_test].iteritems():
                 # print classification_method
                 # pdb.set_trace()
-                for data_type, r2_ in r1_.iteritems():            
-                    # print data_type
+                for data_type, r2_ in r1_.iteritems():
                     # pdb.set_trace()
                     result_list[kinect_test][classification_method][data_type].add_element(
                             result[kinect_test][classification_method][data_type])
-    print "TOTAL TRAIN TIME: %f" % (total_train_time)
-    print "TOTAL TEST TIME: %f" % (total_test_time)
+    print "\n\nTOTAL TEST TIME: %f" % (time.time()-start_test)
     # raw_input("Press enter")
     return result_list
     
