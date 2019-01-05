@@ -1,0 +1,21 @@
+train_net: "/home/dangmanhtruong95/Cuong/Cuong_C3D_files/finetuning/c3d_sport1m_finetuning_train.prototxt" 
+# test_net: "we don't use testing on the fly"
+test_iter: 100
+test_interval: 0
+base_lr: 0.0001
+momentum: 0.9
+weight_decay: 0.0005
+lr_policy: "step"
+gamma: 0.01
+stepsize: 200
+# Display every ... iterations 
+display: 20
+# The maximum number of iterations
+max_iter: 500
+# snapshot intermediate results
+snapshot: 100
+snapshot_prefix: "/home/dangmanhtruong95/Cuong/Cuong_C3D_files/intermediate_model_snapshot/c3d_sport1m_finetune_whole"
+# solver mode: CPU or GPU
+solver_mode: GPU
+device_id: 0
+

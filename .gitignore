@@ -1,3 +1,5 @@
+c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000
+c3d_files/intermediate_model_snapshot/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
