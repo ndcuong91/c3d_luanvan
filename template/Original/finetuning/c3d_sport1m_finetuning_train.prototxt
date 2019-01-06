@@ -9,7 +9,7 @@ layers {
     use_image: true
     mean_file: "%s"
     use_temporal_jitter: false
-    batch_size: 25
+    batch_size: %s
     crop_size: 112
     mirror: false
     show_data: 0

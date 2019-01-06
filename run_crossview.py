@@ -1,45 +1,73 @@
 from crossview import c3d_train_and_test, Result
 import crossview
+import argparse
 import os, shutil
 from python_utils import list_all_folders_in_a_directory, create_folder
 import numpy as np
 import random
-#import matplotlib as mpl
-#mpl.use('Agg') # To use on server
-#import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
-plt.switch_backend('agg')
 from datetime import datetime
-from c3d_helper import delete_files_with_extension_in_folder
+from c3d_helper import delete_files_with_extension_in_folder, dump_plot_to_image_file
 import pdb
 
-def dump_plot_to_image_file(train_list, test_list, max_iter, snapshot, train_label, test_label, plot_title, out_dir):
-    t = np.arange(snapshot, max_iter+1, snapshot)
-    fig = plt.figure()    
-    plt.plot(t, train_list,color =  'b',label = train_label)
-    plt.plot(t, test_list, color = 'orange', label = test_label)
-    plt.legend(loc='upper right')
-    fig.suptitle(plot_title, fontsize=20)
-    plt.savefig(out_dir)
-    plt.close(fig)     
+
+def parse_args():
+    """
+    Written by by CuongND (nguyenduycuong2004@gmail.com)
+    """
+    parser = argparse.ArgumentParser(description='Train C3D hand-gesture networks by CuongND')
+    parser.add_argument('--num_action', type=int, default=5,
+                        help="Number of action.")
+    parser.add_argument('--base_lr', type=float, default=0.0001,
+                        help="Base learning rate for fine-tuning.")
+    parser.add_argument('--gamma', type=float, default=0.1,
+                        help='gamma for learning rate')
+    parser.add_argument('--step_size', type=int, default=500, #coco
+                        help='Step to decrease learning rate.')
+    parser.add_argument('--max_iter', type=int, default=500,
+                        help='Maximum iteration to stop. ')
+    parser.add_argument('--snapshot', type=int, default=100,
+                        help='Number of periodic save params')
+    parser.add_argument('--batch_size_test', type=int, default=20,
+                        help='batch size for feature extraction.')
+    parser.add_argument('--batch_size_finetune', type=int, default=25,
+                        help='batch size for fine-tuning.')
+    parser.add_argument('--server', type=bool, default=False,
+                        help='run on server or not')
+    parser.add_argument('--subject_list', type=str, default='Binh,Giang,Hung,Tan,Thuan',
+                        help='subject to training and test')
+    parser.add_argument('--subject_test', type=str, default='Binh,Giang,Hung,Tan,Thuan',
+                        help='subject to training and test')
+    parser.add_argument('--kinect_train', type=str, default='Kinect_1',
+                        help='trainning set')
+    parser.add_argument('--kinect_test_list', type=str, default='Kinect_1',
+                        help='List of Kinect view for test. e.g: "Kinect_1,Kinect_3,Kinect_5"')
+    parser.add_argument('--data_type', type=str, default='original',
+                        help='original or segmented')
+    args = parser.parse_args()
+    return args
 
 class ConfigParams(object):
     """
     Written by Dang Manh Truong (dangmanhtruong@gmail.com), modified by CuongND (nguyenduycuong2004@gmail.com)
     """
-    num_of_actions = 5 
+    args = parse_args()
     image_type = "jpg"
-    base_lr= 0.0001
-    gamma= 0.1
-    step_size= 500
-    max_iter = 800
-    snapshot = 100
-    batch_size = 20 # For feature extraction
-    server=False
-    crossview.server=server
-    subject_list = ['Binh', 'Giang', 'Hung', 'Tan', 'Thuan']
-    # subject_test=['Binh', 'Giang', 'Hung', 'Tan','Thuan'] #default for test
-    subject_test = ['Hung']
+    num_of_actions = args.num_action
+    base_lr= args.base_lr
+    gamma= args.gamma
+    step_size= args.step_size
+    max_iter = args.max_iter
+    snapshot = args.snapshot
+    batch_size = args.batch_size_test # For feature extraction
+    batch_size_finetune = args.batch_size_finetune # For feature extraction
+    server = args.server
+    crossview.server = server
+
+    subject_list = [x.strip() for x in args.subject_list.split(',')]
+    subject_test = [x.strip() for x in args.subject_test.split(',')]
+    kinect_train = args.kinect_train
+    kinect_test_list = [x.strip() for x in args.kinect_test_list.split(',')]
+    data_type = args.data_type
 
     # Cuong thay doi rieng thu muc ouput va template
     output_dir = "/home/titikid/PycharmProjects/c3d_luanvan/output"
@@ -53,14 +81,8 @@ class ConfigParams(object):
         c3d_data_root = "/media/data2/users/dangmanhtruong95"
         c3d_files_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/c3d_files"
 
-    #thay doi Kinect can train hoac test
-    kinect_train = "Kinect_3"
-    #kinect_test_list = ["Kinect_1","Kinect_3", "Kinect_5"]
-    kinect_test_list = ["Kinect_3"]
-    #data_type = "segmented" 
-    data_type = "original"
-    output_result_ext='output'
-    date_time=datetime.now().strftime('%d-%m-%Y_%H.%M.%S') #date time when start training
+    output_result_ext = 'output'
+    date_time = datetime.now().strftime('%d-%m-%Y_%H.%M.%S') #date time when start training
 
     # c3d_feature_dir = "/home/dangmanhtruong95/Truong_Python_run_scripts/C3D_twostream_finetuning_with_confusion_matrix_and_loss_for_train_and_test/C3D_feature_dir"
     c3d_template_dir = os.path.join(template_dir, "Original")
@@ -126,6 +148,7 @@ if __name__ == "__main__":
     # os.makedirs(config_params.output_dir)
 
     #CuongND. delete all .fc6, .fc7, .prob in old training
+    print "\n\nPROGRAM BEGIN!\n\n"
 
     result_dir= os.path.join(config_params.c3d_data_root,
                             config_params.kinect_train +'_'+config_params.data_type,
@@ -164,23 +187,49 @@ if __name__ == "__main__":
     kinect_train = config_params.kinect_train 
     snapshot = config_params.snapshot
     max_iter = config_params.max_iter
-    
+
+    params_info='num_action: ' + str(config_params.num_of_actions) +'\n' +\
+                'base_lr: ' + str(config_params.base_lr) + '\n' +\
+                'gamma: ' + str(config_params.gamma) + '\n' +\
+                'step_size: ' + str(config_params.step_size) + '\n' +\
+                'max_iter: ' + str(config_params.max_iter) + '\n' +\
+                'snapshot: ' + str(config_params.snapshot) + '\n' +\
+                'batch_size_test: ' + str(config_params.batch_size) + '\n' +\
+                'batch_size_finetune: ' + str(config_params.batch_size_finetune) + '\n' +\
+                'subject_list: ' + ",".join(str(x) for x in config_params.subject_list) + '\n' +\
+                'subject_test: ' + ",".join(str(x) for x in config_params.subject_test) + '\n' +\
+                'kinect_train: ' + config_params.kinect_train + '\n' +\
+                'kinect_test_list: ' + ",".join(str(x) for x in config_params.kinect_test_list) + '\n' +\
+                'data_type: ' + config_params.data_type + '\n'
     for kinect_test in config_params.kinect_test_list:
+        output_result_dir="%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
         create_folder(
             os.path.join(
                 config_params.output_dir, 
-                "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time)))
+                output_result_dir))
+
+        #save arguments. CuongND
+        with open(os.path.join(config_params.output_dir,output_result_dir,"params.txt"), 'a') as the_file:
+            the_file.writelines(params_info)
+        print "Save parameters to file " + os.path.join(config_params.output_dir,output_result_dir,"params.txt")
         for subject in subject_list:
+            continue_create_folder = False
+            for test_subject in subject_test:
+                if (test_subject == subject):
+                    continue_create_folder = True
+                    break
+            if (continue_create_folder == False):
+                continue
             create_folder(
                 os.path.join(
                     config_params.output_dir, 
-                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                    output_result_dir,
                     subject))   
             for iter_ in range(snapshot, max_iter+1, snapshot):
                 create_folder(
                     os.path.join(
                         config_params.output_dir, 
-                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                        output_result_dir,
                         subject,
                         "iter_%d" % (iter_)))
 
@@ -209,7 +258,9 @@ if __name__ == "__main__":
         # Train and Classify
         (result_list) = c3d_train_and_test(train_list, test_list, config_params) 
 
-        # Output to text files   
+        # Output to text files
+        output_result_dir="%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
+        print "\n\nWrite result of "+test_subject+" to folder output/"+output_result_dir+'\n\n'
         for kinect_test, r0_ in result_list.iteritems():
             for classification_method, r1_ in r0_.iteritems():                
                 # Plot loss
@@ -225,7 +276,7 @@ if __name__ == "__main__":
                     "Loss",
                     os.path.join(
                         config_params.output_dir, 
-                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                        output_result_dir,
                         test_subject,                        
                         file_name))
         
@@ -242,7 +293,7 @@ if __name__ == "__main__":
                     "Accuracy",
                     os.path.join(
                         config_params.output_dir, 
-                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                        output_result_dir,
                         test_subject,                        
                         file_name))
                 
@@ -250,7 +301,7 @@ if __name__ == "__main__":
                 np.savetxt(
                     os.path.join(
                         config_params.output_dir,
-                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                        output_result_dir,
                         test_subject,
                         "%s_train_accuracy.txt" % (classification_method)),
                     r1_["train"].acc_list, 
@@ -259,7 +310,7 @@ if __name__ == "__main__":
                 np.savetxt(
                     os.path.join(
                         config_params.output_dir,
-                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                        output_result_dir,
                         test_subject,
                         "%s_test_accuracy.txt" % (classification_method)),
                     r1_["test"].acc_list, 
@@ -268,7 +319,7 @@ if __name__ == "__main__":
                 np.savetxt(
                     os.path.join(
                         config_params.output_dir,
-                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                        output_result_dir,
                         test_subject,
                         "%s_train_loss.txt" % (classification_method)),
                     r1_["train"].loss_list, 
@@ -277,7 +328,7 @@ if __name__ == "__main__":
                 np.savetxt(
                     os.path.join(
                         config_params.output_dir,
-                        "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                        output_result_dir,
                         test_subject,
                         "%s_test_loss.txt" % (classification_method)),
                     r1_["test"].loss_list, 
@@ -302,6 +353,7 @@ if __name__ == "__main__":
         for classification_method, r1_ in r0_.iteritems():
             file_name = "%s_avg_acc.png" % (classification_method)
             # pdb.set_trace()
+            output_result_dir="%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
             dump_plot_to_image_file(
                 list(r1_["train"]/ (1.0 * num_of_subjects)), 
                 list(r1_["test"] / (1.0 * num_of_subjects)), 
@@ -312,12 +364,12 @@ if __name__ == "__main__":
                 "Average accuracy",
                 os.path.join(
                     config_params.output_dir,
-                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                    output_result_dir,
                     file_name))
             np.savetxt(
                 os.path.join(
                     config_params.output_dir,
-                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                    output_result_dir,
                     "%s_train_accuracy.txt" % (classification_method)),
                 list(r1_["train"] / (1.0 * num_of_subjects)), 
                 delimiter = ' ', 
@@ -325,7 +377,7 @@ if __name__ == "__main__":
             np.savetxt(
                 os.path.join(
                     config_params.output_dir,
-                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                    output_result_dir,
                     "%s_test_accuracy.txt" % (classification_method)),
                 list(r1_["test"] / (1.0 * num_of_subjects)), 
                 delimiter = ' ', 

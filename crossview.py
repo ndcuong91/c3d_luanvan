@@ -162,6 +162,7 @@ class C3DNetwork(object):
         finetuning_solver_file, \
         finetuning_sh_file, \
         finetuning_prototxt_file, \
+        batch_size_finetune, \
         base_lr, \
         gamma, \
         step_size, \
@@ -189,7 +190,7 @@ class C3DNetwork(object):
         self.__print_params_to_file__(input_params, self.template_finetuning_solver_file, finetuning_solver_file)
 
         # Prototxt file
-        input_params = (input_file, volume_mean_file, num_of_classes)
+        input_params = (input_file, volume_mean_file, batch_size_finetune, num_of_classes)
         self.__print_params_to_file__(input_params, self.template_finetuning_prototxt_file, finetuning_prototxt_file)            
 
         # Sh file
@@ -623,6 +624,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
             config_params.c3d_finetuning_solver,
             config_params.c3d_finetuning_sh,
             config_params.c3d_finetuning_train,
+            config_params.batch_size_finetune,
             config_params.base_lr,
             config_params.gamma,
             config_params.step_size,

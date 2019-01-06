@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abd00b6-58fb-4ec7-8b9d-1c3f5cbeaee4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_solver.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_solver.prototxt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_train.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_train.prototxt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1_output.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1_output.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/test_01_Kinect_3.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/test_01_Kinect_3.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/test_01_Kinect_3_output.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/test_01_Kinect_3_output.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/c3d_files/train_01.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/train_01.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/c3d_files/train_01_output.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/train_01_output.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copy_result_from_server" beforeDir="false" afterPath="$PROJECT_DIR$/copy_result_from_server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crossview.py" beforeDir="false" afterPath="$PROJECT_DIR$/crossview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_crossview.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_crossview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Original/finetuning/c3d_sport1m_finetuning_train.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/template/Original/finetuning/c3d_sport1m_finetuning_train.prototxt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,23 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crossview.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7431">
-              <caret line="585" column="44" selection-start-line="585" selection-start-column="34" selection-end-line="585" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run_crossview.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="115" column="69" lean-forward="true" selection-start-line="115" selection-start-column="69" selection-end-line="115" selection-end-column="69" />
+            <state relative-caret-position="345">
+              <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -43,30 +36,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/copy_result_from_server">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="116" selection-start-line="1" selection-start-column="116" selection-end-line="1" selection-end-column="116" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/copy_from_server">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="99" selection-start-line="1" selection-start-column="99" selection-end-line="1" selection-end-column="99" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/c3d_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
+            <state>
+              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crossview.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="614" column="61" selection-start-line="614" selection-start-column="61" selection-end-line="614" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,8 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>total_test_time</find>
-      <find>fullpath_subject</find>
       <find>fullpath_subject_action_epoch</find>
       <find>feature ex</find>
       <find>total_train_time</find>
@@ -111,8 +96,10 @@
       <find>c3d_snapshot_prefix</find>
       <find>snapshot_iter</find>
       <find>snap</find>
-      <find>subject_list</find>
+      <find>dump_plot_to_image_file</find>
+      <find>&quot;%s_test_on_%s_%s&quot; % (kinect_train, kinect_test, config_params.date_time)</find>
       <find>finetuning</find>
+      <find>subject_list</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;%s_test_on_%s_%s&quot; % (kinect_train, data_type, datetime.now().strftime('%Y-%m-%d_%H.%M.%S'))</replace>
@@ -120,6 +107,7 @@
       <replace>&quot;%s_test_on_%s_%s&quot; % (kinect_train, data_type, config_params.date_time)</replace>
       <replace>&quot;%s_test_on_%s_%s&quot; % (kinect_train, kinect_test, config_params.date_time)</replace>
       <replace>snapshot</replace>
+      <replace>output_result_dir</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -142,11 +130,11 @@
         <option value="$PROJECT_DIR$/copy_to_server" />
         <option value="$PROJECT_DIR$/c3d_Kinect_1_augmentor.py" />
         <option value="$PROJECT_DIR$/c3d_augmentor_padding.py" />
-        <option value="$PROJECT_DIR$/c3d_helper.py" />
-        <option value="$PROJECT_DIR$/crossview.py" />
         <option value="$PROJECT_DIR$/output/Binh/prob_test_accuracy.txt" />
         <option value="$PROJECT_DIR$/copy_result_from_server" />
         <option value="$PROJECT_DIR$/copy_from_server" />
+        <option value="$PROJECT_DIR$/c3d_helper.py" />
+        <option value="$PROJECT_DIR$/crossview.py" />
         <option value="$PROJECT_DIR$/run_crossview.py" />
       </list>
     </option>
@@ -170,6 +158,17 @@
             <path>
               <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
               <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="c3d_files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="c3d_files" type="462c0819:PsiDirectoryNode" />
+              <item name="finetuning" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
@@ -355,13 +354,13 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20950802" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16639027" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.09195402" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.22988506" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.04493208" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.19331244" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -372,7 +371,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
-      <window_info anchor="right" id="Terminal" order="4" visible="true" weight="0.262576" />
+      <window_info anchor="right" id="Terminal" order="4" visible="true" weight="0.17523494" />
     </layout>
   </component>
   <component name="XDebuggerManager">
@@ -384,14 +383,9 @@
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/run_crossview.py</url>
-          <line>136</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/run_crossview.py</url>
-          <line>132</line>
-          <option name="timeStamp" value="99" />
+          <url>file://$PROJECT_DIR$/crossview.py</url>
+          <line>196</line>
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -544,26 +538,6 @@
     <entry file="file://$PROJECT_DIR$/c3d_files/train_01_output.lst">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/c3d_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crossview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7431">
-          <caret line="585" column="44" selection-start-line="585" selection-start-column="34" selection-end-line="585" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output/Binh/prob_test_loss.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -600,10 +574,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/c3d_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crossview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="614" column="61" selection-start-line="614" selection-start-column="61" selection-end-line="614" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/run_crossview.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="115" column="69" lean-forward="true" selection-start-line="115" selection-start-column="69" selection-end-line="115" selection-end-column="69" />
+        <state relative-caret-position="345">
+          <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>

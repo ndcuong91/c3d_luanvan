@@ -6,9 +6,22 @@ from sklearn.svm import SVC
 from sklearn import preprocessing
 from sklearn.metrics import log_loss, confusion_matrix
 import os
+import matplotlib.pyplot as plt
+plt.switch_backend('agg')
 from sklearn import datasets
 from pprint import pprint
 import pdb
+
+
+def dump_plot_to_image_file(train_list, test_list, max_iter, snapshot, train_label, test_label, plot_title, out_dir):
+    t = np.arange(snapshot, max_iter+1, snapshot)
+    fig = plt.figure()
+    plt.plot(t, train_list,color =  'b',label = train_label)
+    plt.plot(t, test_list, color = 'orange', label = test_label)
+    plt.legend(loc='upper right')
+    fig.suptitle(plot_title, fontsize=20)
+    plt.savefig(out_dir)
+    plt.close(fig)
 
 def read_binary_blob(fn):
     """
@@ -81,6 +94,8 @@ def get_average_of_all_features_in_a_directory(directory, feature_type):
         avg_features += feature_vec
     avg_features = avg_features / num_of_files    
     return avg_features
+
+
 
 # def classification_routine(X_train, Y_train, X_test, Y_test, feature_type, svm_type):     
 #     """  
