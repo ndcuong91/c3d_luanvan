@@ -1,0 +1,8 @@
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Giang/1/3_4/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Giang/1/4_4/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Giang/1/3_1/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Giang/1/3_3/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Giang/1/4_3/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Giang/1/3_2/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Giang/1/4_2/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Giang/1/4_1/ 1 4

@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abd00b6-58fb-4ec7-8b9d-1c3f5cbeaee4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_solver.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_solver.prototxt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_train.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_train.prototxt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1_output.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1_output.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_files/test_01_Kinect_3.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/test_01_Kinect_3.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_files/test_01_Kinect_3_output.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/test_01_Kinect_3_output.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_files/train_01.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/train_01.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_files/train_01_output.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/train_01_output.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crossview.py" beforeDir="false" afterPath="$PROJECT_DIR$/crossview.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_crossview.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_crossview.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/Original/finetuning/c3d_sport1m_finetuning_train.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/template/Original/finetuning/c3d_sport1m_finetuning_train.prototxt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copy_from_server" beforeDir="false" afterPath="$PROJECT_DIR$/copy_from_server" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,14 +12,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_crossview.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
+            <state relative-caret-position="-1346">
+              <caret line="154" column="60" selection-start-line="154" selection-start-column="60" selection-end-line="154" selection-end-column="60" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/copy_from_server">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="98" selection-start-line="2" selection-start-column="98" selection-end-line="2" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -132,10 +130,10 @@
         <option value="$PROJECT_DIR$/c3d_augmentor_padding.py" />
         <option value="$PROJECT_DIR$/output/Binh/prob_test_accuracy.txt" />
         <option value="$PROJECT_DIR$/copy_result_from_server" />
-        <option value="$PROJECT_DIR$/copy_from_server" />
         <option value="$PROJECT_DIR$/c3d_helper.py" />
         <option value="$PROJECT_DIR$/crossview.py" />
         <option value="$PROJECT_DIR$/run_crossview.py" />
+        <option value="$PROJECT_DIR$/copy_from_server" />
       </list>
     </option>
   </component>
@@ -158,17 +156,6 @@
             <path>
               <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
               <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
-              <item name="c3d_files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
-              <item name="c3d_files" type="462c0819:PsiDirectoryNode" />
-              <item name="finetuning" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
@@ -354,12 +341,12 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16639027" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16749585" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.04493208" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.04493208" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.19331244" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -371,7 +358,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
-      <window_info anchor="right" id="Terminal" order="4" visible="true" weight="0.17523494" />
+      <window_info active="true" anchor="right" id="Terminal" order="4" visible="true" weight="0.3029298" />
     </layout>
   </component>
   <component name="XDebuggerManager">
@@ -567,13 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/copy_from_server">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="99" selection-start-line="1" selection-start-column="99" selection-end-line="1" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/c3d_helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -596,11 +576,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run_crossview.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
+        <state relative-caret-position="-1346">
+          <caret line="154" column="60" selection-start-line="154" selection-start-column="60" selection-end-line="154" selection-end-column="60" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/copy_from_server">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="98" selection-start-line="2" selection-start-column="98" selection-end-line="2" selection-end-column="98" />
         </state>
       </provider>
     </entry>

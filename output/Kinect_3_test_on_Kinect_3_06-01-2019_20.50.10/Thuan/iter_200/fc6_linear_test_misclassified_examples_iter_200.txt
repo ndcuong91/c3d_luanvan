@@ -1,0 +1,13 @@
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/1/3_5/ 1 2
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/5/1_2/ 5 3
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/1/4_1/ 1 2
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/2/3_4/ 2 5
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/5/1_1/ 5 3
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/1/4_4/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/1/3_1/ 1 2
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/1/4_5/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/1/3_3/ 1 2
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/1/3_2/ 1 2
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/5/1_5/ 5 3
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/1/3_4/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented/output/Thuan/5/1_4/ 5 3
