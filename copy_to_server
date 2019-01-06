@@ -1,0 +1,2 @@
+scp -r -P 8001 crossview.py dangmanhtruong95@mica.edu.vn:~/Cuong/
+#scp -r -P 8001 run_crossview.py dangmanhtruong95@mica.edu.vn:~/Cuong

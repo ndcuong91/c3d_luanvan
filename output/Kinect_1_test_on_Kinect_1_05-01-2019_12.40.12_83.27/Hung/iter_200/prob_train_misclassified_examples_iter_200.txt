@@ -1,0 +1,10 @@
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented_padding_100/output/Tan/1/4_1/ 1 5
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented_padding_100/output/Binh/1/1_2/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented_padding_100/output/Tan/1/1_5/ 1 5
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented_padding_100/output/Giang/4/2_5/ 4 5
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented_padding_100/output/Tan/1/4_5/ 1 5
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented_padding_100/output/Binh/4/5_5/ 4 5
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented_padding_100/output/Binh/1/5_1/ 1 5
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented_padding_100/output/Thuan/4/3_1/ 4 2
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented_padding_100/output/Binh/4/4_5/ 4 5
+/media/data2/users/dangmanhtruong95/Kinect_1_original_augmented_padding_100/output/Binh/1/5_5/ 1 5

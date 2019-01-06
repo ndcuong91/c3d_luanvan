@@ -37,11 +37,14 @@ class ConfigParams(object):
     batch_size = 20 # For feature extraction
     server=False
     crossview.server=server
+    subject_list = ['Binh', 'Giang', 'Hung', 'Tan', 'Thuan']
+    # subject_test=['Binh', 'Giang', 'Hung', 'Tan','Thuan'] #default for test
+    subject_test = ['Hung']
 
     # Cuong thay doi rieng thu muc ouput va template
     output_dir = "/home/titikid/PycharmProjects/c3d_luanvan/output"
     template_dir = "/home/titikid/PycharmProjects/c3d_luanvan/template"
-    c3d_data_root = "/home/titikid/PycharmProjects/c3d_luanvan"
+    c3d_data_root = "/home/titikid/PycharmProjects/c3d_luanvan/data"
     c3d_files_dir = "/home/titikid/PycharmProjects/c3d_luanvan/c3d_files"
     if(server==True):
         #Cuong thay doi rieng thu muc ouput va template
@@ -51,9 +54,9 @@ class ConfigParams(object):
         c3d_files_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/c3d_files"
 
     #thay doi Kinect can train hoac test
-    kinect_train = "Kinect_1"
+    kinect_train = "Kinect_3"
     #kinect_test_list = ["Kinect_1","Kinect_3", "Kinect_5"]
-    kinect_test_list = ["Kinect_1"]
+    kinect_test_list = ["Kinect_3"]
     #data_type = "segmented" 
     data_type = "original"
     output_result_ext='output'
@@ -153,9 +156,8 @@ if __name__ == "__main__":
     # Leave one out
     # subject_list = list_all_folders_in_a_directory(config_params.c3d_data_dir)
    
-    subject_list = ['Binh', 'Giang', 'Hung', 'Tan','Thuan']
-    #subject_test=['Binh', 'Giang', 'Hung', 'Tan','Thuan'] #default for test
-    subject_test=['Hung']
+    subject_list = config_params.subject_list
+    subject_test=config_params.subject_test
 
     subject_list = list(subject_list) 
     num_of_subjects = len(subject_list)
@@ -315,7 +317,7 @@ if __name__ == "__main__":
             np.savetxt(
                 os.path.join(
                     config_params.output_dir,
-                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.datesnapsho_time),
+                    "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                     "%s_train_accuracy.txt" % (classification_method)),
                 list(r1_["train"] / (1.0 * num_of_subjects)), 
                 delimiter = ' ', 

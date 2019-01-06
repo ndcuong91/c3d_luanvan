@@ -1,0 +1,3 @@
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented_padding_100/output/Giang/3/1_5/ 3 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented_padding_100/output/Giang/1/2_4/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented_padding_100/output/Giang/1/3_4/ 1 4

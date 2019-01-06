@@ -1,0 +1,5 @@
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented_padding_100/output/Tan/1/3_2/ 1 2
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented_padding_100/output/Tan/1/4_1/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented_padding_100/output/Tan/1/3_4/ 1 2
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented_padding_100/output/Tan/1/4_4/ 1 4
+/media/data2/users/dangmanhtruong95/Kinect_3_original_augmented_padding_100/output/Tan/1/4_2/ 1 4
