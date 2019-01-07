@@ -711,6 +711,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
             
             (X_train, Y_train, X_test, Y_test, train_mapped_to_dir, test_mapped_to_dir) = \
                 load_data_for_classification(
+                    os.path.join(config_params.output_dir, config_params.output_result_ext),
                     train_01_fulldir,
                     test_01_fulldir, 
                     "fc6", 
@@ -766,6 +767,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
     
             (X_train, Y_train, X_test, Y_test, train_mapped_to_dir, test_mapped_to_dir) = \
                 load_data_for_classification(
+                    os.path.join(config_params.output_dir, config_params.output_result_ext),
                     train_01_fulldir, 
                     test_01_fulldir, 
                     "fc7", 
@@ -817,6 +819,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
     
             (X_train, Y_train, X_test, Y_test, train_mapped_to_dir, test_mapped_to_dir) = \
                 load_data_for_classification(
+                    os.path.join(config_params.output_dir, config_params.output_result_ext),
                     train_01_fulldir, 
                     test_01_fulldir, 
                     "prob", 

@@ -31,7 +31,7 @@ def parse_args():
                         help='batch size for feature extraction.')
     parser.add_argument('--batch_size_finetune', type=int, default=25,
                         help='batch size for fine-tuning.')
-    parser.add_argument('--server', type=bool, default=True,
+    parser.add_argument('--server', type=bool, default=False,
                         help='run on server or not')
     parser.add_argument('--subject_list', type=str, default='Binh,Giang,Hung,Tan,Thuan',
                         help='subject to training and test')
@@ -70,10 +70,10 @@ class ConfigParams(object):
     data_type = args.data_type
 
     # Cuong thay doi rieng thu muc ouput va template
-    output_dir = "/home/titikid/PycharmProjects/c3d_luanvan/output"
-    template_dir = "/home/titikid/PycharmProjects/c3d_luanvan/template"
-    c3d_data_root = "/home/titikid/PycharmProjects/c3d_luanvan/data"
-    c3d_files_dir = "/home/titikid/PycharmProjects/c3d_luanvan/c3d_files"
+    output_dir = "/home/prdcv265/PycharmProjects/gvh205/c3d_luanvan/output"
+    template_dir = "/home/prdcv265/PycharmProjects/gvh205/c3d_luanvan/template"
+    c3d_data_root = "/home/prdcv265/PycharmProjects/gvh205/c3d_luanvan/data"
+    c3d_files_dir = "/home/prdcv265/PycharmProjects/gvh205/c3d_luanvan/c3d_files"
     if(server==True):
         #Cuong thay doi rieng thu muc ouput va template
         output_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/output"

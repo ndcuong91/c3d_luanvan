@@ -237,7 +237,7 @@ def classification_routine(X_train, Y_train, X_test, Y_test, feature_type, svm_t
         dict_train_misclassified, dict_test_misclassified)    
     
 
-def find_files_to_read(input_dir, separate_output=True):
+def find_files_to_read(result_dir, train_test_list_file, separate_output=True):
     """
     Written by Dang Manh Truong (dangmanhtruong@gmail.com), modify by CuongND
 
@@ -273,21 +273,22 @@ def find_files_to_read(input_dir, separate_output=True):
     separate_output: use when file .fc6, .fc7, .prob in another folder, a little bit tricky base on name of subject: Binh, Giang, Tan, Thuan, Hung
     """
 
-    with open(input_dir) as f:
+    with open(train_test_list_file) as f:
         dict_dir_to_label={}
         directory_list = set()
         for line in f:
-            line = line.rstrip() # Remove trailing \n           
-            line_splitted = line.split(' ')            
+            line = line.rstrip() # Remove trailing \n
+            line_splitted = line.split(' ')
             directory = line_splitted[0]
-            if(separate_output==True):
-                directory=directory.replace('Binh','output/Binh').replace('Giang','output/Giang').replace('Tan','output/Tan').replace('Thuan','output/Thuan').replace('Hung','output/Hung')
+            substrings = directory.split('/')
+            total_substring = len(substrings)
+            directory = os.path.join(result_dir, substrings[total_substring-4], substrings[total_substring-3], substrings[total_substring-2])
             label = line_splitted[2]
             dict_dir_to_label[directory] = label
             directory_list.add(directory)           
     return (directory_list, dict_dir_to_label)
 
-def load_data_for_classification(train_01_fulldir, test_01_fulldir, feature_type, num_of_classes, find_files_to_read_func):
+def load_data_for_classification(result_dir,train_01_fulldir, test_01_fulldir, feature_type, num_of_classes, find_files_to_read_func):
     """
     Written by Dang Manh Truong (dangmanhtruong@gmail.com)
 
@@ -344,7 +345,7 @@ def load_data_for_classification(train_01_fulldir, test_01_fulldir, feature_type
     line_num_id = 0
     train_mapped_to_dir = []
     # Get train data
-    (train_dir_list, train_dict_dir_to_label) = find_files_to_read_func(train_01_fulldir)
+    (train_dir_list, train_dict_dir_to_label) = find_files_to_read_func(result_dir, train_01_fulldir)
     for train_dir in train_dir_list:    
         train_instance = get_average_of_all_features_in_a_directory(train_dir[:-1:], feature_type)
         label = train_dict_dir_to_label[train_dir]
@@ -357,7 +358,7 @@ def load_data_for_classification(train_01_fulldir, test_01_fulldir, feature_type
 
     # Get test data   
     test_mapped_to_dir = []
-    (test_dir_list, test_dict_dir_to_label) = find_files_to_read_func(test_01_fulldir)
+    (test_dir_list, test_dict_dir_to_label) = find_files_to_read_func(result_dir,test_01_fulldir)
     for test_dir in test_dir_list:
         
         # pdb.set_trace()
