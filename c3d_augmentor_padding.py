@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 data_folder='/media/data2/users/dangmanhtruong95'
-kinect_folder='Kinect_1_original'
+kinect_folder='Kinect_5_original'
 kinect_folder_augmented=kinect_folder+'_augmented_padding_100'
 subjects=['Binh','Giang','Hung','Tan','Thuan']
 actions=[1,2,3,4,5]

@@ -81,7 +81,7 @@ class ConfigParams(object):
         c3d_data_root = "/media/data2/users/dangmanhtruong95"
         c3d_files_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/c3d_files"
 
-    output_result_ext = 'output'
+    output_result_ext = 'result'
     date_time = datetime.now().strftime('%d-%m-%Y_%H.%M.%S') #date time when start training
 
     # c3d_feature_dir = "/home/dangmanhtruong95/Truong_Python_run_scripts/C3D_twostream_finetuning_with_confusion_matrix_and_loss_for_train_and_test/C3D_feature_dir"

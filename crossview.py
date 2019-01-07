@@ -299,7 +299,7 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
     with open(in_fullpath, "wt") as f_in, open(out_fullpath, "wt") as f_out:
         for subject_name in subject_list:
             fullpath_subject = os.path.join(data_dir, subject_name)
-            new_output_subject=os.path.join(data_dir,config_params.output_result_ext, subject_name) #CuongND. New folder for output
+            new_output_subject=os.path.join(config_params.output_dir,config_params.output_result_ext, subject_name) #CuongND. New folder for output
             for action_id in range(num_of_actions):
                 action_id = action_id + 1 #0,1,2,... -> 1,2,3....
                 fullpath_subject_action = os.path.join(fullpath_subject, str(action_id))
