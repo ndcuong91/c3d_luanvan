@@ -31,7 +31,7 @@ def parse_args():
                         help='batch size for feature extraction.')
     parser.add_argument('--batch_size_finetune', type=int, default=25,
                         help='batch size for fine-tuning.')
-    parser.add_argument('--server', type=bool, default=False,
+    parser.add_argument('--server', type=bool, default=True,
                         help='run on server or not')
     parser.add_argument('--subject_list', type=str, default='Binh,Giang,Hung,Tan,Thuan',
                         help='subject to training and test')
@@ -150,8 +150,7 @@ if __name__ == "__main__":
     #CuongND. delete all .fc6, .fc7, .prob in old training
     print "\n\nPROGRAM BEGIN!\n\n"
 
-    result_dir= os.path.join(config_params.c3d_data_root,
-                            config_params.kinect_train +'_'+config_params.data_type,
+    result_dir= os.path.join(config_params.output_dir,
                             config_params.output_result_ext)
     delete_files_with_extension_in_folder(result_dir,'.fc6')
     delete_files_with_extension_in_folder(result_dir,'.fc7')
