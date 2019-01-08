@@ -1,0 +1,2 @@
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/4/3_5/ 4 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/4/3_2/ 4 5

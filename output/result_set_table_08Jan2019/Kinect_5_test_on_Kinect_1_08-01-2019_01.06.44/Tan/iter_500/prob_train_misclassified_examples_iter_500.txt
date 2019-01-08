@@ -1,0 +1,11 @@
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/1/3_4/ 1 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/4/3_4/ 4 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/1/4_4/ 1 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/1/2_4/ 1 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/1/4_2/ 1 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/1/4_3/ 1 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/1/3_2/ 1 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/1/2_1/ 1 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/1/4_1/ 1 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/1/2_2/ 1 5
+/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Giang/1/2_3/ 1 5

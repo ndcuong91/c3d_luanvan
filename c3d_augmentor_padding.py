@@ -2,7 +2,7 @@ import cv2
 import os
 import numpy as np
 
-data_folder='/media/data2/users/dangmanhtruong95'
+data_folder='/home/prdcv265/PycharmProjects/gvh205/c3d_luanvan/data'
 kinect_folder='Kinect_5_original'
 kinect_folder_augmented=kinect_folder+'_augmented_padding_100'
 subjects=['Binh','Giang','Hung','Tan','Thuan']
@@ -49,6 +49,7 @@ def make_new_data(data_folder,kinect_folder, kinect_folder_augmented, subject,ac
 
 
 #action 1
+'''
 print('augment action 1')
 for subject in subjects:
     make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[0], crop_set_1)
@@ -67,7 +68,7 @@ for subject in subjects:
 print('augment action 4')
 for subject in subjects:
     make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[3], crop_set_1)
-
+'''
 #action 5
 print('augment action 5')
 for subject in subjects:

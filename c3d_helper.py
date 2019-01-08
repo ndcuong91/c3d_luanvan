@@ -282,7 +282,7 @@ def find_files_to_read(result_dir, train_test_list_file, separate_output=True):
             directory = line_splitted[0]
             substrings = directory.split('/')
             total_substring = len(substrings)
-            directory = os.path.join(result_dir, substrings[total_substring-4], substrings[total_substring-3], substrings[total_substring-2])
+            directory = os.path.join(result_dir, substrings[total_substring-4], substrings[total_substring-3], substrings[total_substring-2])+'/'
             label = line_splitted[2]
             dict_dir_to_label[directory] = label
             directory_list.add(directory)           
