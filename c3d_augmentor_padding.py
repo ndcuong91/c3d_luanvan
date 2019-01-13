@@ -2,9 +2,9 @@ import cv2
 import os
 import numpy as np
 
-data_folder='/home/prdcv265/PycharmProjects/gvh205/c3d_luanvan/data'
-kinect_folder='Kinect_5_original'
-kinect_folder_augmented=kinect_folder+'_augmented_padding_100'
+data_folder='/home/titikid/PycharmProjects/c3d_luanvan/data'
+kinect_folder='Kinect_1_clean_1_rename'
+kinect_folder_augmented='Kinect_1_clean_1_augmented_padding_100'
 subjects=['Binh','Giang','Hung','Tan','Thuan']
 actions=[1,2,3,4,5]
 old_res=[640,480]
@@ -15,6 +15,10 @@ do_padding=True
 crop_set_1=[[0,0],[80,0],[40,30],[80,60],[0,60]] #for action 1,3,5
 crop_set_2=[[0,0],[20,0],[40,0],[60,0],[80,0]] # for action 2
 crop_set_3=[[80,0],[80,15],[80,30],[80,45],[80,60]] #for action 4
+
+# crop_set_1=[[0,0],[80,0],[40,30],[80,60],[0,60],[20,15],[60,15],[20,45],[60,45]] #for action 1,3,5
+# crop_set_2=[[0,0],[10,0],[20,0],[30,0],[40,0],[50,0],[60,0],[70,0],[80,0]] # for action 2
+# crop_set_3=[[80,0],[80,7],[80,15],[80,22],[80,30],[80,38],[80,45],[80,53],[80,60]] #for action 4
 
 def get_list_dir_in_folder (dir):
     sub_dir=[o for o in os.listdir(dir) if os.path.isdir(os.path.join(dir, o))]
@@ -33,7 +37,7 @@ def make_new_data(data_folder,kinect_folder, kinect_folder_augmented, subject,ac
         if(len(sample)>1):
             continue
         image_list=get_list_jpg_in_folder(action_folder+'/'+sample)
-        for i in range(5):
+        for i in range(len(crop_set)):
             new_folder = sample + '_' + str(i + 1)
             if not os.path.exists(action_folder_augmented + '/' + new_folder):
                 os.makedirs(action_folder_augmented + '/' + new_folder)
@@ -49,7 +53,7 @@ def make_new_data(data_folder,kinect_folder, kinect_folder_augmented, subject,ac
 
 
 #action 1
-'''
+
 print('augment action 1')
 for subject in subjects:
     make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[0], crop_set_1)
@@ -68,7 +72,7 @@ for subject in subjects:
 print('augment action 4')
 for subject in subjects:
     make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[3], crop_set_1)
-'''
+
 #action 5
 print('augment action 5')
 for subject in subjects:

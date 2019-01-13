@@ -3,6 +3,7 @@
 data/Kinect_1_original_augmented_padding_100/
 data/Kinect_3_original_augmented_padding_100/
 data/Kinect_5_original_augmented_padding_100/
+data/Kinect_1_clean_1_augmented_padding_100/
 c3d_files/test_01_Kinect_1.lst
 c3d_files/test_01_Kinect_1_output.lst
 c3d_files/train_01.lst
