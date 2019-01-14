@@ -1,2 +1,3 @@
-#scp -r -P 8001 crossview.py dangmanhtruong95@mica.edu.vn:~/Cuong/
-scp -r -P 8001 data/Kinect_1_clean_1_rename/Binh/2/1 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Kinect_1_clean_1_rename/Binh/2/
+scp -P 8001 data/Kinect_3_clean_1_rename.tar.gz dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data
+#scp -P 8001 data/Kinect_3_clean_1_rename.tar.gz dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data
+scp -r -P 8001 data/Kinect_5_clean_1_rename/Thuan/5/5 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Kinect_5_clean_1_rename/Thuan/5/

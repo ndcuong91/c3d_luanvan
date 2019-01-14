@@ -42,11 +42,11 @@ def summary_image_data():
     for Kinect in Kinects:
         for subject in subjects:
             print('Make video samples from images in ' + subject + '_' + Kinect)
-            destination_dir= os.path.join(image_data_dir, Kinect + '_original_summary',subject)
+            destination_dir= os.path.join(image_data_dir, Kinect + 'clean_1_summary',subject)
             if not os.path.exists(destination_dir):
                 os.makedirs(destination_dir)
             for action in actions:
-                action_folder=os.path.join(image_data_dir,Kinect+'_original',subject,action)
+                action_folder=os.path.join(image_data_dir,Kinect+'_clean_1_rename',subject,action)
                 samples = get_list_dir_in_folder(action_folder)
                 for sample in samples:
                     image_list = get_list_jpg_in_folder(os.path.join(action_folder, sample))
@@ -72,6 +72,8 @@ def rename_data_after_clean(Kinect):
             for sample in samples:
                 image_list = get_list_jpg_in_folder(os.path.join(action_folder, sample))
                 image_list.sort()
+                if(len(image_list)<16):
+                    print('len smaller than 16 in '+os.path.join(action_folder, sample))
                 for i in range(len(image_list)):
                     destination_dir = os.path.join(image_data_dir, kinect_rename_dir, subject,action,sample)
                     if not os.path.exists(destination_dir):
@@ -81,11 +83,27 @@ def rename_data_after_clean(Kinect):
                             os.path.join(destination_dir,new_name))
 
 
+def remove_nois_by_copy_roi(dir, roi, src_image):
+    image_list = get_list_jpg_in_folder(dir)
+    image_list.sort()
+    img = cv2.imread(src_image)
+    crop_roi = img[roi[1]:roi[1] + roi[3], roi[0]:roi[0] + roi[2]]
+    for image_name in image_list:
+        image_path=os.path.join(dir,image_name)
+        image = cv2.imread(image_path)
+        image[roi[1]:roi[1] + roi[3], roi[0]:roi[0] + roi[2]] = crop_roi
+        cv2.imwrite(image_path, image)
+        kk=1
 
 
 
-#summary_image_data()
-rename_data_after_clean('Kinect_1')
+
+
+summary_image_data()
+#rename_data_after_clean('Kinect_3')
+#remove_nois_by_copy_roi('/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_3_clean_1/Thuan/5/1',
+ #                      [211,194,200,180],
+  #                     '/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_3_clean_1/Thuan/5/1/000003.jpg')
 print('Finish.')
 
 
