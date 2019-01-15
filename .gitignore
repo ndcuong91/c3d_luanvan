@@ -17,7 +17,6 @@ c3d_files/train_01_output.lst
 Kinect_1_original/
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000
 c3d_files/intermediate_model_snapshot/
-output/
 
 
 # Byte-compiled / optimized / DLL files

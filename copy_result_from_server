@@ -1,7 +1,7 @@
-#scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_1_test_on_Kinect_1_05-01-2019_12.40.12 output
-#scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_5_test_on_Kinect_1_09-01-2019_22.32.30 output
-#scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_5_test_on_Kinect_1_10-01-2019_00.06.18 output
+scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_3_test_on_Kinect_1_15-01-2019_05.03.45 output
+#scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_3_test_on_Kinect_3_15-01-2019_07.52.00 output
+#scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_3_test_on_Kinect_5_15-01-2019_17.01.06 output
 #scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_5_test_on_Kinect_1_10-01-2019_01.27.30 output
 #scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_5_test_on_Kinect_1_10-01-2019_02.48.26 output
-scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_5_test_on_Kinect_1_13-01-2019_23.59.27 output
+#scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_5_test_on_Kinect_1_13-01-2019_23.59.27 output
 #scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/output/Kinect_5_test_on_Kinect_1_10-01-2019_05.30.36 output

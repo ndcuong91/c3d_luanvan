@@ -1,0 +1,2 @@
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Thuan/1/2_1/ 1 2
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Thuan/1/1_1/ 1 2

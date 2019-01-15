@@ -3,12 +3,17 @@ import os
 import numpy as np
 
 data_folder='/home/titikid/PycharmProjects/c3d_luanvan/data'
+new_method=True
 kinect_folder='Kinect_1_clean_1_rename'
 kinect_folder_augmented='Kinect_1_clean_1_augmented_padding_100'
+if (new_method==True):
+    kinect_folder_augmented = 'Kinect_1_clean_1_augmented_padding_new'
+
 subjects=['Binh','Giang','Hung','Tan','Thuan']
 actions=[1,2,3,4,5]
 old_res=[640,480]
 new_res=[560,420]
+new_res_new=[256,192]
 padding=[100,75]
 do_padding=True
 
@@ -52,30 +57,71 @@ def make_new_data(data_folder,kinect_folder, kinect_folder_augmented, subject,ac
                     cv2.imwrite(os.path.join(action_folder_augmented,new_folder,image),crop_img)
 
 
+def make_new_data_new(data_folder,kinect_folder, kinect_folder_augmented, subject,action, crop_set):
+    action_folder=os.path.join(data_folder,kinect_folder,subject,str(action))
+    action_folder_augmented=os.path.join(data_folder,kinect_folder_augmented,subject,str(action))
+    samples=get_list_dir_in_folder(action_folder)
+    for sample in samples:
+        if(len(sample)>1):
+            continue
+        image_list=get_list_jpg_in_folder(action_folder+'/'+sample)
+        for i in range(len(crop_set)):
+            new_folder = sample + '_' + str(i + 1)
+            if not os.path.exists(action_folder_augmented + '/' + new_folder):
+                os.makedirs(action_folder_augmented + '/' + new_folder)
+            for image in image_list:
+                img = cv2.imread(action_folder+'/'+sample+'/'+image)
+                crop_img = img[crop_set[i][1]:crop_set[i][1] + new_res[1], crop_set[i][0]:crop_set[i][0] + new_res[0]]
+                if (do_padding==True):
+                    padding_image = np.zeros((2*padding[1]+ new_res[1], 2*padding[0]+ new_res[0], 3), np.uint8)
+                    padding_image[padding[1]:padding[1]+ new_res[1], padding[0]:padding[0]+ new_res[0]]=crop_img
+                    cv2.imwrite(os.path.join(action_folder_augmented,new_folder,image),padding_image)
+                else:
+                    cv2.imwrite(os.path.join(action_folder_augmented,new_folder,image),crop_img)
+
 #action 1
+if(new_method==True):
+    print('Begin augment data with new method')
+else:
+    print('Begin augment data with old method')
 
 print('augment action 1')
 for subject in subjects:
-    make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[0], crop_set_1)
+    if(new_method==True):
+        make_new_data_new(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[0], crop_set_1)
+    else:
+        make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[0], crop_set_1)
 
 #action 2
 print('augment action 2')
 for subject in subjects:
-    make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[1], crop_set_1)
+    if(new_method==True):
+        make_new_data_new(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[1], crop_set_1)
+    else:
+        make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[1], crop_set_1)
 
 #action 3
 print('augment action 3')
 for subject in subjects:
-    make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[2], crop_set_1)
+    if(new_method==True):
+        make_new_data_new(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[2], crop_set_1)
+    else:
+        make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[2], crop_set_1)
 
 #action 4
 print('augment action 4')
 for subject in subjects:
-    make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[3], crop_set_1)
+    if(new_method==True):
+        make_new_data_new(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[3], crop_set_1)
+    else:
+        make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[3], crop_set_1)
 
 #action 5
 print('augment action 5')
 for subject in subjects:
-    make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[4], crop_set_1)
+    if(new_method==True):
+        make_new_data_new(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[4], crop_set_1)
+    else:
+        make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[4], crop_set_1)
 
 print('Finish.')
