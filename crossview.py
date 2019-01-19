@@ -17,7 +17,7 @@ from sklearn import preprocessing
 from sklearn.metrics import log_loss, confusion_matrix
 # from sklearn import (manifold, datasets, decomposition, ensemble,
 #                      discriminant_analysis, random_projection)
-from c3d_helper import find_files_to_read, load_data_for_classification
+from c3d_helper import find_files_to_read, load_data_for_classification, check_gpu_ready
 import time
 from sklearn.externals import joblib
 
@@ -114,8 +114,10 @@ class C3DNetwork(object):
         # Sh file
         input_params = (input_file, output_volume_mean_file)
         self.__print_params_to_file__(input_params, self.template_compute_volume_mean_sh_file, \
-             compute_volume_mean_sh_file)        
+             compute_volume_mean_sh_file)
 
+        # CuongND. Check for GPU
+        check_gpu_ready(allocate_mem=500)
         # Run 
         print subprocess.check_output(['sh', compute_volume_mean_sh_file])
 
@@ -197,6 +199,8 @@ class C3DNetwork(object):
         input_params = (finetuning_solver_file, pretrained_model_file)
         self.__print_params_to_file__(input_params, self.template_finetuning_sh_file, finetuning_sh_file)
 
+        #CuongND. Check for GPU
+        check_gpu_ready(allocate_mem=7000)
         # Run
         print subprocess.check_output(['sh', finetuning_sh_file])        
 
@@ -226,7 +230,9 @@ class C3DNetwork(object):
         input_params = (feature_extraction_prototxt_file, pretrained_model_file, batch_size, num_of_batches, \
             output_file)
         self.__print_params_to_file__(input_params, self.template_feature_extraction_sh_file, feature_extraction_sh_file)
-        
+
+        # CuongND. Check for GPU
+        check_gpu_ready(allocate_mem=3500)
         # Run
         print subprocess.check_output(['sh', feature_extraction_sh_file])       
 

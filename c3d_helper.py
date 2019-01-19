@@ -11,7 +11,37 @@ plt.switch_backend('agg')
 from sklearn import datasets
 from pprint import pprint
 import pdb
+import subprocess
+import time
 
+
+def get_gpu_memory():
+    result = subprocess.check_output(
+        [
+            'nvidia-smi', '--query-gpu=memory.used',
+            '--format=csv,nounits,noheader'
+        ])
+    # Convert lines into a dictionary
+    gpu_memory = [int(x) for x in result.strip().split('\n')]
+    gpu_memory_map = dict(zip(range(len(gpu_memory)), gpu_memory))
+    return gpu_memory_map[0]
+
+def check_gpu_ready(allocate_mem=7000,total_gpu_mem=11172, sleep_second=10, max_wait_time=36000, log_time=1800):
+    remain_size=total_gpu_mem-allocate_mem
+    count=0
+    while(get_gpu_memory()>remain_size):
+        if(count==0):
+            print("CuongND. GPU memory remain is not enough. Waiting ...")
+        else:
+            if(count%(log_time/sleep_second)==0):
+                minute=(count*sleep_second)/60
+                print('Waiting '+str(minute) + ' mins...')
+
+        time.sleep(sleep_second)
+        count=count+1
+        if(count>(max_wait_time/sleep_second)):
+            break
+    print('GPU ready! Total waiting time: '+str(((count*sleep_second)/60))+' mins')
 
 def dump_plot_to_image_file(train_list, test_list, max_iter, snapshot, train_label, test_label, plot_title, out_dir):
     t = np.arange(snapshot, max_iter+1, snapshot)

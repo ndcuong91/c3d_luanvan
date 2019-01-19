@@ -2,21 +2,17 @@ import cv2
 import os
 import numpy as np
 
-data_folder='/home/prdcv/PycharmProjects/gvh205/c3d_luanvan/data'
+data_folder='/home/titikid/PycharmProjects/c3d_luanvan/data'
 new_method=True
-kinect_folder='Kinect_1_clean_1_rename'
-kinect_folder_augmented='Kinect_1_clean_1_augmented_padding_100'
-if (new_method==True):
-    kinect_folder_augmented = 'Kinect_1_clean_1_augmented_padding_new'
-
+Kinects=['Kinect_1','Kinect_3','Kinect_5']
 subjects=['Binh','Giang','Hung','Tan','Thuan']
 actions=[1,2,3,4,5]
 old_res=[640,480]
-new_res=[560,420]
-new_res_new=[256,192]
 padding=[100,75]
 do_padding=True
 
+#old method
+new_res=[560,420]
 crop_set_augment_1=[]
 crop_set_1=[[0,0],[80,0],[40,30],[80,60],[0,60]] #for action 1,3,5
 crop_set_2=[[0,0],[20,0],[40,0],[60,0],[80,0]] # for action 2
@@ -25,11 +21,16 @@ crop_set_augment_1.append(crop_set_1)
 crop_set_augment_1.append(crop_set_2)
 crop_set_augment_1.append(crop_set_3)
 
+#new method
+new_res_new=[256,192]
+begin_pt=[110,30]
+#pos_set = [[0, 0], [25, 25], [50, 50], [75, 75], [100, 100],[25, 75], [75, 25], [0, 100], [100, 0]]
+pos_set = [[0, 0], [50, 50], [100, 100], [0, 100], [100, 0]]
+final_pos=[]
+for pos in pos_set:
+    temp_pos=[pos[0]+begin_pt[0],pos[1]+begin_pt[1]]
+    final_pos.append(temp_pos)
 
-
-# crop_set_1=[[0,0],[80,0],[40,30],[80,60],[0,60],[20,15],[60,15],[20,45],[60,45]] #for action 1,3,5
-# crop_set_2=[[0,0],[10,0],[20,0],[30,0],[40,0],[50,0],[60,0],[70,0],[80,0]] # for action 2
-# crop_set_3=[[80,0],[80,7],[80,15],[80,22],[80,30],[80,38],[80,45],[80,53],[80,60]] #for action 4
 
 def get_list_dir_in_folder (dir):
     sub_dir=[o for o in os.listdir(dir) if os.path.isdir(os.path.join(dir, o))]
@@ -93,60 +94,41 @@ def make_new_data_new(data_folder,kinect_folder, kinect_folder_augmented, subjec
                     cv2.imwrite(os.path.join(action_folder_augmented,new_folder,image),padding_image)
                 else:
                     cv2.imwrite(os.path.join(action_folder_augmented,new_folder,image),crop_img)
-                kk=1
 
 
-begin_pt=[110,30]
-pos_set = [[0, 0], [25, 25], [50, 50], [75, 75], [100, 100],[25, 75], [75, 25], [0, 100], [100, 0]]
-final_pos=[]
-for pos in pos_set:
-    temp_pos=[pos[0]+begin_pt[0],pos[1]+begin_pt[1]]
-    final_pos.append(temp_pos)
 
-
-#action 1
-if(new_method==True):
-    print('Begin augment data with new method')
-else:
-    print('Begin augment data with old method')
-
-print('augment action 1')
-for subject in subjects:
-    if(new_method==True):
-        make_new_data_new(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[0], final_pos)
+for kinect in Kinects:
+    kinect_folder=kinect+'_clean_1_rename'
+    kinect_folder_augmented=kinect+'_clean_1_augmented_padding_100'
+    if (new_method == True):
+        kinect_folder_augmented = kinect+'_clean_1_augmented_padding_new'
+        print('Begin augment data with new method for ' + kinect)
     else:
-        make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[0], crop_set_1)
+        print('Begin augment data with old method for ' + kinect)
 
-#action 2
-print('augment action 2')
-for subject in subjects:
-    if(new_method==True):
-        make_new_data_new(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[1], final_pos)
-    else:
-        make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[1], crop_set_1)
-
-#action 3
-print('augment action 3')
-for subject in subjects:
-    if(new_method==True):
-        make_new_data_new(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[2], final_pos)
-    else:
-        make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[2], crop_set_1)
-
-#action 4
-print('augment action 4')
-for subject in subjects:
-    if(new_method==True):
-        make_new_data_new(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[3], final_pos)
-    else:
-        make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[3], crop_set_1)
-
-#action 5
-print('augment action 5')
-for subject in subjects:
-    if(new_method==True):
-        make_new_data_new(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[4], final_pos)
-    else:
-        make_new_data(data_folder,kinect_folder,kinect_folder_augmented, subject,actions[4], crop_set_1)
+    for subject in subjects:
+        print('Augment subject '+subject)
+        if (new_method == True):
+            print('Action 1')
+            make_new_data_new(data_folder, kinect_folder, kinect_folder_augmented, subject, actions[0], final_pos)
+            print('Action 2')
+            make_new_data_new(data_folder, kinect_folder, kinect_folder_augmented, subject, actions[1], final_pos)
+            print('Action 3')
+            make_new_data_new(data_folder, kinect_folder, kinect_folder_augmented, subject, actions[2], final_pos)
+            print('Action 4')
+            make_new_data_new(data_folder, kinect_folder, kinect_folder_augmented, subject, actions[3], final_pos)
+            print('Action 5')
+            make_new_data_new(data_folder, kinect_folder, kinect_folder_augmented, subject, actions[4], final_pos)
+        else:
+            print('Action 1')
+            make_new_data(data_folder, kinect_folder, kinect_folder_augmented, subject, actions[0], crop_set_1)
+            print('Action 2')
+            make_new_data(data_folder, kinect_folder, kinect_folder_augmented, subject, actions[1], crop_set_1)
+            print('Action 3')
+            make_new_data(data_folder, kinect_folder, kinect_folder_augmented, subject, actions[2], crop_set_1)
+            print('Action 4')
+            make_new_data(data_folder, kinect_folder, kinect_folder_augmented, subject, actions[3], crop_set_1)
+            print('Action 5')
+            make_new_data(data_folder, kinect_folder, kinect_folder_augmented, subject, actions[4], crop_set_1)
 
 print('Finish.')
