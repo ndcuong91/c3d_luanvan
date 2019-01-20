@@ -548,28 +548,25 @@ def c3d_train_and_test(train_list, test_list, config_params):
     num_of_actions = config_params.num_of_actions
     max_iter = config_params.max_iter
     snapshot = config_params.snapshot
-    num_of_iters = max_iter / snapshot
     image_type = config_params.image_type
     batch_size = config_params.batch_size
     c3d_files_dir = config_params.c3d_files_dir
-    c3d_train_data_dir = os.path.join(config_params.c3d_data_root, config_params.kinect_train + "_" + config_params.data_type)
     
     kinect_train = config_params.kinect_train
     kinect_test_list = config_params.kinect_test_list
     c3d_data_root = config_params.c3d_data_root
-    data_type = config_params.data_type
     c3d_feature_extraction_for_test_dir = config_params.c3d_feature_extraction_for_test_dir    
     output_dir = config_params.output_dir
     
-    # Create train_01.lst, train_01_output.lst, test_01.lst, test_01_output.lst     
-    c3d_train_data_dir = os.path.join(c3d_data_root, kinect_train + "_" + data_type)      
+    # Create train_01.lst5, train_01_output.lst, test_01.lst, test_01_output.lst
+    c3d_train_data_dir = os.path.join(c3d_data_root, kinect_train + "_" + config_params.data_type_train)
     train_numlines = create_lst_files(config_params, c3d_files_dir, c3d_train_data_dir, train_list, "train_01", num_of_actions, image_type)
     num_of_train_batches = train_numlines / batch_size
     if (num_of_train_batches * batch_size < train_numlines):
         num_of_train_batches = num_of_train_batches + 1 
         
     for kinect_test in kinect_test_list:
-        kinect_run_list[kinect_test].c3d_test_data_dir = os.path.join(c3d_data_root, kinect_test + "_"  + data_type)
+        kinect_run_list[kinect_test].c3d_test_data_dir = os.path.join(c3d_data_root, kinect_test + "_"  + config_params.data_type_test)
         kinect_run_list[kinect_test].test_numlines = create_lst_files(config_params,
                 c3d_files_dir, 
                 kinect_run_list[kinect_test].c3d_test_data_dir , 
@@ -722,7 +719,8 @@ def c3d_train_and_test(train_list, test_list, config_params):
                     test_01_fulldir, 
                     "fc6", 
                     num_of_actions, 
-                    find_files_to_read_func) 
+                    find_files_to_read_func,
+                    average_feature=config_params.average_feature)
                 
             # pdb.set_trace()
             
@@ -778,7 +776,8 @@ def c3d_train_and_test(train_list, test_list, config_params):
                     test_01_fulldir, 
                     "fc7", 
                     num_of_actions, 
-                    find_files_to_read_func)
+                    find_files_to_read_func,
+                    average_feature=config_params.average_feature)
             (acc_train, acc_test, loss_train, loss_test, confmat_train, confmat_test, \
                 dict_train_instances_misclassified, dict_test_instances_misclassified, _, _) = \
                     classification_routine(
@@ -794,7 +793,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
             result[kinect_test]["fc7_linear"]["train"].set_value(
                 acc_train, 
                 confmat_train, 
-                loss_train, 
+                loss_train,
                 dict_train_instances_misclassified)
             result[kinect_test]["fc7_linear"]["test"].set_value(
                 acc_test, 
@@ -857,11 +856,11 @@ def c3d_train_and_test(train_list, test_list, config_params):
             # Print confusion matrix and list of misclassified examples for each snapshot iterations
             # for kinect_test, r0_ in result.iteritems():
             for classification_method, r1_ in result[kinect_test].iteritems():
-                for data_type, r2_ in r1_.iteritems():                     
+                for train_or_test, r2_ in r1_.iteritems():
                     # Output confusion matrix
                     file_name = "%s_%s_confmat_iter_%d.txt" % (                    
-                        classification_method, 
-                        data_type, 
+                        classification_method,
+                        train_or_test,
                         iter_)
                     # pdb.set_trace()
                     np.savetxt(
@@ -878,8 +877,8 @@ def c3d_train_and_test(train_list, test_list, config_params):
                     
                     # Output misclassified examples
                     file_name = "%s_%s_misclassified_examples_iter_%d.txt" % (                     
-                        classification_method, 
-                        data_type, 
+                        classification_method,
+                        train_or_test,
                         iter_)                
                     dump_list_of_misclassified_examples(
                         r2_.misclassified_dict,
@@ -893,10 +892,10 @@ def c3d_train_and_test(train_list, test_list, config_params):
             for classification_method, r1_ in result[kinect_test].iteritems():
                 # print classification_method
                 # pdb.set_trace()
-                for data_type, r2_ in r1_.iteritems():
+                for train_or_test, r2_ in r1_.iteritems():
                     # pdb.set_trace()
-                    result_list[kinect_test][classification_method][data_type].add_element(
-                            result[kinect_test][classification_method][data_type])
+                    result_list[kinect_test][classification_method][train_or_test].add_element(
+                            result[kinect_test][classification_method][train_or_test])
     print "\n\nTOTAL TEST TIME: %f" % (time.time()-start_test)
     # raw_input("Press enter")
     return result_list

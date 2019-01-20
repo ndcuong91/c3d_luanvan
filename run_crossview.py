@@ -31,7 +31,7 @@ def parse_args():
                         help='batch size for feature extraction.')
     parser.add_argument('--batch_size_finetune', type=int, default=25,
                         help='batch size for fine-tuning.')
-    parser.add_argument('--server', type=bool, default=False,
+    parser.add_argument('--server', type=bool, default=True,
                         help='run on server or not')
     parser.add_argument('--subject_list', type=str, default='Binh,Giang,Hung,Tan,Thuan',
                         help='subject to training and test')
@@ -41,8 +41,12 @@ def parse_args():
                         help='trainning set')
     parser.add_argument('--kinect_test_list', type=str, default='Kinect_1',
                         help='List of Kinect view for test. e.g: "Kinect_1,Kinect_3,Kinect_5"')
-    parser.add_argument('--data_type', type=str, default='original',
-                        help='original or segmented')
+    parser.add_argument('--data_type_train', type=str, default='original',
+                        help='original, segmented...')
+    parser.add_argument('--data_type_test', type=str, default='segmented',
+                        help='original, segmented...')
+    parser.add_argument('--average_feature', type=bool, default=False,
+                        help='compute average feature or only first 16 frames feature')
     args = parser.parse_args()
     return args
 
@@ -67,13 +71,15 @@ class ConfigParams(object):
     subject_test = [x.strip() for x in args.subject_test.split(',')]
     kinect_train = args.kinect_train
     kinect_test_list = [x.strip() for x in args.kinect_test_list.split(',')]
-    data_type = args.data_type
+    data_type_train = args.data_type_train
+    data_type_test = args.data_type_test
+    average_feature=args.average_feature
 
     # Cuong thay doi rieng thu muc ouput va template
-    output_dir = "/home/prdcv265/PycharmProjects/gvh205/c3d_luanvan/output"
-    template_dir = "/home/prdcv265/PycharmProjects/gvh205/c3d_luanvan/template"
-    c3d_data_root = "/home/prdcv265/PycharmProjects/gvh205/c3d_luanvan/data"
-    c3d_files_dir = "/home/prdcv265/PycharmProjects/gvh205/c3d_luanvan/c3d_files"
+    output_dir = "/home/titikid/PycharmProjects/c3d_luanvan/output"
+    template_dir = "/home/titikid/PycharmProjects/c3d_luanvan/template"
+    c3d_data_root = "/home/titikid/PycharmProjects/c3d_luanvan/data"
+    c3d_files_dir = "/home/titikid/PycharmProjects/c3d_luanvan/c3d_files"
     if(server==True):
         #Cuong thay doi rieng thu muc ouput va template
         output_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/output"
@@ -199,7 +205,10 @@ if __name__ == "__main__":
                 'subject_test: ' + ",".join(str(x) for x in config_params.subject_test) + '\n' +\
                 'kinect_train: ' + config_params.kinect_train + '\n' +\
                 'kinect_test_list: ' + ",".join(str(x) for x in config_params.kinect_test_list) + '\n' +\
-                'data_type: ' + config_params.data_type + '\n'
+                'data_type_train: ' + config_params.data_type_train + '\n' +\
+                'data_type_test: ' + config_params.data_type_test + '\n' +\
+                'average_feature: ' + str(config_params.average_feature) + '\n' +\
+                'use center crop in finetuning instead of random crop\n'
     for kinect_test in config_params.kinect_test_list:
         output_result_dir="%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
         create_folder(

@@ -26,22 +26,21 @@ def get_gpu_memory():
     gpu_memory_map = dict(zip(range(len(gpu_memory)), gpu_memory))
     return gpu_memory_map[0]
 
-def check_gpu_ready(allocate_mem=7000,total_gpu_mem=11172, sleep_second=10, max_wait_time=36000, log_time=1800):
+def check_gpu_ready(allocate_mem=7000,total_gpu_mem=11172, sleep_second=10, max_wait_time=36000, log_time=60):
     remain_size=total_gpu_mem-allocate_mem
     count=0
     while(get_gpu_memory()>remain_size):
         if(count==0):
-            print("CuongND. GPU memory remain is not enough. Waiting ...")
+            print("CuongND. GPU memory remain is not enough. Waiting"),
         else:
             if(count%(log_time/sleep_second)==0):
-                minute=(count*sleep_second)/60
-                print('Waiting '+str(minute) + ' mins...')
+                print('.'),
 
         time.sleep(sleep_second)
         count=count+1
         if(count>(max_wait_time/sleep_second)):
             break
-    print('GPU ready! Total waiting time: '+str(((count*sleep_second)/60))+' mins')
+    print('\nGPU ready! Total waiting time: '+str(((count*sleep_second)/60))+' mins')
 
 def dump_plot_to_image_file(train_list, test_list, max_iter, snapshot, train_label, test_label, plot_title, out_dir):
     t = np.arange(snapshot, max_iter+1, snapshot)
@@ -83,7 +82,7 @@ def read_binary_blob(fn):
     feature_vec = np.array(array.array("f", s[20:]))
     return feature_vec        
 
-def get_average_of_all_features_in_a_directory(directory, feature_type):
+def get_features_in_a_directory(directory, feature_type, average_feature=True):
     """
     Written by Dang Manh Truong (dangmanhtruong@gmail.com)
 
@@ -115,14 +114,16 @@ def get_average_of_all_features_in_a_directory(directory, feature_type):
     file_list = glob(directory + "/*." + feature_type)
     num_of_files = len(file_list)       
     feature_vec_list = []
-    for file_name in file_list:       
-        
+    for file_name in file_list:
         feature_vec = read_binary_blob(file_name)        
         feature_vec_list.append(feature_vec)           
     avg_features = np.zeros(feature_vec_list[0].shape)
-    for feature_vec in feature_vec_list:
-        avg_features += feature_vec
-    avg_features = avg_features / num_of_files    
+    if(average_feature==True): #use avg features of all frames
+        for feature_vec in feature_vec_list:
+            avg_features += feature_vec
+        avg_features = avg_features / num_of_files
+    else:
+        avg_features=feature_vec_list[0] #only use first 16 frames
     return avg_features
 
 
@@ -318,9 +319,9 @@ def find_files_to_read(result_dir, train_test_list_file, separate_output=True):
             directory_list.add(directory)           
     return (directory_list, dict_dir_to_label)
 
-def load_data_for_classification(result_dir,train_01_fulldir, test_01_fulldir, feature_type, num_of_classes, find_files_to_read_func):
+def load_data_for_classification(result_dir,train_01_fulldir, test_01_fulldir, feature_type, num_of_classes, find_files_to_read_func, average_feature=True):
     """
-    Written by Dang Manh Truong (dangmanhtruong@gmail.com)
+    Written by Dang Manh Truong (dangmanhtruong@gmail.com), modified by CuongND
 
     This function loads C3D features into Python.
     
@@ -345,6 +346,8 @@ def load_data_for_classification(result_dir,train_01_fulldir, test_01_fulldir, f
                   - dict_dir_to_label: A dictionary which maps a directory to the corresponding class
     
     This allows for customization by users
+
+    average_feature: Use average of all feature or only first 16 frames feature
     
     Output:
 
@@ -376,8 +379,9 @@ def load_data_for_classification(result_dir,train_01_fulldir, test_01_fulldir, f
     train_mapped_to_dir = []
     # Get train data
     (train_dir_list, train_dict_dir_to_label) = find_files_to_read_func(result_dir, train_01_fulldir)
-    for train_dir in train_dir_list:    
-        train_instance = get_average_of_all_features_in_a_directory(train_dir[:-1:], feature_type)
+    for train_dir in train_dir_list:
+        dir=train_dir[:-1:]
+        train_instance = get_features_in_a_directory(train_dir[:-1:], feature_type, average_feature)
         label = train_dict_dir_to_label[train_dir]
         label = int(label)  
         X_train = np.vstack((X_train, train_instance))
@@ -393,7 +397,7 @@ def load_data_for_classification(result_dir,train_01_fulldir, test_01_fulldir, f
         
         # pdb.set_trace()
         
-        test_instance = get_average_of_all_features_in_a_directory(test_dir[:-1:], feature_type)
+        test_instance = get_features_in_a_directory(test_dir[:-1:], feature_type, average_feature)
         label = test_dict_dir_to_label[test_dir]        
         label = int(label)
         X_test = np.vstack((X_test, test_instance))
