@@ -1,3 +1,10 @@
-scp -P 8001 data/Kinect_3_clean_1_rename.tar.gz dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data
+scp -P 8001 c3d_helper.py dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/
+#scp -P 8001 data/Kinect_1_clean_1_rename/crop_aug_3 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data/Kinect_1_clean_1_rename/
+#scp -P 8001 data/Kinect_3_clean_1_rename/crop_aug_3 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data/Kinect_3_clean_1_rename/
+#scp -P 8001 data/Kinect_3_clean_1_rename/crop_aug_3 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data/Kinect_5_clean_1_rename/
+
+
+
 #scp -P 8001 data/Kinect_3_clean_1_rename.tar.gz dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data
-scp -r -P 8001 data/Kinect_5_clean_1_rename/Thuan/5/5 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Kinect_5_clean_1_rename/Thuan/5/
+#scp -r -P 8001 data/Kinect_1_clean_1_fix_Binh/Kinect_1_clean_1_fix_Binh.tar.gz dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data/
+#scp -r -P 8001 data/Kinect_1_clean_1_fix_Binh/Binh.tar.gz dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data/

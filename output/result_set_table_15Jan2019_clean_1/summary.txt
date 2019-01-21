@@ -1,8 +1,0 @@
-prob_softmax
-         || Kinect 1|| Kinect 3|| Kinect 5||
-Kinect 1 ||  80.47  ||  39.63  ||  35.44  ||
-Kinect 3 ||  75.06  ||  97.08  ||  82.73  ||
-Kinect 5 ||  76.74  ||  92.75  ||  98.00  ||
-
-single-view 91.85%
-cross-view 69.60%

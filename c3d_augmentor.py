@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 data_folder='/home/titikid/PycharmProjects/c3d_luanvan/data'
-method=3
+method=2
 Kinects=['Kinect_1','Kinect_3','Kinect_5']
 subjects=['Binh','Giang','Hung','Tan','Thuan']
 actions=[1,2,3,4,5]

@@ -1,3 +1,5 @@
 #scp -r -P 8001 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Kinect_5_original/ output
-#scp -r -P 8001 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Kinect_1_clean_1_augmented_padding_100 data
-scp -r -P 8001 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Kinect_1_segmented.tar.gz data
+#scp -r -P 8001 dangmanhtruong95@mica.edu.vn:~/Truong_Python_run_scripts/Feature_extraction_example/Tan_K5_3_1/ output
+scp -r -P 8001 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Kinect_1_original.tar data
+scp -r -P 8001 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Kinect_5_segmented.tar data
+#scp -r -P 8001 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data/Kinect_1_clean_1_rename/Binh data

@@ -23,6 +23,114 @@ def get_list_jpg_in_folder(dir):
                   if any(fn.endswith(ext) for ext in included_extensions)]
     return file_names
 
+def summary_result(folder, subjects=['Binh','Giang','Hung','Tan','Thuan'], folder_mod=['','','','',''], data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
+    print('Begin summarize result in '+folder)
+    result=folder+'\n\n'
+    subject_title=''
+    field_title = ''
+    final_accuracy=[]
+    final_loss=[]
+
+    for i in range(len(subjects)):
+        subject_title+=subjects[i].ljust(5)+'\t\t\t'
+        if(i==len(subjects)-1):
+            subject_title+='Final accuracy'
+        field_title+='loss\tacc \t'
+        result_folder=os.path.join(folder,subjects[i])
+        if(folder_mod[i]!=''):
+            result_folder=os.path.join(folder_mod[i],subjects[i])
+
+        accuracy=[]
+        loss=[]
+        for type in data_type:
+            with open(os.path.join(result_folder, type+'_test_accuracy.txt')) as f:
+                lines = f.readlines()
+                x = np.array(lines)
+                accuracy.append(x.astype(np.float))
+            with open(os.path.join(result_folder, type+'_test_loss.txt')) as f:
+                lines = f.readlines()
+                x = np.array(lines)
+                loss.append(x.astype(np.float))
+
+        final_accuracy.append(accuracy)
+        final_loss.append(accuracy)
+
+    for n in range(len(data_type)):
+        result +=data_type[n]+'\n' + subject_title + '\n' + field_title + '\n'
+        final_acc = []
+        for j in range(len(final_accuracy[n][0])):
+            sum_acc = 0.
+            for k in range((len(final_accuracy[n]))):
+                sum_acc += final_accuracy[k][n][j]
+                res = "%.4f" % final_loss[k][n][j] + '\t' + "%.4f" % final_accuracy[k][n][j] + '\t'
+                result += res
+            avg_acc = sum_acc / len(final_accuracy[n])
+            final_acc.append(avg_acc)
+            result += '\t' + "%.4f" % avg_acc + '\n'
+        result += data_type[n]+ '_accuracy:%.4f' % max(final_acc) + '\n\n'
+
+
+    with open(os.path.join(folder,'summary.txt'),'w') as f:
+        f.writelines(result)
+    print('Save result to '+os.path.join(folder,'summary.txt'))
+
+def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'], folder_mod=['','','','','','','','',''],data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
+    sub_dir= get_list_dir_in_folder(folder)
+    final_acc=[]
+    header='\t\t'
+    for kinect_train in Kinects:
+        header+=' || '+kinect_train
+        for kinect_test in Kinects:
+            folder_prefix=kinect_train+'_test_on_'+kinect_test
+            for dir in sub_dir:
+                if (folder_prefix in dir):
+                    summary_result(os.path.join(folder, dir))
+                    with open(os.path.join(folder, dir,'summary.txt')) as f:
+                        lines = f.readlines()
+                    acc=[]
+                    for i in range(len(data_type)):
+                        max_acc_str=lines[12*(i+1)].split(':')
+                        max_acc=float(max_acc_str[1].replace('\n',''))
+                        acc.append(max_acc)
+            final_acc.append(acc)
+    x = np.array(final_acc)
+    final_acc=x.transpose(1,0).tolist()
+
+
+    single_view =[]
+    cross_view =[]
+    for i in range(len(data_type)):
+        single_view.append((final_acc[i][0]+final_acc[i][4]+final_acc[i][8])/3)
+        cross_view.append((final_acc[i][1]+final_acc[i][2]+final_acc[i][3]+final_acc[i][5]+final_acc[i][6]+final_acc[i][7])/6)
+
+    result=''
+    header += ' ||'
+    for i in range(len(data_type)):
+        result+=data_type[i]+'\n'+header+'\n'
+        count=0
+        final_acc[i][1], final_acc[i][3] = final_acc[i][3], final_acc[i][1]
+        final_acc[i][2], final_acc[i][6] = final_acc[i][6], final_acc[i][2]
+        final_acc[i][5], final_acc[i][7] = final_acc[i][7], final_acc[i][5]
+
+        for kinect_train in Kinects:
+            result += kinect_train + ' ||'
+            for kinect_test in Kinects:
+                result+= '  %.2f' % (100*final_acc[i][count])+'   ||'
+                count+=1
+            result +='\n'
+        result += '\t\tsingle-view: %.2f' % (100 * single_view[i])+'\n'
+        result += '\t\tcross-view:  %.2f' % (100 * cross_view[i])+'\n'
+        result +='\n'
+
+
+    with open(os.path.join(folder,'summary_final.txt'),'w') as f:
+        f.writelines(result)
+    print('Save result to '+os.path.join(folder,'summary_final.txt'))
+
+
+
+
+
 def summary_video_data():
     for subject in subjects:
         for Kinect in Kinects:
@@ -114,7 +222,9 @@ def shift_image(dir, shift_data): #shift image x, y
         cv2.imwrite(image_path, new_image)
 
 
-check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
+summary_9_results('output/result_set_table_08Jan2019_original_aug_1_pad')
+#summary_result('output/Kinect_1_test_on_Kinect_1_21-01-2019_11.38.29')
+#check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
 
 
 

@@ -1,0 +1,16 @@
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/2_3/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/2_2/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/2_4/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/4_5/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/5/2_1/ 5 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/1/4_5/ 1 2
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/2_5/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/4_2/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/4_3/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/4_1/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/3_2/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/3_3/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/1_2/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/3_1/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/1_1/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Binh/4/2_1/ 4 3
