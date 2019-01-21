@@ -96,7 +96,6 @@ def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'], folder
     x = np.array(final_acc)
     final_acc=x.transpose(1,0).tolist()
 
-
     single_view =[]
     cross_view =[]
     for i in range(len(data_type)):
@@ -108,10 +107,6 @@ def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'], folder
     for i in range(len(data_type)):
         result+=data_type[i]+'\n'+header+'\n'
         count=0
-        final_acc[i][1], final_acc[i][3] = final_acc[i][3], final_acc[i][1]
-        final_acc[i][2], final_acc[i][6] = final_acc[i][6], final_acc[i][2]
-        final_acc[i][5], final_acc[i][7] = final_acc[i][7], final_acc[i][5]
-
         for kinect_train in Kinects:
             result += kinect_train + ' ||'
             for kinect_test in Kinects:
@@ -222,7 +217,7 @@ def shift_image(dir, shift_data): #shift image x, y
         cv2.imwrite(image_path, new_image)
 
 
-summary_9_results('output/result_set_table_08Jan2019_original_aug_1_pad')
+summary_9_results('output/result_set_table_15Jan2019_clean_1')
 #summary_result('output/Kinect_1_test_on_Kinect_1_21-01-2019_11.38.29')
 #check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
 
