@@ -89,7 +89,7 @@ def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'], folder
                         lines = f.readlines()
                     acc=[]
                     for i in range(len(data_type)):
-                        max_acc_str=lines[12*(i+1)].split(':')
+                        max_acc_str=lines[10*(i+1)].split(':')
                         max_acc=float(max_acc_str[1].replace('\n',''))
                         acc.append(max_acc)
             final_acc.append(acc)
@@ -217,8 +217,8 @@ def shift_image(dir, shift_data): #shift image x, y
         cv2.imwrite(image_path, new_image)
 
 
-#summary_9_results('output/result_set_table_08Jan2019_original_aug_1_pad')
-summary_result('output/backup_19Jan/Kinect_5_test_on_Kinect_1_17-01-2019_02.55.53')
+summary_9_results('output/result_segmented')
+#summary_result('output/result_segmented')
 #check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
 
 
