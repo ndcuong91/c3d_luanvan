@@ -1,0 +1,3 @@
+Kinect 1: shift center + aug_1_pad
+Kinect 3: aug_1_pad
+Kinect 5: aug_1_pad
