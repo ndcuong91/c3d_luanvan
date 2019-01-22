@@ -32,7 +32,7 @@ def summary_result(folder, subjects=['Binh','Giang','Hung','Tan','Thuan'], folde
     final_loss=[]
 
     for i in range(len(subjects)):
-        subject_title+=subjects[i].ljust(5)+'\t\t\t'
+        subject_title+=subjects[i].ljust(5)+'\t\t'
         if(i==len(subjects)-1):
             subject_title+='Final accuracy'
         field_title+='loss\tacc \t'
@@ -53,7 +53,7 @@ def summary_result(folder, subjects=['Binh','Giang','Hung','Tan','Thuan'], folde
                 loss.append(x.astype(np.float))
 
         final_accuracy.append(accuracy)
-        final_loss.append(accuracy)
+        final_loss.append(loss)
 
     for n in range(len(data_type)):
         result +=data_type[n]+'\n' + subject_title + '\n' + field_title + '\n'
@@ -89,7 +89,8 @@ def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'], folder
                         lines = f.readlines()
                     acc=[]
                     for i in range(len(data_type)):
-                        max_acc_str=lines[10*(i+1)].split(':')
+                        line_per_sample=len(lines)/len(data_type)
+                        max_acc_str=lines[line_per_sample*(i+1)].split(':')
                         max_acc=float(max_acc_str[1].replace('\n',''))
                         acc.append(max_acc)
             final_acc.append(acc)
@@ -217,8 +218,8 @@ def shift_image(dir, shift_data): #shift image x, y
         cv2.imwrite(image_path, new_image)
 
 
-summary_9_results('output/result_segmented')
-#summary_result('output/result_segmented')
+#summary_9_results('output/result_set_table_22Jan2019_segmented')
+summary_result('output/backup_19Jan/Kinect_5_test_on_Kinect_1_17-01-2019_02.55.53')
 #check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
 
 
