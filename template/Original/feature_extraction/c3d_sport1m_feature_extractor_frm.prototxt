@@ -10,12 +10,12 @@ layers {
     mean_file: "%s"
     use_temporal_jitter: false
     batch_size: %s
-    crop_size: 112
+    crop_size: %s
     mirror: false
     show_data: 0
-    new_height: 128
-    new_width: 171
-    new_length: 16
+    new_height: %s
+    new_width: %s
+    new_length: %s
     shuffle: false
   }
 }
@@ -30,7 +30,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 64
+    num_output: %s
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -75,7 +75,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 128
+    num_output: %s
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -120,7 +120,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 256
+    num_output: %s
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -151,7 +151,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 256
+    num_output: %s
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -197,7 +197,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 512
+    num_output: %s
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -228,7 +228,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 512
+    num_output: %s
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -274,7 +274,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 512
+    num_output: %s
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -305,7 +305,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 512
+    num_output: %s
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -351,7 +351,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 4096
+    num_output: %s
     weight_filler {
       type: "gaussian"
       std: 0.005
@@ -387,7 +387,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 4096
+    num_output: %s
     weight_filler {
     type: "gaussian"
       std: 0.005

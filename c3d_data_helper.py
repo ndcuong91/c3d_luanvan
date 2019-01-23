@@ -73,24 +73,29 @@ def summary_result(folder, subjects=['Binh','Giang','Hung','Tan','Thuan'], folde
     with open(os.path.join(folder,'summary.txt'),'w') as f:
         f.writelines(result)
     print('Save result to '+os.path.join(folder,'summary.txt'))
+    return os.path.join(folder,'summary.txt')
 
 def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'], folder_mod=['','','','','','','','',''],data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
     sub_dir= get_list_dir_in_folder(folder)
     final_acc=[]
     header='\t\t'
+    summary_dir=os.path.join(folder, 'final_summary')
+    if not os.path.exists(summary_dir):
+        os.makedirs(summary_dir)
     for kinect_train in Kinects:
         header+=' || '+kinect_train
         for kinect_test in Kinects:
             folder_prefix=kinect_train+'_test_on_'+kinect_test
             for dir in sub_dir:
                 if (folder_prefix in dir):
-                    summary_result(os.path.join(folder, dir))
-                    with open(os.path.join(folder, dir,'summary.txt')) as f:
+                    result_file=summary_result(os.path.join(folder, dir))
+                    new_name='K'+ kinect_train.split('_')[1]+'_K'+ kinect_test.split('_')[1]
+                    shutil.copy(result_file, os.path.join(summary_dir,new_name))
+                    with open(result_file) as f:
                         lines = f.readlines()
                     acc=[]
                     for i in range(len(data_type)):
-                        line_per_sample=len(lines)/len(data_type)
-                        max_acc_str=lines[line_per_sample*(i+1)].split(':')
+                        max_acc_str=lines[10*(i+1)].split(':')
                         max_acc=float(max_acc_str[1].replace('\n',''))
                         acc.append(max_acc)
             final_acc.append(acc)
@@ -119,12 +124,9 @@ def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'], folder
         result +='\n'
 
 
-    with open(os.path.join(folder,'summary_final.txt'),'w') as f:
+    with open(os.path.join(summary_dir,'final_summary.txt'),'w') as f:
         f.writelines(result)
-    print('Save result to '+os.path.join(folder,'summary_final.txt'))
-
-
-
+    print('Save result to '+os.path.join(summary_dir,'final_summary.txt'))
 
 
 def summary_video_data():
@@ -218,8 +220,8 @@ def shift_image(dir, shift_data): #shift image x, y
         cv2.imwrite(image_path, new_image)
 
 
-#summary_9_results('output/result_set_table_22Jan2019_segmented')
-summary_result('output/backup_19Jan/Kinect_5_test_on_Kinect_1_17-01-2019_02.55.53')
+summary_9_results('output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc')
+#summary_result('output/Kinect_1_test_on_Kinect_1_22-01-2019_16.43.03')
 #check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
 
 
