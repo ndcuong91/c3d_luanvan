@@ -10,4 +10,4 @@ batch_size_test: 20
 batch_size_finetune: 20
 subject_list: Binh,Giang,Hung,Tan,Thuan
 subject_test: Binh,Giang,Hung,Tan,Thuan
-data_type: original_augmented_padding_100
+data_type: original_aug_1_pad

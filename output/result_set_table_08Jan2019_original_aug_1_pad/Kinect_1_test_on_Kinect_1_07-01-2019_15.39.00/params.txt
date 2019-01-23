@@ -10,4 +10,4 @@ subject_list: Binh,Giang,Hung,Tan,Thuan
 subject_test: Binh,Giang,Hung,Tan,Thuan
 kinect_train: Kinect_1
 kinect_test_list: Kinect_1
-data_type: original_augmented_padding_100
+data_type: original_aug_1_pad
