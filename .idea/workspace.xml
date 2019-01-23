@@ -3,40 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2abd00b6-58fb-4ec7-8b9d-1c3f5cbeaee4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_data_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_data_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copy_from_server" beforeDir="false" afterPath="$PROJECT_DIR$/copy_from_server" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_08Jan2019_original_aug_1_pad/summary_final.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_15Jan2019_clean_1_aug_1_pad/summary_final.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_22Jan2019_clean_1_aug_3/summary_final.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_22Jan2019_segmented/summary_final.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_1_22-01-2019_16.43.03/params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_1_22-01-2019_16.43.03/params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_1_22-01-2019_16.43.03/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_1_22-01-2019_16.43.03/summary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_3_22-01-2019_18.11.58/params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_3_22-01-2019_18.11.58/params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_3_22-01-2019_18.11.58/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_3_22-01-2019_18.11.58/summary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_5_22-01-2019_19.28.42/params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_5_22-01-2019_19.28.42/params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_5_22-01-2019_19.28.42/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_1_test_on_Kinect_5_22-01-2019_19.28.42/summary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_1_22-01-2019_20.44.48/params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_1_22-01-2019_20.44.48/params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_1_22-01-2019_20.44.48/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_1_22-01-2019_20.44.48/summary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_3_22-01-2019_21.59.46/params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_3_22-01-2019_21.59.46/params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_3_22-01-2019_21.59.46/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_3_22-01-2019_21.59.46/summary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_5_22-01-2019_23.12.31/params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_5_22-01-2019_23.12.31/params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_5_22-01-2019_23.12.31/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_3_test_on_Kinect_5_22-01-2019_23.12.31/summary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_1_23-01-2019_00.26.04/params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_1_23-01-2019_00.26.04/params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_1_23-01-2019_00.26.04/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_1_23-01-2019_00.26.04/summary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_3_23-01-2019_01.40.05/params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_3_23-01-2019_01.40.05/params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_3_23-01-2019_01.40.05/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_3_23-01-2019_01.40.05/summary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_5_23-01-2019_02.52.47/params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_5_23-01-2019_02.52.47/params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_5_23-01-2019_02.52.47/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/Kinect_5_test_on_Kinect_5_23-01-2019_02.52.47/summary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/c3d_23Jan2019_clean_1_aug_3_first_16_fix_fc.ods" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K1_K1" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K1_K1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K1_K3" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K1_K3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K1_K5" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K1_K5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K3_K1" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K3_K1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K3_K3" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K3_K3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K3_K5" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K3_K5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K5_K1" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K5_K1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K5_K3" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K5_K3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K5_K5" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_set_table_23Jan2019_clean_1_aug_3_first_16_fix_fc/final_summary/K5_K5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/.~lock.result_summary.xls#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/result_summary.xls" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_summary.xls" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/c3d_data_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="228" selection-start-line="228" selection-end-line="228" />
+            <state relative-caret-position="443">
+              <caret line="233" column="39" selection-start-line="233" selection-start-column="39" selection-end-line="233" selection-end-column="39" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -388,7 +356,7 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1310116" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18186843" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -473,7 +441,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Cuong_Output/Kinect_1_test_on_Kinect_1/fc7_rbf_test_accuracy.txt" />
     <entry file="file://$PROJECT_DIR$/Cuong_Output/Kinect_1_test_on_Kinect_1/Binh/prob_test_accuracy.txt" />
     <entry file="file://$PROJECT_DIR$/Cuong_Output/Kinect_1_test_on_Kinect_1/Giang/prob_test_accuracy.txt" />
     <entry file="file://$PROJECT_DIR$/Cuong_Output/Kinect_1_test_on_Kinect_1/Hung/prob_test_accuracy.txt" />
@@ -613,10 +580,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.~lock.c3d_original.ods#">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/c3d_data_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="228" selection-start-line="228" selection-end-line="228" />
+        <state relative-caret-position="443">
+          <caret line="233" column="39" selection-start-line="233" selection-start-column="39" selection-end-line="233" selection-end-column="39" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
