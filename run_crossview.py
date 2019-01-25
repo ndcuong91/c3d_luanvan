@@ -137,7 +137,7 @@ class ConfigParams(object):
     c3d_files_dir = c3d_params.c3d_files_dir
     tool_dir = c3d_params.tool_dir
 
-    output_result_ext = 'result'
+    output_vector = 'intermediate_output_vector'
     date_time = datetime.now().strftime('%Y-%m-%d_%H.%M')  # date time when start training
 
     # c3d_feature_dir = "/home/dangmanhtruong95/Truong_Python_run_scripts/C3D_twostream_finetuning_with_confusion_matrix_and_loss_for_train_and_test/C3D_feature_dir"
@@ -213,7 +213,7 @@ if __name__ == "__main__":
     print "\nPROGRAM BEGIN!\n"
 
     result_dir = os.path.join(config_params.output_dir,
-                              config_params.output_result_ext)
+                              config_params.output_vector)
     delete_files_with_extension_in_folder(result_dir, '.fc6')
     delete_files_with_extension_in_folder(result_dir, '.fc7')
     delete_files_with_extension_in_folder(result_dir, '.prob')

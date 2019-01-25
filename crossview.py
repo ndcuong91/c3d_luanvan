@@ -321,7 +321,7 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
     with open(in_fullpath, "wt") as f_in, open(out_fullpath, "wt") as f_out:
         for subject_name in subject_list:
             fullpath_subject = os.path.join(data_dir, subject_name)
-            new_output_subject = os.path.join(config_params.output_dir, config_params.output_result_ext,
+            new_output_subject = os.path.join(config_params.output_dir, config_params.output_vector,
                                               subject_name)  # CuongND. New folder for output
             for action_id in range(num_of_actions):
                 action_id = action_id + 1  # 0,1,2,... -> 1,2,3....
@@ -765,7 +765,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
             (X_train, Y_train, X_test, Y_test, train_mapped_to_dir, test_mapped_to_dir) = \
                 load_data_for_classification(
                     config_params.fc6,
-                    os.path.join(config_params.output_dir, config_params.output_result_ext),
+                    os.path.join(config_params.output_dir, config_params.output_vector),
                     train_01_fulldir,
                     test_01_fulldir,
                     "fc6",
@@ -822,7 +822,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
             (X_train, Y_train, X_test, Y_test, train_mapped_to_dir, test_mapped_to_dir) = \
                 load_data_for_classification(
                     config_params.fc7,
-                    os.path.join(config_params.output_dir, config_params.output_result_ext),
+                    os.path.join(config_params.output_dir, config_params.output_vector),
                     train_01_fulldir,
                     test_01_fulldir,
                     "fc7",
@@ -876,7 +876,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
             (X_train, Y_train, X_test, Y_test, train_mapped_to_dir, test_mapped_to_dir) = \
                 load_data_for_classification(
                     config_params.fc7,
-                    os.path.join(config_params.output_dir, config_params.output_result_ext),
+                    os.path.join(config_params.output_dir, config_params.output_vector),
                     train_01_fulldir,
                     test_01_fulldir,
                     "prob",
