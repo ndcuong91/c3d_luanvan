@@ -42,6 +42,7 @@ data/K5_clean_1_aug_2/
 data/K1_clean_1_aug_3/
 data/K3_clean_1_aug_3/
 data/K5_clean_1_aug_3/
+data/video_dataset/
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000
 
 
