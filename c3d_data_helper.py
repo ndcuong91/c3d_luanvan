@@ -3,13 +3,13 @@ import os
 import numpy as np
 import shutil
 import cv2
-from c3d_helper import check_gpu_ready
+import c3d_params
 
 
 video_data_dir='/home/titikid/PycharmProjects/c3d_luanvan/data/Dataset_hand_gesture'
-image_data_dir='/home/titikid/PycharmProjects/c3d_luanvan/data'
+image_data_dir= c3d_params.c3d_data_root
 subjects=['Binh','Giang','Hung','Tan','Thuan']
-Kinects=['Kinect_1','Kinect_3','Kinect_5']
+Kinects=['K1','K3','K5']
 actions=['1','2','3','4','5']
 resolution=(640,480)
 
@@ -84,7 +84,7 @@ def summary_all_results_in_folder(folder):
 
 
 
-def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'],data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
+def summary_9_results(folder, Kinects=['1','K3','K5'],data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
     sub_dir= get_list_dir_in_folder(folder)
     final_acc=[]
     header='\t\t'
@@ -94,12 +94,11 @@ def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'],data_ty
     for kinect_train in Kinects:
         header+=' || '+kinect_train
         for kinect_test in Kinects:
-            folder_prefix=kinect_train+'_test_on_'+kinect_test
+            folder_prefix=kinect_train+'_'+kinect_test
             for dir in sub_dir:
                 if (folder_prefix in dir):
                     result_file=summary_result(os.path.join(folder, dir))
-                    new_name='K'+ kinect_train.split('_')[1]+'_K'+ kinect_test.split('_')[1]
-                    shutil.copy(result_file, os.path.join(summary_dir,new_name))
+                    shutil.copy(result_file, os.path.join(summary_dir,folder_prefix))
                     with open(result_file) as f:
                         lines = f.readlines()
                     acc=[]
@@ -229,9 +228,9 @@ def shift_image(dir, shift_data): #shift image x, y
         new_image[new_y:new_y + new_h,new_x:new_x + new_w] = crop_roi
         cv2.imwrite(image_path, new_image)
 
-summary_all_results_in_folder('output/experiments')
-summary_9_results('output/result_set_table_22Jan2019_segmented')
-#summary_result('output/Kinect_1_test_on_Kinect_1_22-01-2019_16.43.03')
+#summary_all_results_in_folder('output/experiments')
+#summary_9_results('output/result_set_table_22Jan2019_segmented')
+summary_result('output/K1_K1_2019-01-25_15.55')
 #check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
 
 

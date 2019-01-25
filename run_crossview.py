@@ -8,7 +8,7 @@ import random
 from datetime import datetime
 from c3d_helper import delete_files_with_extension_in_folder, dump_plot_to_image_file, get_params_info
 import c3d_params
-
+from c3d_data_helper import summary_result
 
 def parse_args():
     """
@@ -39,12 +39,10 @@ def parse_args():
                         help='trainning set')
     parser.add_argument('--kinect_test_list', type=str, default='K1',
                         help='List of Kinect view for test. e.g: "K1,K3,K5"')
-    parser.add_argument('--data_type_train', type=str, default='clean_1_rename',
+    parser.add_argument('--data_type_train', type=str, default='clean_1_aug_3',
                         help='original, segmented...')
-    parser.add_argument('--data_type_test', type=str, default='segmented',
+    parser.add_argument('--data_type_test', type=str, default='clean_1_aug_3',
                         help='original, segmented...')
-    parser.add_argument('--average_feature', type=bool, default=False,
-                        help='compute average feature or only first 16 frames feature')
 
     # 23Jan. CuongND. Add parameters for modify c3d
     parser.add_argument('--resize', type=str, default='171,128',
@@ -98,7 +96,7 @@ class ConfigParams(object):
     kinect_test_list = [x.strip() for x in args.kinect_test_list.split(',')]
     data_type_train = args.data_type_train
     data_type_test = args.data_type_test
-    average_feature = False
+    average_feature=c3d_params.average_feature
 
     # CuongND. Modify C3D structure
     c3d_default = dict()
@@ -390,17 +388,15 @@ if __name__ == "__main__":
     # Output average accuracy
     print ""
     print ""
-    print ""
     print "OUTPUT AVERAGE ACCURACY"
-    print ""
     print ""
     print ""
     # pdb.set_trace()
     for kinect_test, r0_ in avg_result.iteritems():
+        output_result_dir = "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
         for classification_method, r1_ in r0_.iteritems():
             file_name = "%s_avg_acc.png" % (classification_method)
             # pdb.set_trace()
-            output_result_dir = "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
             dump_plot_to_image_file(
                 list(r1_["train"] / (1.0 * num_of_subjects)),
                 list(r1_["test"] / (1.0 * num_of_subjects)),
@@ -429,3 +425,5 @@ if __name__ == "__main__":
                 list(r1_["test"] / (1.0 * num_of_subjects)),
                 delimiter=' ',
                 fmt="%f")
+
+        summary_result(os.path.join(c3d_params.output_dir, output_result_dir))

@@ -1,12 +1,10 @@
 
-
-
-
 pc_name='japan' # japan, 300, mica: for running # duycuong: for coding
 
 compute_volume_mean=True
 finetuning=True
 feature_extract=True
+average_feature = False
 
 #default is mica
 output_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/output"
@@ -32,8 +30,8 @@ if(pc_name=='duycuong'):
     c3d_files_dir = "/home/titikid/PycharmProjects/c3d_luanvan/c3d_files"
 
 if(pc_name=='300'):
-    output_dir = "/home/titikid/PycharmProjects/c3d_luanvan/output"
-    template_dir = "/home/titikid/PycharmProjects/c3d_luanvan/template"
-    c3d_data_root = "/home/titikid/PycharmProjects/c3d_luanvan/data"
-    c3d_files_dir = "/home/titikid/PycharmProjects/c3d_luanvan/c3d_files"
+    output_dir = "/home/prdcv/PycharmProjects/c3d_luanvan/output"
+    template_dir = "/home/prdcv/PycharmProjects/c3d_luanvan/template"
+    c3d_data_root = "/home/prdcv/PycharmProjects/c3d_luanvan/data"
+    c3d_files_dir = "/home/prdcv/PycharmProjects/c3d_luanvan/c3d_files"
     tool_dir='...tools'

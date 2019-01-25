@@ -15,8 +15,11 @@ c3d_files/test_01_K5.lst
 c3d_files/test_01_K5_output.lst
 output/result_sample/
 output/result/
-C3D_sourcecode/
+C3D_sourcecode/C3D-v1.0/examples/c3d_feature_extraction/conv3d_deepnetA_sport1m_iter_1900000
 protobuf/
+output/intermediate_output_vector
+output/intermediate_model_snapshot/
+c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000_mod
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000_new
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000_origin
 
@@ -33,8 +36,13 @@ data/Kinect_5_clean_1_video/
 data/Kinect_1_original_video/
 data/Kinect_3_original_video/
 data/Kinect_5_original_video/
+data/K1_clean_1_aug_2/
+data/K3_clean_1_aug_2/
+data/K5_clean_1_aug_2/
+data/K1_clean_1_aug_3/
+data/K3_clean_1_aug_3/
+data/K5_clean_1_aug_3/
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000
-output/intermediate_model_snapshot/
 
 
 # Byte-compiled / optimized / DLL files

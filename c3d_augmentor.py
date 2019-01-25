@@ -1,10 +1,11 @@
 import cv2
 import os
 import numpy as np
+import c3d_params
 
-data_folder='/home/titikid/PycharmProjects/c3d_luanvan/data'
+data_folder=c3d_params.c3d_data_root
 method=2
-Kinects=['Kinect_1','Kinect_3','Kinect_5']
+Kinects=['K1','K3','K5']
 subjects=['Binh','Giang','Hung','Tan','Thuan']
 actions=[1,2,3,4,5]
 old_res=[640,480]

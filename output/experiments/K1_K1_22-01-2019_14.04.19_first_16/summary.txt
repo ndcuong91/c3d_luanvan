@@ -1,4 +1,4 @@
-output/result_set_table_22Jan2019_clean_1_aug_3_first_16/Kinect_1_test_on_Kinect_1_22-01-2019_14.04.19
+output/experiments/K1_K1_22-01-2019_14.04.19_first_16
 
 fc6_linear
 Binh 		Giang		Hung 		Tan  		Thuan		Final accuracy

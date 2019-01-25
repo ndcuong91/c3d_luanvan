@@ -360,37 +360,51 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
                     # Assumption: if smaller than 16, then padded to 16
                     # But if bigger than 16 then no padding .
                     # Example: 23 images, then it would be 1-16 and 8-23
+
                     counter = 1
-                    for _ in range(num_of_batches_of_16_images):
-                        # Input
+                    if(config_params.average_feature==True): #calculate average feature or not
+                        for _ in range(num_of_batches_of_16_images):
+                            # Input
+                            in_text = "%s/ %d %d\n" % (
+                                fullpath_subject_action_epoch, counter, action_id - 1)  # CuongND. New folder for input
+                            f_in.write(in_text)
+                            # Output
+                            # out_text = "%s/%06d\n" % (fullpath_subject_action_epoch, counter)
+                            out_text = "%s/%06d\n" % (
+                                new_output_dir_action_epoch, counter)  # CuongND. New folder for output
+                            f_out.write(out_text)
+
+                            num_of_lines = num_of_lines + 1
+                            counter = counter + 16
+
+                            # Last batch: last 16 images
+
+                        if (num_of_batches_of_16_images * 16) < num_of_images:
+                            counter = num_of_images - 15
+                            # Input
+                            in_text = "%s/ %d %d\n" % (
+                                fullpath_subject_action_epoch, counter, action_id - 1)  # CuongND. New folder for input
+                            f_in.write(in_text)
+                            # Output
+                            # out_text = "%s/%06d\n" % (fullpath_subject_action_epoch, counter)
+                            out_text = "%s/%06d\n" % (
+                                new_output_dir_action_epoch, counter)  # CuongND. New folder for output
+                            f_out.write(out_text)
+
+                            num_of_lines = num_of_lines + 1
+                            counter = counter + 16
+                    else:
                         in_text = "%s/ %d %d\n" % (
-                        fullpath_subject_action_epoch, counter, action_id - 1)  # CuongND. New folder for input
+                            fullpath_subject_action_epoch, counter, action_id - 1)  # CuongND.
                         f_in.write(in_text)
                         # Output
-                        # out_text = "%s/%06d\n" % (fullpath_subject_action_epoch, counter)
+                        out_text = "%s/%06d\n" % (fullpath_subject_action_epoch, counter)
                         out_text = "%s/%06d\n" % (
-                        new_output_dir_action_epoch, counter)  # CuongND. New folder for output
+                            new_output_dir_action_epoch, counter)  # CuongND. New folder for output
                         f_out.write(out_text)
 
                         num_of_lines = num_of_lines + 1
-                        counter = counter + 16
 
-                        # Last batch: last 16 images
-
-                    if (num_of_batches_of_16_images * 16) < num_of_images:
-                        counter = num_of_images - 15
-                        # Input
-                        in_text = "%s/ %d %d\n" % (
-                        fullpath_subject_action_epoch, counter, action_id - 1)  # CuongND. New folder for input
-                        f_in.write(in_text)
-                        # Output
-                        # out_text = "%s/%06d\n" % (fullpath_subject_action_epoch, counter)
-                        out_text = "%s/%06d\n" % (
-                        new_output_dir_action_epoch, counter)  # CuongND. New folder for output
-                        f_out.write(out_text)
-
-                        num_of_lines = num_of_lines + 1
-                        counter = counter + 16
                     pass
                 pass
 
