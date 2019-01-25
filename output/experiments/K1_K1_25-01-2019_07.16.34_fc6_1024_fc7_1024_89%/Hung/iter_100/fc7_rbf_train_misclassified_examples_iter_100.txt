@@ -1,0 +1,2 @@
+/home/prdcv/PycharmProjects/c3d_luanvan/output/result/Thuan/3/1_3/ 3 5
+/home/prdcv/PycharmProjects/c3d_luanvan/output/result/Thuan/3/2_3/ 3 5

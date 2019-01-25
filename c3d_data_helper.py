@@ -23,7 +23,7 @@ def get_list_jpg_in_folder(dir):
                   if any(fn.endswith(ext) for ext in included_extensions)]
     return file_names
 
-def summary_result(folder, subjects=['Binh','Giang','Hung','Tan','Thuan'], folder_mod=['','','','',''], data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
+def summary_result(folder, subjects=['Binh','Giang','Hung','Tan','Thuan'], data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
     print('Begin summarize result in '+folder)
     result=folder+'\n\n'
     subject_title=''
@@ -37,8 +37,6 @@ def summary_result(folder, subjects=['Binh','Giang','Hung','Tan','Thuan'], folde
             subject_title+='Final accuracy'
         field_title+='loss\tacc \t'
         result_folder=os.path.join(folder,subjects[i])
-        if(folder_mod[i]!=''):
-            result_folder=os.path.join(folder_mod[i],subjects[i])
 
         accuracy=[]
         loss=[]
@@ -75,7 +73,18 @@ def summary_result(folder, subjects=['Binh','Giang','Hung','Tan','Thuan'], folde
     print('Save result to '+os.path.join(folder,'summary.txt'))
     return os.path.join(folder,'summary.txt')
 
-def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'], folder_mod=['','','','','','','','',''],data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
+def summary_all_results_in_folder(folder):
+    sub_dir = get_list_dir_in_folder(folder)
+    names=['K1_K1','K1_K3','K1_K5','K3_K1','K3_K3','K3_K5','K5_K1','K5_K3','K5_K5']
+    for dir in sub_dir:
+        for name in names:
+            if(name in dir):
+                summary_result(os.path.join(folder,dir))
+    print('Finish.')
+
+
+
+def summary_9_results(folder, Kinects=['Kinect_1','Kinect_3','Kinect_5'],data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
     sub_dir= get_list_dir_in_folder(folder)
     final_acc=[]
     header='\t\t'
@@ -220,7 +229,7 @@ def shift_image(dir, shift_data): #shift image x, y
         new_image[new_y:new_y + new_h,new_x:new_x + new_w] = crop_roi
         cv2.imwrite(image_path, new_image)
 
-
+summary_all_results_in_folder('output/experiments')
 summary_9_results('output/result_set_table_22Jan2019_segmented')
 #summary_result('output/Kinect_1_test_on_Kinect_1_22-01-2019_16.43.03')
 #check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)

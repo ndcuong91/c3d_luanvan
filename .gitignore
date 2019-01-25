@@ -9,6 +9,10 @@ c3d_files/train_01.lst
 c3d_files/train_01_output.lst
 output/result_sample/
 output/result/
+C3D_sourcecode/
+protobuf/
+c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000_new
+c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000_origin
 
 #DATA
 
@@ -24,7 +28,7 @@ data/Kinect_1_original_video/
 data/Kinect_3_original_video/
 data/Kinect_5_original_video/
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000
-c3d_files/intermediate_model_snapshot/
+output/intermediate_model_snapshot/
 
 
 # Byte-compiled / optimized / DLL files

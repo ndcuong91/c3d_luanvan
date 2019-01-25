@@ -7,7 +7,7 @@ import numpy as np
 import random
 from datetime import datetime
 from c3d_helper import delete_files_with_extension_in_folder, dump_plot_to_image_file, get_params_info
-import pdb
+import c3d_params
 
 
 def parse_args():
@@ -31,16 +31,14 @@ def parse_args():
                         help='batch size for feature extraction.')
     parser.add_argument('--batch_size_finetune', type=int, default=20,
                         help='batch size for fine-tuning.')
-    parser.add_argument('--server', type=bool, default=True,
-                        help='run on server or not')
     parser.add_argument('--subject_list', type=str, default='Binh,Giang,Hung,Tan,Thuan',
                         help='subject to training and test')
     parser.add_argument('--subject_test', type=str, default='Binh,Giang,Hung,Tan,Thuan',
                         help='subject to training and test')
-    parser.add_argument('--kinect_train', type=str, default='Kinect_1',
+    parser.add_argument('--kinect_train', type=str, default='K1',
                         help='trainning set')
-    parser.add_argument('--kinect_test_list', type=str, default='Kinect_1',
-                        help='List of Kinect view for test. e.g: "Kinect_1,Kinect_3,Kinect_5"')
+    parser.add_argument('--kinect_test_list', type=str, default='K1',
+                        help='List of Kinect view for test. e.g: "K1,K3,K5"')
     parser.add_argument('--data_type_train', type=str, default='clean_1_rename',
                         help='original, segmented...')
     parser.add_argument('--data_type_test', type=str, default='segmented',
@@ -93,8 +91,6 @@ class ConfigParams(object):
     snapshot = args.snapshot
     batch_size = args.batch_size_test  # For feature extraction
     batch_size_finetune = args.batch_size_finetune  # For feature extraction
-    server = args.server
-    crossview.server = server
 
     subject_list = [x.strip() for x in args.subject_list.split(',')]
     subject_test = [x.strip() for x in args.subject_test.split(',')]
@@ -102,7 +98,7 @@ class ConfigParams(object):
     kinect_test_list = [x.strip() for x in args.kinect_test_list.split(',')]
     data_type_train = args.data_type_train
     data_type_test = args.data_type_test
-    average_feature = True
+    average_feature = False
 
     # CuongND. Modify C3D structure
     c3d_default = dict()
@@ -137,24 +133,14 @@ class ConfigParams(object):
 
     print('avg feature: ' + str(average_feature))
     # Cuong thay doi rieng thu muc ouput va template
-    output_dir = "/home/titikid/PycharmProjects/c3d_luanvan/output"
-    template_dir = "/home/titikid/PycharmProjects/c3d_luanvan/template"
-    c3d_data_root = "/home/titikid/PycharmProjects/c3d_luanvan/data"
-    c3d_files_dir = "/home/titikid/PycharmProjects/c3d_luanvan/c3d_files"
-    if (server == True):
-        # Cuong thay doi rieng thu muc ouput va template
-        output_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/output"
-        template_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/template"
-        c3d_data_root = "/media/data2/users/dangmanhtruong95"
-        c3d_files_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/c3d_files"
-
-        output_dir = "/home/prdcv/PycharmProjects/gvh205/c3d_luanvan/output"
-        template_dir = "/home/prdcv/PycharmProjects/gvh205/c3d_luanvan/template"
-        c3d_data_root = "/home/prdcv/PycharmProjects/gvh205/c3d_luanvan/data"
-        c3d_files_dir = "/home/prdcv/PycharmProjects/gvh205/c3d_luanvan/c3d_files"
+    output_dir = c3d_params.output_dir
+    template_dir = c3d_params.template_dir
+    c3d_data_root = c3d_params.c3d_data_root
+    c3d_files_dir = c3d_params.c3d_files_dir
+    tool_dir = c3d_params.tool_dir
 
     output_result_ext = 'result'
-    date_time = datetime.now().strftime('%d-%m-%Y_%H.%M.%S')  # date time when start training
+    date_time = datetime.now().strftime('%Y-%m-%d_%H.%M')  # date time when start training
 
     # c3d_feature_dir = "/home/dangmanhtruong95/Truong_Python_run_scripts/C3D_twostream_finetuning_with_confusion_matrix_and_loss_for_train_and_test/C3D_feature_dir"
     c3d_template_dir = os.path.join(template_dir, "Original")
@@ -163,7 +149,7 @@ class ConfigParams(object):
     c3d_finetuning_dir = os.path.join(c3d_files_dir, "finetuning")
     c3d_feature_extraction_for_train_dir = os.path.join(c3d_files_dir, "feature_extraction_for_train")
     c3d_feature_extraction_for_test_dir = os.path.join(c3d_files_dir, "feature_extraction_for_test")
-    c3d_intermediate_model_snapshot_dir = os.path.join(c3d_files_dir, "intermediate_model_snapshot")
+    c3d_intermediate_model_snapshot_dir = os.path.join(output_dir, "intermediate_model_snapshot")
 
     c3d_compute_volume_mean_sh = os.path.join(c3d_pretrained_model_and_volume_mean_dir,
                                               "c3d_sport1m_compute_volume_mean.sh")
@@ -268,7 +254,7 @@ if __name__ == "__main__":
     params_info = get_params_info(config_params)
 
     for kinect_test in config_params.kinect_test_list:
-        output_result_dir = "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
+        output_result_dir = "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
         create_folder(os.path.join(config_params.output_dir, output_result_dir))
 
         # CuongND. Save arguments.
@@ -323,7 +309,7 @@ if __name__ == "__main__":
         (result_list) = c3d_train_and_test(train_list, test_list, config_params)
 
         # Output to text files
-        output_result_dir = "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
+        output_result_dir = "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
         print "\n\nWrite result of " + test_subject + " to folder output/" + output_result_dir + '\n\n'
         for kinect_test, r0_ in result_list.iteritems():
             for classification_method, r1_ in r0_.iteritems():
@@ -416,7 +402,7 @@ if __name__ == "__main__":
         for classification_method, r1_ in r0_.iteritems():
             file_name = "%s_avg_acc.png" % (classification_method)
             # pdb.set_trace()
-            output_result_dir = "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
+            output_result_dir = "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
             dump_plot_to_image_file(
                 list(r1_["train"] / (1.0 * num_of_subjects)),
                 list(r1_["test"] / (1.0 * num_of_subjects)),

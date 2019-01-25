@@ -1,28 +1,20 @@
-import pdb
 import os
+import time
+from sklearn.externals import joblib
 from glob import glob
 from python_utils import list_all_folders_in_a_directory
 import subprocess
 import numpy as np
-# import matplotlib as mpl
-# mpl.use('Agg') # To use on server
-# import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 
 plt.switch_backend('agg')
-
-# from matplotlib import offsetbox
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import SVC
 from sklearn import preprocessing
 from sklearn.metrics import log_loss, confusion_matrix
-# from sklearn import (manifold, datasets, decomposition, ensemble,
-#                      discriminant_analysis, random_projection)
 from c3d_helper import find_files_to_read, load_data_for_classification, check_gpu_ready
-import time
-from sklearn.externals import joblib
 
-server = False
+import c3d_params
 
 
 class C3DNetwork(object):
@@ -103,12 +95,13 @@ class C3DNetwork(object):
         """
         pass
 
-    def compute_volume_mean(self, \
-                            input_file, \
-                            output_volume_mean_file, \
-                            num_frame, \
-                            resize_h, \
-                            resize_w, \
+    def compute_volume_mean(self,
+                            tool_dir,
+                            input_file,
+                            output_volume_mean_file,
+                            num_frame,
+                            resize_h,
+                            resize_w,
                             compute_volume_mean_sh_file):
         """
         input_file is assumed to be in the format:
@@ -117,7 +110,7 @@ class C3DNetwork(object):
         """
 
         # Sh file
-        input_params = (input_file, num_frame, resize_h, resize_w, output_volume_mean_file)
+        input_params = ( os.path.join(tool_dir,'compute_volume_mean_from_list.bin') , input_file, num_frame, resize_h, resize_w, output_volume_mean_file)
         self.__print_params_to_file__(input_params, self.template_compute_volume_mean_sh_file, \
                                       compute_volume_mean_sh_file)
 
@@ -162,6 +155,7 @@ class C3DNetwork(object):
         pass
 
     def finetune(self,
+                 tool_dir,
                  input_file,
                  volume_mean_file,
                  pretrained_model_file,
@@ -207,7 +201,7 @@ class C3DNetwork(object):
         self.__print_params_to_file__(input_params, self.template_finetuning_prototxt_file, finetuning_prototxt_file)
 
         # Sh file
-        input_params = (finetuning_solver_file, pretrained_model_file)
+        input_params = (os.path.join(tool_dir,'finetune_net.bin'), finetuning_solver_file, pretrained_model_file)
         self.__print_params_to_file__(input_params, self.template_finetuning_sh_file, finetuning_sh_file)
 
         # CuongND. Check for GPU
@@ -216,6 +210,7 @@ class C3DNetwork(object):
         print subprocess.check_output(['sh', finetuning_sh_file])
 
     def feature_extraction(self,
+                           tool_dir,
                            input_file,
                            output_file,
                            volume_mean_file,
@@ -245,7 +240,7 @@ class C3DNetwork(object):
                                       feature_extraction_prototxt_file)
 
         # Sh file
-        input_params = (feature_extraction_prototxt_file, pretrained_model_file, batch_size, num_of_batches, \
+        input_params = (os.path.join(tool_dir,'extract_image_features.bin'), feature_extraction_prototxt_file, pretrained_model_file, batch_size, num_of_batches, \
                         output_file)
         self.__print_params_to_file__(input_params, self.template_feature_extraction_sh_file,
                                       feature_extraction_sh_file)
@@ -396,22 +391,6 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
 
                         num_of_lines = num_of_lines + 1
                         counter = counter + 16
-
-                        # Write
-                    # counter = 1
-                    # for i in range(num_of_images):
-                    #     counter = i + 1
-                    #     if counter > num_of_images - 15:
-                    #         continue
-                    #     # Input
-                    #     in_text = "%s/ %d %d\n" % (fullpath_subject_action_epoch, counter, action_id - 1)
-                    #     f_in.write(in_text)
-                    #     # Output
-                    #     out_text = "%s/%06d\n" % (fullpath_subject_action_epoch, counter)
-                    #     f_out.write(out_text)
-
-                    #     num_of_lines = num_of_lines + 1
-                    #     # counter = counter + 16
                     pass
                 pass
 
@@ -609,11 +588,6 @@ def c3d_train_and_test(train_list, test_list, config_params):
         if (kinect_run_list[kinect_test].num_of_test_batches * batch_size < kinect_run_list[kinect_test].test_numlines):
             kinect_run_list[kinect_test].num_of_test_batches += 1
 
-    #    test_numlines = create_lst_files(c3d_files_dir, c3d_test_data_dir, test_list, "test_01", num_of_actions, image_type)
-    #    num_of_test_batches = test_numlines / batch_size
-    #    if (num_of_test_batches * batch_size < test_numlines):
-    #        num_of_test_batches= num_of_test_batches + 1
-
     # Initialize networks
     original_network = C3DNetwork()
     original_network.set_template_compute_volume_mean(config_params.c3d_template_compute_volume_mean_sh)
@@ -628,9 +602,9 @@ def c3d_train_and_test(train_list, test_list, config_params):
     )
 
     # Compute volume mean
-
-    if (server == True):
-        original_network.compute_volume_mean(config_params.c3d_train_01,
+    if (c3d_params.compute_volume_mean == True):
+        original_network.compute_volume_mean(config_params.tool_dir,
+                                             config_params.c3d_train_01,
                                              config_params.c3d_volume_mean_file,
                                              config_params.num_frame,
                                              config_params.resize_h,
@@ -650,11 +624,12 @@ def c3d_train_and_test(train_list, test_list, config_params):
     num_of_iters = max_iter / snapshot
 
     c3d_pretrained_model = config_params.c3d_pretrained_model
-    if (server == True):
+    if (c3d_params.finetuning == True):
         start_train = time.time()
         # Perform finetuning on train set
         print "CuongND. Finetune on train set. Move outside loop to increase performance"
         original_network.finetune(
+            config_params.tool_dir,
             config_params.c3d_train_01,
             config_params.c3d_volume_mean_file,
             c3d_pretrained_model,
@@ -717,10 +692,11 @@ def c3d_train_and_test(train_list, test_list, config_params):
         # kinect_run_list[kinect_test].c3d_test_data_dir])
         c3d_pretrained_model = config_params.snapshot_prefix + "_iter_" + str(iter_)
 
-        if (server == True):
+        if (c3d_params.feature_extract  == True):
             print "EXTRACT FEATURES ON TRAIN SET"
             print "Model %s" % (c3d_pretrained_model)
             original_network.feature_extraction(
+                config_params.tool_dir,
                 config_params.c3d_train_01,
                 config_params.c3d_train_01_output,
                 config_params.c3d_volume_mean_file,
@@ -747,10 +723,11 @@ def c3d_train_and_test(train_list, test_list, config_params):
             )
 
         for kinect_test in kinect_test_list:
-            if (server == True):
+            if (c3d_params.feature_extract == True):
                 print "EXTRACT FEATURE ON TEST SET (view: %s)" % (kinect_test)
                 print "Model %s" % (c3d_pretrained_model)
                 original_network.feature_extraction(
+                    config_params.tool_dir,
                     os.path.join(c3d_files_dir, "test_01_%s.lst" % (kinect_test)),
                     os.path.join(c3d_files_dir, "test_01_%s_output.lst" % (kinect_test)),
                     config_params.c3d_volume_mean_file,
@@ -942,7 +919,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                         # os.path.join(output_iter_dir,file_name),
                         os.path.join(
                             output_dir,
-                            "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                            "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                             test_subject,
                             "iter_%d" % (iter_),
                             file_name),
@@ -959,7 +936,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                         r2_.misclassified_dict,
                         os.path.join(
                             output_dir,
-                            "%s_test_on_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                            "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
                             test_subject,
                             "iter_%d" % (iter_),
                             file_name))

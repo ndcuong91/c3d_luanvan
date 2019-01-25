@@ -5,9 +5,9 @@ layers {
   top: "data"
   top: "label"
   image_data_param {
-    source: "/home/titikid/PycharmProjects/c3d_luanvan/c3d_files/train_01.lst"
+    source: "/home/prdcv/PycharmProjects/c3d_luanvan/c3d_files/train_01.lst"
     use_image: true
-    mean_file: "/home/titikid/PycharmProjects/c3d_luanvan/c3d_files/pretrained_model_and_volume_mean/c3d_sport1m_volume_mean.binaryproto"
+    mean_file: "/home/prdcv/PycharmProjects/c3d_luanvan/c3d_files/pretrained_model_and_volume_mean/c3d_sport1m_volume_mean.binaryproto"
     use_temporal_jitter: false
     batch_size: 20
     crop_size: 112
@@ -367,7 +367,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 4096
+    num_output: 2048
     weight_filler {
       type: "gaussian"
       std: 0.005
@@ -403,7 +403,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 4096
+    num_output: 2048
     weight_filler {
     type: "gaussian"
       std: 0.005

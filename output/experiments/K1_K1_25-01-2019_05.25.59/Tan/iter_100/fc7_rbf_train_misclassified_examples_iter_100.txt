@@ -1,0 +1,6 @@
+/home/prdcv/PycharmProjects/c3d_luanvan/output/result/Hung/5/1_3/ 5 4
+/home/prdcv/PycharmProjects/c3d_luanvan/output/result/Binh/4/2_4/ 4 5
+/home/prdcv/PycharmProjects/c3d_luanvan/output/result/Giang/4/2_2/ 4 5
+/home/prdcv/PycharmProjects/c3d_luanvan/output/result/Binh/1/1_5/ 1 4
+/home/prdcv/PycharmProjects/c3d_luanvan/output/result/Binh/1/4_5/ 1 4
+/home/prdcv/PycharmProjects/c3d_luanvan/output/result/Giang/4/1_2/ 4 5

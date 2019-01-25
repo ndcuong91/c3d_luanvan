@@ -2,9 +2,927 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abd00b6-58fb-4ec7-8b9d-1c3f5cbeaee4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/c3d_luanvan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/c3d_luanvan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/.~lock.result_summary.xls#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/result_summary.xls" beforeDir="false" afterPath="$PROJECT_DIR$/output/result_summary.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.~lock.c3d_original.ods#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3D_sourcecode/C3D-v1.0/src/caffe/layers/video_data_layer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/C3D_sourcecode/C3D-v1.0/src/caffe/layers/video_data_layer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_data_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_data_helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/feature_extraction_for_test/c3d_sport1m_feature_extractor_frm_test_Kinect_1.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/feature_extraction_for_test/c3d_sport1m_feature_extractor_frm_test_Kinect_1.prototxt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/feature_extraction_for_test/c3d_sport1m_feature_extractor_test_Kinect_1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/feature_extraction_for_test/c3d_sport1m_feature_extractor_test_Kinect_1.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/feature_extraction_for_train/c3d_sport1m_feature_extractor_frm_train.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/feature_extraction_for_train/c3d_sport1m_feature_extractor_frm_train.prototxt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/feature_extraction_for_train/c3d_sport1m_feature_extractor_train.sh" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/feature_extraction_for_train/c3d_sport1m_feature_extractor_train.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning.sh" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_solver.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_solver.prototxt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_train.prototxt" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_train.prototxt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/pretrained_model_and_volume_mean/c3d_sport1m_compute_volume_mean.sh" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/pretrained_model_and_volume_mean/c3d_sport1m_compute_volume_mean.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/pretrained_model_and_volume_mean/c3d_sport1m_volume_mean.binaryproto" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/pretrained_model_and_volume_mean/c3d_sport1m_volume_mean.binaryproto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1_output.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/test_01_Kinect_1_output.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/train_01.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/train_01.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_files/train_01_output.lst" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_files/train_01_output.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_original.ods" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_original.ods" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_svm_scaler.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_svm_scaler.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3d_svm_trained_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_svm_trained_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crossview.py" beforeDir="false" afterPath="$PROJECT_DIR$/crossview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finetuning" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc6_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/fc7_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc6_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc6_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc6_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc6_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc6_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc6_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc6_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc6_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc7_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc7_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc7_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc7_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc7_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc7_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc7_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/fc7_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/prob_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/prob_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/prob_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_100/prob_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc6_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc6_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc6_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc6_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc6_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc6_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc6_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc6_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc7_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc7_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc7_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc7_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc7_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc7_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc7_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/fc7_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/prob_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/prob_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/prob_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_200/prob_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc6_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc6_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc6_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc6_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc6_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc6_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc6_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc6_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc7_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc7_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc7_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc7_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc7_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc7_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc7_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/fc7_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/prob_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/prob_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/prob_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_300/prob_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc6_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc6_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc6_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc6_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc6_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc6_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc6_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc6_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc7_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc7_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc7_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc7_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc7_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc7_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc7_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/fc7_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/prob_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/prob_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/prob_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_400/prob_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc6_linear_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc6_linear_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc6_linear_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc6_linear_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc6_rbf_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc6_rbf_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc6_rbf_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc6_rbf_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc7_linear_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc7_linear_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc7_linear_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc7_linear_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc7_rbf_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc7_rbf_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc7_rbf_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/fc7_rbf_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/prob_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/prob_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/prob_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/iter_500/prob_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/prob_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/prob_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/prob_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/prob_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/prob_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Binh/prob_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc6_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/fc7_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc6_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc6_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc6_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc6_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc6_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc6_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc6_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc6_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc7_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc7_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc7_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc7_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc7_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc7_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc7_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/fc7_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/prob_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/prob_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/prob_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_100/prob_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc6_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc6_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc6_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc6_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc6_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc6_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc6_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc6_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc7_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc7_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc7_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc7_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc7_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc7_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc7_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/fc7_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/prob_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/prob_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/prob_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_200/prob_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc6_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc6_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc6_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc6_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc6_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc6_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc6_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc6_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc7_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc7_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc7_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc7_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc7_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc7_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc7_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/fc7_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/prob_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/prob_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/prob_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_300/prob_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc6_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc6_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc6_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc6_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc6_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc6_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc6_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc6_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc7_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc7_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc7_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc7_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc7_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc7_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc7_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/fc7_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/prob_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/prob_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/prob_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_400/prob_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc6_linear_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc6_linear_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc6_linear_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc6_linear_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc6_rbf_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc6_rbf_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc6_rbf_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc6_rbf_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc7_linear_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc7_linear_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc7_linear_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc7_linear_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc7_rbf_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc7_rbf_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc7_rbf_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/fc7_rbf_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/prob_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/prob_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/prob_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/iter_500/prob_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/prob_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/prob_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/prob_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/prob_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/prob_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Giang/prob_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc6_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/fc7_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc6_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc6_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc6_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc6_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc6_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc6_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc6_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc6_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc7_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc7_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc7_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc7_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc7_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc7_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc7_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/fc7_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/prob_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/prob_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/prob_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_100/prob_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc6_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc6_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc6_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc6_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc6_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc6_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc6_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc6_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc7_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc7_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc7_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc7_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc7_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc7_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc7_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/fc7_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/prob_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/prob_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/prob_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_200/prob_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc6_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc6_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc6_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc6_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc6_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc6_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc6_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc6_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc7_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc7_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc7_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc7_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc7_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc7_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc7_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/fc7_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/prob_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/prob_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/prob_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_300/prob_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc6_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc6_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc6_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc6_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc6_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc6_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc6_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc6_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc7_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc7_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc7_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc7_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc7_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc7_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc7_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/fc7_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/prob_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/prob_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/prob_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_400/prob_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc6_linear_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc6_linear_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc6_linear_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc6_linear_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc6_rbf_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc6_rbf_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc6_rbf_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc6_rbf_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc7_linear_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc7_linear_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc7_linear_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc7_linear_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc7_rbf_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc7_rbf_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc7_rbf_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/fc7_rbf_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/prob_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/prob_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/prob_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/iter_500/prob_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/prob_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/prob_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/prob_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/prob_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/prob_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Hung/prob_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc6_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/fc7_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc6_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc6_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc6_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc6_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc6_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc6_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc6_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc6_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc7_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc7_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc7_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc7_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc7_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc7_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc7_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/fc7_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/prob_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/prob_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/prob_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_100/prob_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc6_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc6_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc6_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc6_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc6_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc6_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc6_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc6_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc7_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc7_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc7_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc7_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc7_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc7_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc7_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/fc7_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/prob_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/prob_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/prob_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_200/prob_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc6_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc6_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc6_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc6_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc6_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc6_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc6_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc6_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc7_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc7_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc7_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc7_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc7_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc7_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc7_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/fc7_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/prob_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/prob_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/prob_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_300/prob_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc6_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc6_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc6_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc6_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc6_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc6_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc6_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc6_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc7_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc7_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc7_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc7_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc7_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc7_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc7_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/fc7_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/prob_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/prob_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/prob_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_400/prob_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc6_linear_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc6_linear_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc6_linear_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc6_linear_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc6_rbf_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc6_rbf_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc6_rbf_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc6_rbf_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc7_linear_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc7_linear_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc7_linear_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc7_linear_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc7_rbf_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc7_rbf_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc7_rbf_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/fc7_rbf_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/prob_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/prob_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/prob_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/iter_500/prob_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/prob_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/prob_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/prob_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/prob_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/prob_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Tan/prob_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc6_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/fc7_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc6_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc6_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc6_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc6_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc6_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc6_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc6_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc6_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc7_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc7_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc7_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc7_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc7_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc7_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc7_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/fc7_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/prob_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/prob_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/prob_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_100/prob_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc6_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc6_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc6_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc6_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc6_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc6_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc6_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc6_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc7_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc7_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc7_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc7_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc7_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc7_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc7_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/fc7_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/prob_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/prob_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/prob_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_200/prob_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc6_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc6_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc6_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc6_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc6_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc6_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc6_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc6_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc7_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc7_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc7_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc7_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc7_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc7_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc7_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/fc7_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/prob_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/prob_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/prob_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_300/prob_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc6_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc6_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc6_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc6_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc6_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc6_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc6_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc6_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc7_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc7_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc7_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc7_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc7_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc7_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc7_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/fc7_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/prob_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/prob_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/prob_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_400/prob_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc6_linear_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc6_linear_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc6_linear_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc6_linear_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc6_rbf_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc6_rbf_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc6_rbf_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc6_rbf_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc7_linear_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc7_linear_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc7_linear_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc7_linear_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc7_rbf_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc7_rbf_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc7_rbf_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/fc7_rbf_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/prob_test_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/prob_test_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/prob_train_confmat_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/iter_500/prob_train_misclassified_examples_iter_500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/prob_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/prob_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/prob_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/prob_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/prob_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/Thuan/prob_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc6_linear_avg_acc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc6_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc6_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc6_rbf_avg_acc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc6_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc6_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc7_linear_avg_acc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc7_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc7_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc7_rbf_avg_acc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc7_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/fc7_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/params.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/prob_avg_acc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/prob_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/prob_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_15.11.40/summary.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc6_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/fc7_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc6_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc6_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc6_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc6_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc6_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc6_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc6_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc6_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc7_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc7_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc7_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc7_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc7_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc7_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc7_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/fc7_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/prob_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/prob_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/prob_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_100/prob_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc6_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc6_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc6_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc6_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc6_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc6_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc6_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc6_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc7_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc7_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc7_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc7_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc7_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc7_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc7_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/fc7_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/prob_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/prob_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/prob_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_200/prob_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc6_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc6_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc6_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc6_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc6_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc6_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc6_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc6_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc7_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc7_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc7_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc7_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc7_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc7_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc7_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/fc7_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/prob_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/prob_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/prob_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_300/prob_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc6_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc6_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc6_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc6_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc6_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc6_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc6_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc6_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc7_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc7_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc7_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc7_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc7_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc7_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc7_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/fc7_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/prob_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/prob_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/prob_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/iter_400/prob_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/prob_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/prob_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/prob_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/prob_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/prob_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Binh/prob_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc6_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_linear_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_linear_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_linear_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_linear_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_linear_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_linear_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_rbf_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_rbf_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_rbf_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_rbf_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_rbf_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/fc7_rbf_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc6_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc6_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc6_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc6_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc6_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc6_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc6_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc6_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc7_linear_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc7_linear_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc7_linear_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc7_linear_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc7_rbf_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc7_rbf_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc7_rbf_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/fc7_rbf_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/prob_test_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/prob_test_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/prob_train_confmat_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_100/prob_train_misclassified_examples_iter_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc6_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc6_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc6_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc6_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc6_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc6_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc6_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc6_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc7_linear_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc7_linear_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc7_linear_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc7_linear_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc7_rbf_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc7_rbf_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc7_rbf_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/fc7_rbf_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/prob_test_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/prob_test_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/prob_train_confmat_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_200/prob_train_misclassified_examples_iter_200.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc6_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc6_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc6_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc6_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc6_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc6_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc6_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc6_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc7_linear_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc7_linear_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc7_linear_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc7_linear_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc7_rbf_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc7_rbf_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc7_rbf_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/fc7_rbf_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/prob_test_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/prob_test_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/prob_train_confmat_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_300/prob_train_misclassified_examples_iter_300.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc6_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc6_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc6_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc6_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc6_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc6_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc6_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc6_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc7_linear_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc7_linear_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc7_linear_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc7_linear_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc7_rbf_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc7_rbf_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc7_rbf_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/fc7_rbf_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/prob_test_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/prob_test_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/prob_train_confmat_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/iter_400/prob_train_misclassified_examples_iter_400.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/prob_accuracy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/prob_loss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/prob_test_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/prob_test_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/prob_train_accuracy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/Giang/prob_train_loss.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Kinect_1_test_on_Kinect_1_23-01-2019_16.07.17/params.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_crossview.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_crossview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Original/compute_volume_mean/c3d_sport1m_compute_volume_mean.sh" beforeDir="false" afterPath="$PROJECT_DIR$/template/Original/compute_volume_mean/c3d_sport1m_compute_volume_mean.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Original/compute_volume_mean/c3d_sport1m_compute_volume_mean_backup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Original/feature_extraction/c3d_sport1m_feature_extractor.sh" beforeDir="false" afterPath="$PROJECT_DIR$/template/Original/feature_extraction/c3d_sport1m_feature_extractor.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Original/feature_extraction/c3d_sport1m_feature_extractor_backup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Original/finetuning/c3d_sport1m_finetuning.sh" beforeDir="false" afterPath="$PROJECT_DIR$/template/Original/finetuning/c3d_sport1m_finetuning.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Original/finetuning/c3d_sport1m_finetuning_backup.sh" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,36 +931,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/c3d_data_helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="233" column="39" selection-start-line="233" selection-start-column="39" selection-end-line="233" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/c3d_helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_crossview.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+            <state relative-caret-position="204">
+              <caret line="136" column="27" lean-forward="true" selection-start-line="136" selection-start-column="27" selection-end-line="136" selection-end-column="27" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -50,14 +944,56 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crossview.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1775">
-              <caret line="189" selection-start-line="189" selection-end-line="189" />
+            <state relative-caret-position="451">
+              <caret line="748" column="41" lean-forward="true" selection-start-line="748" selection-start-column="41" selection-end-line="748" selection-end-column="41" />
+              <folding>
+                <element signature="e#1#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/C3D_sourcecode/C3D-v1.0/src/caffe/proto/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/c3d_params.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/c3d_data_helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="86">
+              <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protobuf/python/google/protobuf/message.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="188" column="16" selection-start-line="188" selection-start-column="6" selection-end-line="188" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -73,11 +1009,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>intermediate_model_fulldir</find>
-      <find>cuongND</find>
-      <find>&quot;%s_test_on_%s&quot; % (kinect_train, kinect_test)</find>
-      <find>find_files_to_read_func</find>
-      <find>time</find>
       <find>total</find>
       <find>cuongnd</find>
       <find>fine</find>
@@ -86,7 +1017,6 @@
       <find>data_dir</find>
       <find>finetune</find>
       <find>finetu</find>
-      <find>c3d_intermediate_model_snapshot_dir</find>
       <find>c3d_snapshot_prefix</find>
       <find>snapshot_iter</find>
       <find>snap</find>
@@ -103,6 +1033,12 @@
       <find>new_folder</find>
       <find>get_average_of_all_features_in_a_directory</find>
       <find>load_data_for_classification</find>
+      <find>caffe</find>
+      <find>c3d_intermediate_model_snapshot_dir</find>
+      <find>server</find>
+      <find>c3d_default</find>
+      <find>finetun</find>
+      <find>compute_volume_mean</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;%s_test_on_%s_%s&quot; % (kinect_train, data_type, datetime.now().strftime('%Y-%m-%d_%H.%M.%S'))</replace>
@@ -141,22 +1077,28 @@
         <option value="$PROJECT_DIR$/c3d_augmentor_padding.py" />
         <option value="$PROJECT_DIR$/copy_to_server" />
         <option value="$PROJECT_DIR$/c3d_helper.py" />
-        <option value="$PROJECT_DIR$/crossview.py" />
-        <option value="$PROJECT_DIR$/run_crossview.py" />
         <option value="$PROJECT_DIR$/finetuning" />
         <option value="$PROJECT_DIR$/c3d_augmentor.py" />
         <option value="$PROJECT_DIR$/copy_from_server" />
+        <option value="$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_train.prototxt" />
+        <option value="$PROJECT_DIR$/C3D_sourcecode/test.py" />
+        <option value="$PROJECT_DIR$/C3D_sourcecode/C3D-v1.0/src/caffe/proto/test.py" />
         <option value="$PROJECT_DIR$/c3d_data_helper.py" />
+        <option value="$PROJECT_DIR$/c3d_params.py" />
+        <option value="$PROJECT_DIR$/run_crossview.py" />
+        <option value="$PROJECT_DIR$/crossview.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="519" />
-    <option name="y" value="76" />
-    <option name="width" value="1280" />
-    <option name="height" value="1004" />
+    <option name="x" value="319" />
+    <option name="y" value="86" />
+    <option name="width" value="1398" />
+    <option name="height" value="984" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -170,6 +1112,59 @@
               <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
               <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="C3D_sourcecode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="C3D_sourcecode" type="462c0819:PsiDirectoryNode" />
+              <item name="C3D-v1.0" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="C3D_sourcecode" type="462c0819:PsiDirectoryNode" />
+              <item name="C3D-v1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="C3D_sourcecode" type="462c0819:PsiDirectoryNode" />
+              <item name="C3D-v1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="caffe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="C3D_sourcecode" type="462c0819:PsiDirectoryNode" />
+              <item name="C3D-v1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="caffe" type="462c0819:PsiDirectoryNode" />
+              <item name="proto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="Original" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="Original" type="462c0819:PsiDirectoryNode" />
+              <item name="feature_extraction" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -177,7 +1172,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/C3D_sourcecode/C3D-v1.1/python" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -219,27 +1215,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="c3d_augmentor_padding" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="c3d_luanvan" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/c3d_augmentor_padding.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="c3d_data_helper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="c3d_luanvan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -253,27 +1228,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/c3d_data_helper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="crossview" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="c3d_luanvan" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crossview.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -303,6 +1257,48 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="c3d_luanvan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/C3D_sourcecode/C3D-v1.0/src/caffe/proto" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/C3D_sourcecode/C3D-v1.0/src/caffe/proto/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="c3d_luanvan" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/C3D_sourcecode" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/C3D_sourcecode/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <module name="c3d_luanvan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -319,18 +1315,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.run_crossview" />
-      <item itemvalue="Python.crossview" />
-      <item itemvalue="Python.c3d_augmentor_padding" />
       <item itemvalue="Python.c3d_data_helper" />
       <item itemvalue="Python.c3d_augmentor" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.test (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.c3d_data_helper" />
+        <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.c3d_augmentor" />
         <item itemvalue="Python.run_crossview" />
-        <item itemvalue="Python.c3d_augmentor_padding" />
-        <item itemvalue="Python.crossview" />
       </list>
     </recent_temporary>
   </component>
@@ -356,13 +1352,13 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18186843" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24072053" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26123303" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.46603972" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13584118" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29571578" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -390,24 +1386,39 @@
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/crossview.py</url>
-          <line>932</line>
-          <option name="timeStamp" value="125" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/c3d_helper.py</url>
           <line>426</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/run_crossview.py</url>
-          <line>139</line>
-          <option name="timeStamp" value="138" />
+          <url>file://$PROJECT_DIR$/C3D_sourcecode/test.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/C3D_sourcecode/test.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/C3D_sourcecode/test.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/C3D_sourcecode/test.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/C3D_sourcecode/test.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/c3d_data_helper.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="147" />
+          <line>232</line>
+          <option name="timeStamp" value="173" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -420,9 +1431,8 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="attrDict['attr']" />
-        <watch expression="get_gpu_memory()&gt;remain_size" language="Python" />
-        <watch expression="get_gpu_memory()" />
+        <watch expression="p.layers" />
+        <watch expression="p.layers[i]" />
       </configuration>
     </watches-manager>
   </component>
@@ -441,14 +1451,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Cuong_Output/Kinect_1_test_on_Kinect_1/Binh/prob_test_accuracy.txt" />
-    <entry file="file://$PROJECT_DIR$/Cuong_Output/Kinect_1_test_on_Kinect_1/Giang/prob_test_accuracy.txt" />
-    <entry file="file://$PROJECT_DIR$/Cuong_Output/Kinect_1_test_on_Kinect_1/Hung/prob_test_accuracy.txt" />
-    <entry file="file://$PROJECT_DIR$/Cuong_Output/Kinect_1_test_on_Kinect_1/Tan/prob_test_accuracy.txt" />
-    <entry file="file://$PROJECT_DIR$/Cuong_Output/Kinect_1_test_on_Kinect_1/Thuan/prob_test_accuracy.txt" />
-    <entry file="file://$PROJECT_DIR$/Cuong_C3D_files/finetuning/c3d_sport1m_finetuning_solver.prototxt" />
-    <entry file="file://$PROJECT_DIR$/Cuong_C3D_files/feature_extraction_for_train/c3d_sport1m_feature_extractor_frm_train.prototxt" />
-    <entry file="file://$PROJECT_DIR$/output_backup/crossview.py" />
     <entry file="file://$PROJECT_DIR$/Cuong_C3D_files/feature_extraction_for_test/c3d_sport1m_feature_extractor_frm_test_Kinect_1.prototxt" />
     <entry file="file://$PROJECT_DIR$/output_backup/crossview_backup.py" />
     <entry file="file://$PROJECT_DIR$/Cuong_Template/Original/finetuning/c3d_sport1m_finetuning_train.prototxt" />
@@ -494,16 +1496,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/GPUtil/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/GPUtil/GPUtil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/GPUtil/__init__.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/GPUtil/GPUtil.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-1247972723/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -553,16 +1547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_crossview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/copy_from_server">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -570,25 +1554,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crossview.py">
+    <entry file="file://$PROJECT_DIR$/.~lock.c3d_original.ods#">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c3d_files/finetuning/c3d_sport1m_finetuning_train.prototxt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1775">
-          <caret line="189" selection-start-line="189" selection-end-line="189" />
+        <state relative-caret-position="-153">
+          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C3D_sourcecode/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Original/feature_extraction/c3d_sport1m_feature_extractor_frm.prototxt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C3D_sourcecode/C3D-v1.0/src/caffe/proto/caffe_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1173">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c3d_files/feature_extraction_for_test/c3d_sport1m_feature_extractor_frm_test.prototxt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protobuf/python/google/protobuf/message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="188" column="16" selection-start-line="188" selection-start-column="6" selection-end-line="188" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c3d_data_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.~lock.c3d_original.ods#">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/c3d_data_helper.py">
+    <entry file="file://$PROJECT_DIR$/C3D_sourcecode/C3D-v1.0/src/caffe/proto/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="233" column="39" selection-start-line="233" selection-start-column="39" selection-end-line="233" selection-end-column="39" />
+        <state relative-caret-position="177">
+          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c3d_params.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_crossview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="136" column="27" lean-forward="true" selection-start-line="136" selection-start-column="27" selection-end-line="136" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crossview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="748" column="41" lean-forward="true" selection-start-line="748" selection-start-column="41" selection-end-line="748" selection-end-column="41" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
