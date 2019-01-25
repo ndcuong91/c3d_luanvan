@@ -11,9 +11,9 @@ stepsize: 500
 # Display every ... iterations 
 display: 20
 # The maximum number of iterations
-max_iter: 50
+max_iter: 20
 # snapshot intermediate results
-snapshot: 50
+snapshot: 20
 snapshot_prefix: "/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_model_snapshot/c3d_sport1m_finetune_whole"
 # solver mode: CPU or GPU
 solver_mode: GPU

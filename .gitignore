@@ -7,6 +7,12 @@ c3d_files/test_01_Kinect_1.lst
 c3d_files/test_01_Kinect_1_output.lst
 c3d_files/train_01.lst
 c3d_files/train_01_output.lst
+c3d_files/test_01_K1.lst
+c3d_files/test_01_K1_output.lst
+c3d_files/test_01_K3.lst
+c3d_files/test_01_K3_output.lst
+c3d_files/test_01_K5.lst
+c3d_files/test_01_K5_output.lst
 output/result_sample/
 output/result/
 C3D_sourcecode/

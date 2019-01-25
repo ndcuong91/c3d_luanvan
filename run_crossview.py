@@ -131,8 +131,6 @@ class ConfigParams(object):
     fc6 = args.fc6
     fc7 = args.fc7
 
-    print('avg feature: ' + str(average_feature))
-    # Cuong thay doi rieng thu muc ouput va template
     output_dir = c3d_params.output_dir
     template_dir = c3d_params.template_dir
     c3d_data_root = c3d_params.c3d_data_root
