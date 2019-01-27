@@ -4,7 +4,6 @@ pc_name='japan' # japan, 300, mica: for running # duycuong: for coding
 compute_volume_mean=True
 finetuning=True
 feature_extract=True
-average_feature = False
 
 #default is mica
 output_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/output"

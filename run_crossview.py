@@ -43,6 +43,8 @@ def parse_args():
                         help='original, segmented...')
     parser.add_argument('--data_type_test', type=str, default='clean_1_aug_3',
                         help='original, segmented...')
+    parser.add_argument('--average_feature', type=bool, default=False,
+                        help='average feature or use only first 16 frames')
 
     # 23Jan. CuongND. Add parameters for modify c3d
     parser.add_argument('--resize', type=str, default='171,128',
@@ -96,7 +98,7 @@ class ConfigParams(object):
     kinect_test_list = [x.strip() for x in args.kinect_test_list.split(',')]
     data_type_train = args.data_type_train
     data_type_test = args.data_type_test
-    average_feature=c3d_params.average_feature
+    average_feature=args.average_feature
 
     # CuongND. Modify C3D structure
     c3d_default = dict()
@@ -250,7 +252,7 @@ if __name__ == "__main__":
     params_info = get_params_info(config_params)
 
     for kinect_test in config_params.kinect_test_list:
-        output_result_dir = "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
+        output_result_dir = os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
         create_folder(os.path.join(config_params.output_dir, output_result_dir))
 
         # CuongND. Save arguments.
@@ -305,7 +307,7 @@ if __name__ == "__main__":
         (result_list) = c3d_train_and_test(train_list, test_list, config_params)
 
         # Output to text files
-        output_result_dir = "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
+        output_result_dir = os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
         print "\n\nWrite result of " + test_subject + " to folder output/" + output_result_dir + '\n\n'
         for kinect_test, r0_ in result_list.iteritems():
             for classification_method, r1_ in r0_.iteritems():
@@ -393,7 +395,7 @@ if __name__ == "__main__":
     print ""
     # pdb.set_trace()
     for kinect_test, r0_ in avg_result.iteritems():
-        output_result_dir = "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)
+        output_result_dir = os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
         for classification_method, r1_ in r0_.iteritems():
             file_name = "%s_avg_acc.png" % (classification_method)
             # pdb.set_trace()

@@ -4,7 +4,7 @@ import numpy as np
 import c3d_params
 
 data_folder=c3d_params.c3d_data_root
-method=2
+method=3
 Kinects=['K1','K3','K5']
 subjects=['Binh','Giang','Hung','Tan','Thuan']
 actions=[1,2,3,4,5]
@@ -108,24 +108,28 @@ def make_new_data_3(data_folder,kinect_folder, kinect_folder_augmented, subject,
     action_folder_augmented=os.path.join(data_folder,kinect_folder_augmented,subject,str(action))
     samples=get_list_dir_in_folder(action_folder)
 
+    shift=20
+    new_shift=[[-shift,-shift],[-shift,shift],[shift,-shift],[0,0],[shift,shift]]
 
     for sample in samples:
         if(len(sample)>1):
             continue
         image_list=get_list_jpg_in_folder(action_folder+'/'+sample)
-        if not os.path.exists(action_folder_augmented + '/' + sample):
-            os.makedirs(action_folder_augmented + '/' + sample)
-        for image in image_list:
-            img = cv2.imread(action_folder + '/' + sample + '/' + image)
-            M = np.float32([[1, 0, shift_x], [0, 1, shift_y]])
-            shift_image = cv2.warpAffine(img, M, (old_res[0], old_res[1]))
-            cv2.imwrite(os.path.join(action_folder_augmented, sample, image), shift_image)
+        for i in range(len(new_shift)):
+            new_folder = sample + '_' + str(i + 1)
+            if not os.path.exists(action_folder_augmented + '/' + new_folder):
+                os.makedirs(action_folder_augmented + '/' + new_folder)
+            for image in image_list:
+                img = cv2.imread(action_folder + '/' + sample + '/' + image)
+                M = np.float32([[1, 0, shift_x+new_shift[i][0]], [0, 1, shift_y+new_shift[i][1]]])
+                shift_image = cv2.warpAffine(img, M, (old_res[0], old_res[1]))
+                cv2.imwrite(os.path.join(action_folder_augmented, new_folder, image), shift_image)
 
 
 
 for kinect in Kinects:
     kinect_folder=kinect+'_clean_1_rename'
-    kinect_folder_augmented=kinect+'_clean_1_aug_'+str(method)+'_pad'
+    kinect_folder_augmented=kinect+'_clean_1_aug_'+str(method)
     print('Begin augment data with method '+str(method)+' for ' + kinect)
 
     for n in range(len(subjects)):

@@ -1,0 +1,2 @@
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Hung/3/7/ 3 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/result/Hung/3/8/ 3 5

@@ -1,0 +1,7 @@
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/4/3/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/4/2/ 4 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/5/4/ 5 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/3/3/ 3 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/4/1/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/4/4/ 4 3
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/5/3/ 5 3

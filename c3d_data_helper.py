@@ -228,19 +228,19 @@ def shift_image(dir, shift_data): #shift image x, y
         new_image[new_y:new_y + new_h,new_x:new_x + new_w] = crop_roi
         cv2.imwrite(image_path, new_image)
 
-#summary_all_results_in_folder('output/experiments')
-#summary_9_results('output/result_set_table_22Jan2019_segmented')
-summary_result('output/K1_K1_2019-01-25_15.55')
-#check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
 
+if __name__ == "__main__":
+    summary_all_results_in_folder('output/result_26Jan')
+    # summary_9_results('output/result_set_table_22Jan2019_segmented')
+    # summary_result('output/K1_K1_2019-01-25_15.55')
+    # check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
 
+    # summary_image_data(data_type='clean_1_augmented_padding_new')
+    # rename_data_after_clean('Kinect_3')
+    # remove_nois_by_copy_roi('/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_3_clean_1/Thuan/5/1',
+    #                      [211,194,200,180],
+    #                     '/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_3_clean_1/Thuan/5/1/000003.jpg')
 
-#summary_image_data(data_type='clean_1_augmented_padding_new')
-#rename_data_after_clean('Kinect_3')
-#remove_nois_by_copy_roi('/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_3_clean_1/Thuan/5/1',
- #                      [211,194,200,180],
-  #                     '/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_3_clean_1/Thuan/5/1/000003.jpg')
-
-# for i in range(5):
-#     shift_image('/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_1_clean_1_fix_Binh/Tan/5/'+str(i+1),(-60,0))
-# print('Finish.')
+    # for i in range(5):
+    #     shift_image('/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_1_clean_1_fix_Binh/Tan/5/'+str(i+1),(-60,0))
+    # print('Finish.')

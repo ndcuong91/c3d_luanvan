@@ -1,3 +1,0 @@
-original: 76.9%
-augmented_only: 79.2% 
-augmented + zero_padding_100: 82%

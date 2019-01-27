@@ -1,6 +1,0 @@
-/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Tan/1/3_3/ 1 2
-/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Tan/1/4_1/ 1 4
-/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Tan/1/1_1/ 1 4
-/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Tan/1/3_4/ 1 2
-/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Tan/1/1_3/ 1 3
-/home/prdcv/PycharmProjects/luanvan/C3D/c3d_luanvan/output/result/Tan/1/3_2/ 1 5

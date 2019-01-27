@@ -1,4 +1,0 @@
-/home/prdcv/PycharmProjects/gvh205/c3d_luanvan/output/result/Giang/4/4_5/ 4 5
-/home/prdcv/PycharmProjects/gvh205/c3d_luanvan/output/result/Giang/4/3_3/ 4 1
-/home/prdcv/PycharmProjects/gvh205/c3d_luanvan/output/result/Giang/4/3_5/ 4 1
-/home/prdcv/PycharmProjects/gvh205/c3d_luanvan/output/result/Giang/4/2_5/ 4 5
