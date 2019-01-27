@@ -933,7 +933,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                         # os.path.join(output_iter_dir,file_name),
                         os.path.join(
                             output_dir,
-                            "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                            os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)),
                             test_subject,
                             "iter_%d" % (iter_),
                             file_name),
@@ -950,7 +950,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                         r2_.misclassified_dict,
                         os.path.join(
                             output_dir,
-                            "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                            os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)),
                             test_subject,
                             "iter_%d" % (iter_),
                             file_name))

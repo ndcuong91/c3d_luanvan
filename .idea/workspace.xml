@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abd00b6-58fb-4ec7-8b9d-1c3f5cbeaee4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/c3d_augmentor.py" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_augmentor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_data_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_data_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/c3d_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/c3d_params.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_crossview.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_crossview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crossview.py" beforeDir="false" afterPath="$PROJECT_DIR$/crossview.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,22 +13,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/c3d_helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-434">
-              <caret line="460" selection-start-line="460" selection-end-line="461" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crossview.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="955" column="39" selection-start-line="955" selection-start-column="39" selection-end-line="955" selection-end-column="39" />
+            <state relative-caret-position="315">
+              <caret line="932" column="66" lean-forward="true" selection-start-line="932" selection-start-column="66" selection-end-line="932" selection-end-column="66" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -48,6 +33,37 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run_crossview.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="254" column="114" selection-start-line="254" selection-start-column="28" selection-end-line="254" selection-end-column="116" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/c3d_files/test_01_K1.lst">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1992" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/c3d_files/train_01.lst">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8547" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finetuning_experiment">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -59,7 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>finetuning</find>
       <find>subject_list</find>
       <find>get_list_dir_in_folder</find>
       <find>dict_test_instances_misclassified</find>
@@ -89,6 +104,7 @@
       <find>kinect_test</find>
       <find>output_result_dir</find>
       <find>&quot;%s_%s_%s&quot; % (kinect_train, kinect_test, config_params.date_time)</find>
+      <find>config_params.date_time</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;%s_test_on_%s_%s&quot; % (kinect_train, data_type, datetime.now().strftime('%Y-%m-%d_%H.%M.%S'))</replace>
@@ -138,8 +154,8 @@
         <option value="$PROJECT_DIR$/c3d_data_helper.py" />
         <option value="$PROJECT_DIR$/c3d_augmentor.py" />
         <option value="$PROJECT_DIR$/c3d_params.py" />
-        <option value="$PROJECT_DIR$/crossview.py" />
         <option value="$PROJECT_DIR$/run_crossview.py" />
+        <option value="$PROJECT_DIR$/crossview.py" />
       </list>
     </option>
   </component>
@@ -162,6 +178,11 @@
             <path>
               <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
               <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c3d_luanvan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="c3d_luanvan" type="462c0819:PsiDirectoryNode" />
+              <item name="c3d_files" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -191,7 +212,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.c3d_data_helper">
+  <component name="RunManager" selected="Python.run_crossview">
     <configuration name="c3d_augmentor" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="c3d_luanvan" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -312,16 +333,16 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.c3d_augmentor" />
-      <item itemvalue="Python.c3d_data_helper" />
       <item itemvalue="Python.run_crossview" />
-      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.c3d_data_helper" />
+      <item itemvalue="Python.c3d_augmentor" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.test (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.c3d_data_helper" />
         <item itemvalue="Python.run_crossview" />
+        <item itemvalue="Python.c3d_data_helper" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.c3d_augmentor" />
@@ -350,12 +371,12 @@
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17855169" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15865119" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17450365" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.15151516" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45454547" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -479,8 +500,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/run_crossview_backup.py" />
-    <entry file="file://$PROJECT_DIR$/Cuong_C3D_files/test_01_Kinect_3.lst" />
     <entry file="file://$PROJECT_DIR$/Cuong_C3D_files/feature_extraction_for_test/c3d_sport1m_feature_extractor_test_Kinect_1.sh" />
     <entry file="file://$PROJECT_DIR$/Cuong_C3D_files/test_01_Kinect_1_output.lst" />
     <entry file="file://$PROJECT_DIR$/Cuong_C3D_files/train_01_output.lst" />
@@ -493,9 +512,6 @@
     <entry file="file://$PROJECT_DIR$/Cuong_C3D_files/feature_extraction_for_train/c3d_sport1m_feature_extractor_train.sh" />
     <entry file="file://$PROJECT_DIR$/Cuong_Template/Original/feature_extraction/c3d_sport1m_feature_extractor.sh" />
     <entry file="file://$PROJECT_DIR$/Cuong_C3D_files/feature_extraction_for_test/c3d_sport1m_feature_extractor_test.sh" />
-    <entry file="file://$PROJECT_DIR$/c3d_files/train_01.lst">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/c3d_files/train_01_output.lst">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -617,27 +633,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/c3d_params.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crossview (copy).py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="75" column="58" lean-forward="true" selection-end-line="968" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crossview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="955" column="39" selection-start-line="955" selection-start-column="39" selection-end-line="955" selection-end-column="39" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -654,25 +653,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/c3d_params (copy).py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c3d_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="491" column="27" lean-forward="true" selection-start-line="491" selection-start-column="27" selection-end-line="491" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c3d_params.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finetuning_experiment">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c3d_files/test_01_K1.lst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1992" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c3d_files/train_01.lst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8547" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/run_crossview.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="430" column="78" selection-start-line="430" selection-start-column="78" selection-end-line="430" selection-end-column="78" />
+        <state relative-caret-position="116">
+          <caret line="254" column="114" selection-start-line="254" selection-start-column="28" selection-end-line="254" selection-end-column="116" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/c3d_params (copy).py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/c3d_helper.py">
+    <entry file="file://$PROJECT_DIR$/crossview.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-434">
-          <caret line="460" selection-start-line="460" selection-end-line="461" selection-end-column="26" />
+        <state relative-caret-position="315">
+          <caret line="932" column="66" lean-forward="true" selection-start-line="932" selection-start-column="66" selection-end-line="932" selection-end-column="66" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
