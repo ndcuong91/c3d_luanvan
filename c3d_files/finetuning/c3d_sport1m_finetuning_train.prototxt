@@ -15,7 +15,7 @@ layers {
     show_data: 0
     new_height: 128
     new_width: 171
-    new_length: 16
+    new_length: 8
     shuffle: true
   }
 }
@@ -79,7 +79,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 64
+    num_output: 128
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -126,7 +126,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 128
+    num_output: 256
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -159,7 +159,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   convolution_param {
-    num_output: 128
+    num_output: 256
     kernel_size: 3
     kernel_depth: 3
     pad: 1
@@ -367,7 +367,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 2048
+    num_output: 1024
     weight_filler {
       type: "gaussian"
       std: 0.005
@@ -403,7 +403,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 2048
+    num_output: 1024
     weight_filler {
     type: "gaussian"
       std: 0.005

@@ -153,8 +153,8 @@ def make_new_data_3_not_aug(data_folder,kinect_folder, kinect_folder_augmented, 
 
 
 for kinect in Kinects:
-    kinect_folder=kinect+'_clean_1_rename'
-    kinect_folder_augmented=kinect+'_clean_1_aug_'+str(method)
+    kinect_folder=kinect+'_original'
+    kinect_folder_augmented=kinect+'_original_not_aug_'+str(method)
     print('Begin augment data with method '+str(method)+' for ' + kinect)
 
     for n in range(len(subjects)):
@@ -170,6 +170,6 @@ for kinect in Kinects:
         if (method == 3):
             for i in range(len(actions)):
                 print('Action '+str(i+1))
-                make_new_data_3(data_folder, kinect_folder, kinect_folder_augmented, subjects[n], actions[i], n)
+                make_new_data_3_not_aug(data_folder, kinect_folder, kinect_folder_augmented, subjects[n], actions[i], n)
 
 print('Finish.')

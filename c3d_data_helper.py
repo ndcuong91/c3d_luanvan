@@ -9,8 +9,9 @@ import c3d_params
 video_data_dir='/home/titikid/PycharmProjects/c3d_luanvan/data/Dataset_hand_gesture'
 image_data_dir= c3d_params.c3d_data_root
 subjects=['Binh','Giang','Hung','Tan','Thuan']
-Kinects=['K1','K3','K5']
-actions=['1','2','3','4','5']
+subjects=['All']
+Kinects=['K1','K2','K3','K4','K5']
+actions=['1','2','3','4','5','6','7','8','9','10','11','12']
 resolution=(640,480)
 
 def get_list_dir_in_folder (dir):
@@ -18,7 +19,7 @@ def get_list_dir_in_folder (dir):
     return sub_dir
 
 def get_list_jpg_in_folder(dir):
-    included_extensions = ['jpg']
+    included_extensions = ['png']
     file_names = [fn for fn in os.listdir(dir)
                   if any(fn.endswith(ext) for ext in included_extensions)]
     return file_names
@@ -176,8 +177,8 @@ def summary_image_data(data_type='clean_1_rename'):
                     cv2.destroyAllWindows()
                     video.release()
 
-def rename_data_after_clean(Kinect):
-    clean_name='clean_1'
+def rename_data_after_clean(Kinect, leng=8):
+    clean_name='segmented'
     kinect_clean_dir=Kinect+'_'+clean_name
     kinect_rename_dir=Kinect + '_'+clean_name+'_rename'
     print('Rename image from '  + kinect_clean_dir)
@@ -188,8 +189,8 @@ def rename_data_after_clean(Kinect):
             for sample in samples:
                 image_list = get_list_jpg_in_folder(os.path.join(action_folder, sample))
                 image_list.sort()
-                if(len(image_list)<16):
-                    print('len smaller than 16 in '+os.path.join(action_folder, sample))
+                if(len(image_list)<leng):
+                    print('len smaller than '+str(leng)+' in '+os.path.join(action_folder, sample))
                 for i in range(len(image_list)):
                     destination_dir = os.path.join(image_data_dir, kinect_rename_dir, subject,action,sample)
                     if not os.path.exists(destination_dir):
@@ -230,7 +231,9 @@ def shift_image(dir, shift_data): #shift image x, y
 
 
 if __name__ == "__main__":
-    summary_all_results_in_folder('output/result_26Jan')
+    for i in range (5):
+        rename_data_after_clean('K' +str(i+1))
+    #summary_all_results_in_folder('output/result_26Jan')
     # summary_9_results('output/result_set_table_22Jan2019_segmented')
     # summary_result('output/K1_K1_2019-01-25_15.55')
     # check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)

@@ -340,7 +340,7 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
                     # Find number of images
                     image_list = list(glob(os.path.join(fullpath_subject_action_epoch, "*." + image_type)))
                     num_of_images = len(image_list)
-                    num_of_batches_of_16_images = num_of_images / 16
+                    num_of_batches_of_num_images = num_of_images / config_params.num_frame
 
                     # Write (note that already padded to 16n !)
                     # counter = 1
@@ -362,8 +362,8 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
                     # Example: 23 images, then it would be 1-16 and 8-23
 
                     counter = 1
-                    if(config_params.average_feature==True): #calculate average feature or not
-                        for _ in range(num_of_batches_of_16_images):
+                    if(config_params.average_feature==False): #calculate average feature or not
+                        for _ in range(num_of_batches_of_num_images):
                             # Input
                             in_text = "%s/ %d %d\n" % (
                                 fullpath_subject_action_epoch, counter, action_id - 1)  # CuongND. New folder for input
@@ -375,12 +375,12 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
                             f_out.write(out_text)
 
                             num_of_lines = num_of_lines + 1
-                            counter = counter + 16
+                            counter = counter + config_params.num_frame
 
                             # Last batch: last 16 images
 
-                        if (num_of_batches_of_16_images * 16) < num_of_images:
-                            counter = num_of_images - 15
+                        if (num_of_batches_of_num_images * config_params.num_frame) < num_of_images:
+                            counter = num_of_images - config_params.num_frame +1
                             # Input
                             in_text = "%s/ %d %d\n" % (
                                 fullpath_subject_action_epoch, counter, action_id - 1)  # CuongND. New folder for input
@@ -392,7 +392,7 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
                             f_out.write(out_text)
 
                             num_of_lines = num_of_lines + 1
-                            counter = counter + 16
+                            counter = counter + config_params.num_frame
                     else:
                         in_text = "%s/ %d %d\n" % (
                             fullpath_subject_action_epoch, counter, action_id - 1)  # CuongND.

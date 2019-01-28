@@ -46,6 +46,19 @@ data/K1_original_aug_3/
 data/K3_original_aug_3/
 data/K5_original_aug_3/
 data/video_dataset/
+data/K1_clean_1_not_aug_3/
+data/K1_original_not_aug_3/
+data/K3_clean_1_not_aug_3/
+data/K3_original_not_aug_3/
+data/K5_clean_1_not_aug_3/
+data/K5_original_not_aug_3/
+data/12gestures/K1_segmented_old/
+data/12gestures/K2_segmented_old/
+data/12gestures/K3_segmented_old/
+data/12gestures/K4_segmented_old/
+data/12gestures/K5_segmented_old/
+
+
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000
 
 .idea/workspace.xml

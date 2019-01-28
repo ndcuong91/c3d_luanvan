@@ -15,7 +15,7 @@ def parse_args():
     Written by by CuongND (nguyenduycuong2004@gmail.com)
     """
     parser = argparse.ArgumentParser(description='Train C3D hand-gesture networks by CuongND')
-    parser.add_argument('--num_action', type=int, default=5,
+    parser.add_argument('--num_action', type=int, default=12,
                         help="Number of action.")
     parser.add_argument('--base_lr', type=float, default=0.0001,
                         help="Base learning rate for fine-tuning.")
@@ -31,27 +31,27 @@ def parse_args():
                         help='batch size for feature extraction.')
     parser.add_argument('--batch_size_finetune', type=int, default=20,
                         help='batch size for fine-tuning.')
-    parser.add_argument('--subject_list', type=str, default='Binh,Giang,Hung,Tan,Thuan',
+    parser.add_argument('--subject_list', type=str, default='All',
                         help='subject to training and test')
-    parser.add_argument('--subject_test', type=str, default='Binh,Giang,Hung,Tan,Thuan',
+    parser.add_argument('--subject_test', type=str, default='All',
                         help='subject to training and test')
     parser.add_argument('--kinect_train', type=str, default='K1',
                         help='trainning set')
     parser.add_argument('--kinect_test_list', type=str, default='K1',
                         help='List of Kinect view for test. e.g: "K1,K3,K5"')
-    parser.add_argument('--data_type_train', type=str, default='clean_1_aug_3',
+    parser.add_argument('--data_type_train', type=str, default='segmented_rename',
                         help='original, segmented...')
-    parser.add_argument('--data_type_test', type=str, default='clean_1_aug_3',
+    parser.add_argument('--data_type_test', type=str, default='segmented_rename',
                         help='original, segmented...')
     parser.add_argument('--average_feature', type=bool, default=False,
-                        help='average feature or use only first 16 frames')
+                        help='average feature or use only first x frames')
 
     # 23Jan. CuongND. Add parameters for modify c3d
     parser.add_argument('--resize', type=str, default='171,128',
                         help='input size of C3D')
     parser.add_argument('--crop', type=int, default=112,
                         help='crop size of C3D')
-    parser.add_argument('--num_frame', type=int, default=16,
+    parser.add_argument('--num_frame', type=int, default=8,
                         help='number of frame for input')
     parser.add_argument('--conv1a', type=int, default=64,
                         help='Number of filter in conv1a')
@@ -285,19 +285,23 @@ if __name__ == "__main__":
     for test_subject in subject_list:
         train_list = []
         test_list = [test_subject]
-        # CuongND
-        continue_test = False
-        for subject in subject_test:
-            if (test_subject == subject):
-                continue_test = True
-                break
-        if (continue_test == False):
-            continue
 
-        for train_subject in subject_list:
-            if train_subject == test_subject:
+        if(test_subject=='All'):
+            train_list=[test_subject]
+        else:
+            # CuongND
+            continue_test = False
+            for subject in subject_test:
+                if (test_subject == subject):
+                    continue_test = True
+                    break
+            if (continue_test == False):
                 continue
-            train_list.append(train_subject)
+
+            for train_subject in subject_list:
+                if train_subject == test_subject:
+                    continue
+                train_list.append(train_subject)
 
         print "\n\nTEST SUBJECT " + str(
             count) + ': ' + test_subject + ' ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
