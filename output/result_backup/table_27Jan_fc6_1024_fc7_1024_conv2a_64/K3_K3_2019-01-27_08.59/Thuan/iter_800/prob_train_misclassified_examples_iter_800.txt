@@ -1,0 +1,2 @@
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/1/1_1/ 1 4
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/1/1_4/ 1 4

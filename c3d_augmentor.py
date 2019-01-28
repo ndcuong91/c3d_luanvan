@@ -125,6 +125,31 @@ def make_new_data_3(data_folder,kinect_folder, kinect_folder_augmented, subject,
                 shift_image = cv2.warpAffine(img, M, (old_res[0], old_res[1]))
                 cv2.imwrite(os.path.join(action_folder_augmented, new_folder, image), shift_image)
 
+def make_new_data_3_not_aug(data_folder,kinect_folder, kinect_folder_augmented, subject,action, subject_id):
+
+    with open(os.path.join(data_folder,kinect_folder,'crop_aug_3')) as f:
+        lines = f.readlines()
+    hand_pos=lines[subject_id].replace('\n','').split(',')
+    shift_x=old_res[0]/2-int(hand_pos[0])
+    shift_y=old_res[1]/2-int(hand_pos[1])
+
+    action_folder=os.path.join(data_folder,kinect_folder,subject,str(action))
+    action_folder_augmented=os.path.join(data_folder,kinect_folder_augmented,subject,str(action))
+    samples=get_list_dir_in_folder(action_folder)
+
+
+    for sample in samples:
+        if(len(sample)>1):
+            continue
+        image_list=get_list_jpg_in_folder(action_folder+'/'+sample)
+        if not os.path.exists(action_folder_augmented + '/' + sample):
+            os.makedirs(action_folder_augmented + '/' + sample)
+        for image in image_list:
+            img = cv2.imread(action_folder + '/' + sample + '/' + image)
+            M = np.float32([[1, 0, shift_x], [0, 1, shift_y]])
+            shift_image = cv2.warpAffine(img, M, (old_res[0], old_res[1]))
+            cv2.imwrite(os.path.join(action_folder_augmented, sample, image), shift_image)
+
 
 
 for kinect in Kinects:

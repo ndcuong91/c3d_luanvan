@@ -1,0 +1,13 @@
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Thuan/1/4_1/ 1 2
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/2/2_1/ 2 1
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/1/4_5/ 1 2
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/1/1_2/ 1 3
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/1/1_4/ 1 3
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/1/1_5/ 1 2
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/2/2_4/ 2 1
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/1/1_1/ 1 3
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/1/4_2/ 1 5
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hung/5/3_1/ 5 1
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/1/3_5/ 1 2
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/1/2_5/ 1 2
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tan/2/2_2/ 2 1

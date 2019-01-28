@@ -333,11 +333,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.run_crossview" />
-      <item itemvalue="Python.c3d_data_helper" />
       <item itemvalue="Python.c3d_augmentor" />
-      <item itemvalue="Python.test" />
+      <item itemvalue="Python.c3d_data_helper" />
+      <item itemvalue="Python.run_crossview" />
       <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
