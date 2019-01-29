@@ -5,6 +5,17 @@ compute_volume_mean=True
 finetuning=True
 feature_extract=True
 
+#optional
+base_lr=0.0001
+gamma=0.1
+data_type_train='original'
+data_type_test='original'
+subject_list='Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen'
+subject_test='Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen'
+Kinects=['K1,K2,K3,K4,K5']
+batch_size_test=20
+batch_size_finetune=20
+
 #default is mica
 output_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/output"
 template_dir = "/home/dangmanhtruong95/Cuong/c3d_luanvan/template"

@@ -17,34 +17,36 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train C3D hand-gesture networks by CuongND')
     parser.add_argument('--num_action', type=int, default=12,
                         help="Number of action.")
-    parser.add_argument('--base_lr', type=float, default=0.0001,
-                        help="Base learning rate for fine-tuning.")
-    parser.add_argument('--gamma', type=float, default=0.1,
-                        help='gamma for learning rate')
     parser.add_argument('--step_size', type=int, default=500,  # coco
                         help='Step to decrease learning rate.')
     parser.add_argument('--max_iter', type=int, default=500,
                         help='Maximum iteration to stop. ')
     parser.add_argument('--snapshot', type=int, default=100,
                         help='Number of periodic save params')
-    parser.add_argument('--batch_size_test', type=int, default=20,
-                        help='batch size for feature extraction.')
-    parser.add_argument('--batch_size_finetune', type=int, default=20,
-                        help='batch size for fine-tuning.')
-    parser.add_argument('--subject_list', type=str, default='Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen',
-                        help='subject to training and test')
-    parser.add_argument('--subject_test', type=str, default='Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen',
-                        help='subject to training and test')
     parser.add_argument('--kinect_train', type=str, default='K1',
                         help='trainning set')
     parser.add_argument('--kinect_test_list', type=str, default='K1',
                         help='List of Kinect view for test. e.g: "K1,K3,K5"')
+    parser.add_argument('--average_feature', type=bool, default=False,
+                        help='average feature or use only first x frames')
+
+    #optional params (already in c3d_params.py)
     parser.add_argument('--data_type_train', type=str, default='',
                         help='original, segmented...')
     parser.add_argument('--data_type_test', type=str, default='',
                         help='original, segmented...')
-    parser.add_argument('--average_feature', type=bool, default=False,
-                        help='average feature or use only first x frames')
+    parser.add_argument('--base_lr', type=float, default=0.0,
+                        help="Base learning rate for fine-tuning.")
+    parser.add_argument('--gamma', type=float, default=0.0,
+                        help='gamma for learning rate')
+    parser.add_argument('--subject_list', type=str, default='',
+                        help='subject to training and test')
+    parser.add_argument('--subject_test', type=str, default='',
+                        help='subject to training and test')
+    parser.add_argument('--batch_size_test', type=int, default=0,
+                        help='batch size for feature extraction.')
+    parser.add_argument('--batch_size_finetune', type=int, default=0,
+                        help='batch size for fine-tuning.')
 
     # 23Jan. CuongND. Add parameters for modify c3d
     parser.add_argument('--resize', type=str, default='171,128',
@@ -89,16 +91,45 @@ class ConfigParams(object):
     step_size = args.step_size
     max_iter = args.max_iter
     snapshot = args.snapshot
-    batch_size = args.batch_size_test  # For feature extraction
-    batch_size_finetune = args.batch_size_finetune  # For feature extraction
 
-    subject_list = [x.strip() for x in args.subject_list.split(',')]
-    subject_test = [x.strip() for x in args.subject_test.split(',')]
+    if(args.base_lr!=0.0):
+        base_lr = args.base_lr
+    else:
+        base_lr = c3d_params.base_lr
+    if(args.gamma!=0.0):
+        gamma = args.gamma
+    else:
+        gamma = c3d_params.gamma
+    if(args.batch_size_test!=0):
+        batch_size = args.batch_size_test  # For feature extraction
+    else:
+        batch_size = c3d_params.batch_size_test  # For feature extraction
+    if(args.batch_size_finetune!=0):
+        batch_size_finetune = args.batch_size_finetune  # For finetuning
+    else:
+        batch_size_finetune = c3d_params.batch_size_finetune  # For finetuning
+
+    if(args.subject_list!=''):
+        subject_list = [x.strip() for x in args.subject_list.split(',')]
+    else:
+        subject_list = [x.strip() for x in c3d_params.subject_list.split(',')]
+
+    if(args.subject_test!=''):
+        subject_test = [x.strip() for x in args.subject_test.split(',')]
+    else:
+        subject_test = [x.strip() for x in c3d_params.subject_test.split(',')]
+    if(args.data_type_train!=''):
+        data_type_train = args.data_type_train
+    else:
+        data_type_train = c3d_params.data_type_train
+    if(args.data_type_test!=''):
+        data_type_test = args.data_type_test
+    else:
+        data_type_test = c3d_params.data_type_test
+
     kinect_train = args.kinect_train
     kinect_test_list = [x.strip() for x in args.kinect_test_list.split(',')]
-    data_type_train = args.data_type_train
-    data_type_test = args.data_type_test
-    average_feature=args.average_feature
+    average_feature = args.average_feature
 
     # CuongND. Modify C3D structure
     c3d_default = dict()
@@ -204,11 +235,6 @@ if __name__ == "__main__":
     config_params = ConfigParams
     num_of_iters = config_params.max_iter / config_params.snapshot
 
-    # CuongND. Don't clean up output folder beforehand
-    # if os.path.exists(config_params.output_dir):
-    #     shutil.rmtree(config_params.output_dir)
-    # os.makedirs(config_params.output_dir)
-
     # CuongND. delete all .fc6, .fc7, .prob in old training
     print "\nPROGRAM BEGIN!\n"
 
@@ -310,7 +336,7 @@ if __name__ == "__main__":
 
         # Output to text files
         output_result_dir = os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
-        print "\n\nWrite result of " + test_subject + " to folder output/" + output_result_dir + '\n\n'
+        print "\n\nWrite result to folder output/" + output_result_dir +'/'+test_subject +'\n\n'
         for kinect_test, r0_ in result_list.iteritems():
             for classification_method, r1_ in r0_.iteritems():
                 # Plot loss

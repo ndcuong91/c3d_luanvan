@@ -1,16 +1,12 @@
-import cv2
 import os
 import numpy as np
 import shutil
 import cv2
 import c3d_params
 
-
-video_data_dir='/home/titikid/PycharmProjects/c3d_luanvan/data/Dataset_hand_gesture'
+video_data_dir= os.path.join(c3d_params.c3d_data_root,'Dataset_hand_gesture')
 image_data_dir= c3d_params.c3d_data_root
-subjects=['Binh','Giang','Hung','Tan','Thuan']
-subjects=['All']
-Kinects=['K1','K2','K3','K4','K5']
+Kinects=['K1,K2,K3,K4,K5']
 actions=['1','2','3','4','5','6','7','8','9','10','11','12']
 resolution=(640,480)
 
@@ -24,13 +20,15 @@ def get_list_file_in_folder(dir, ext='jpg'):
                   if any(fn.endswith(ext) for ext in included_extensions)]
     return file_names
 
-def summary_result(folder, subjects=['Binh','Giang','Hung','Tan','Thuan'], data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
+def summary_result(folder, subjects=['Binh,Giang,Hung,Tan,Thuan'], data_type=['fc6_linear,fc6_rbf,fc7_linear,fc7_rbf,prob']):
     print('Begin summarize result in '+folder)
     result=folder+'\n\n'
     subject_title=''
     field_title = ''
     final_accuracy=[]
     final_loss=[]
+    subjects=subjects.split(',')
+    data_type=data_type.split(',')
 
     for i in range(len(subjects)):
         subject_title+=subjects[i].ljust(5)+'\t\t'
@@ -85,10 +83,12 @@ def summary_all_results_in_folder(folder):
 
 
 
-def summary_9_results(folder, Kinects=['K1','K3','K5'],data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
+def summary_9_results(folder, Kinects=['K1,K3,K5'],data_type=['fc6_linear,fc6_rbf,fc7_linear,fc7_rbf,prob']):
     sub_dir= get_list_dir_in_folder(folder)
     final_acc=[]
     header='\t\t'
+    Kinects=Kinects.split(',')
+    data_type=data_type.split(',')
     summary_dir=os.path.join(folder, 'final_summary')
     if not os.path.exists(summary_dir):
         os.makedirs(summary_dir)
@@ -139,7 +139,9 @@ def summary_9_results(folder, Kinects=['K1','K3','K5'],data_type=['fc6_linear','
     print('Save result to '+os.path.join(summary_dir,'final_summary.txt'))
 
 
-def summary_video_data():
+def summary_video_data(subjects, Kinects):
+    subjects=subjects.split(',')
+    Kinects=Kinects.split(',')
     for subject in subjects:
         for Kinect in Kinects:
             print('Copy samples from ' + subject + '_' + Kinect)
@@ -154,8 +156,10 @@ def summary_video_data():
                             os.path.join(summary_dir, new_sample_name + '.avi'))
 
 
-def summary_image_data(data_type='clean_1_rename'):
+def summary_image_data(subjects,Kinects,data_type='clean_1_rename'):
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    subjects=subjects.split(',')
+    Kinects=Kinects.split(',')
     for Kinect in Kinects:
         for subject in subjects:
             print('Make video samples from images in ' + subject + '_' + Kinect)
@@ -177,11 +181,12 @@ def summary_image_data(data_type='clean_1_rename'):
                     cv2.destroyAllWindows()
                     video.release()
 
-def rename_data_after_clean(Kinect, leng=8):
+def rename_data_after_clean(Kinect,subjects, leng=8):
     clean_name='segmented'
     kinect_clean_dir=Kinect+'_'+clean_name
     kinect_rename_dir=Kinect + '_'+clean_name+'_rename'
     print('Rename image from '  + kinect_clean_dir)
+    subjects=subjects.split(',')
     for subject in subjects:
         for action in actions:
             action_folder = os.path.join(image_data_dir, kinect_clean_dir, subject, action)
@@ -210,7 +215,6 @@ def remove_nois_by_copy_roi(dir, roi, src_image):
         image = cv2.imread(image_path)
         image[roi[1]:roi[1] + roi[3], roi[0]:roi[0] + roi[2]] = crop_roi
         cv2.imwrite(image_path, image)
-        kk=1
 
 def shift_image(dir, shift_data): #shift image x, y
     image_list = get_list_file_in_folder(dir)
@@ -372,11 +376,34 @@ def convert_video_dataset_to_images(video_dir, image_dir,base_num_frame=16):
     print('\nFinish.')
 
 
-
-
+def reorder_dataset(video_dir, new_video_dir):
+    subjects = get_list_dir_in_folder(video_dir)
+    subjects.sort()
+    for subject in subjects:
+        print(subject)
+        kinects = get_list_dir_in_folder(os.path.join(video_dir,subject))
+        kinects.sort()
+        for kinect in kinects:
+            print(kinect)
+            actions = get_list_dir_in_folder(os.path.join(video_dir,subject,kinect))
+            actions.sort()
+            for action in actions:
+                print(action)
+                action_dir=os.path.join(video_dir,subject,kinect,action)
+                samples= get_list_dir_in_folder(action_dir)
+                samples.sort()
+                for sample in samples:
+                    destination_dir=os.path.join(new_video_dir,kinect+'_original',subject,action,sample)
+                    if not os.path.exists(destination_dir):
+                        os.makedirs(destination_dir)
+                    images = get_list_file_in_folder(os.path.join(action_dir,sample))
+                    for image in images:
+                        shutil.copy(os.path.join(action_dir,sample,image),os.path.join(destination_dir,image))
 
 
 if __name__ == "__main__":
+    reorder_dataset('/home/titikid/PycharmProjects/12gestures_images',
+                    '/home/titikid/PycharmProjects/12gestures_images_new')
     #for i in range (5):
     #    rename_data_after_clean('K' +str(i+1))
     #summary_all_results_in_folder('output/result_26Jan')

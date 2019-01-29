@@ -5,19 +5,12 @@ import c3d_params
 
 data_folder=c3d_params.c3d_data_root
 method=3
-#for old dataset with 5 gestures
-Kinects=['K1','K3','K5']
-subjects=['Binh','Giang','Hung','Tan','Thuan']
-
-#for new dataset with 12 gestures
-Kinects=['K1','K2','K3','K4','K5']
-subjects=['Giang','Hai','Long','Minh','Thuan','Thuy','Tuyen']
 actions=[1,2,3,4,5]
 old_res=[640,480]
 padding=[100,75]
 do_padding=True
 
-#old method
+#method 1
 new_res=[560,420]
 crop_set_augment_1=[]
 crop_set_1=[[0,0],[80,0],[40,30],[80,60],[0,60]] #for action 1,3,5
@@ -27,10 +20,9 @@ crop_set_augment_1.append(crop_set_1)
 crop_set_augment_1.append(crop_set_2)
 crop_set_augment_1.append(crop_set_3)
 
-#new method
+#method 2
 new_res_new=[256,192]
 begin_pt=[110,30]
-#pos_set = [[0, 0], [25, 25], [50, 50], [75, 75], [100, 100],[25, 75], [75, 25], [0, 100], [100, 0]]
 pos_set = [[0, 0], [50, 50], [100, 100], [0, 100], [100, 0]]
 final_pos=[]
 for pos in pos_set:
@@ -156,25 +148,30 @@ def make_new_data_3_not_aug(data_folder,kinect_folder, kinect_folder_augmented, 
             cv2.imwrite(os.path.join(action_folder_augmented, sample, image), shift_image)
 
 
+if __name__ == "__main__":
+    Kinects = c3d_params.Kinects.split(',')
+    subjects = c3d_params.subjects.split(',')
+    for kinect in Kinects:
+        kinect_folder = kinect + '_original'
+        kinect_folder_augmented = kinect + '_original_not_aug_' + str(method)
+        print('Begin augment data with method ' + str(method) + ' for ' + kinect)
+        for n in range(len(subjects)):
+            print('Augment subject ' + subjects[n])
+            if (method == 1):
+                for i in range(len(actions)):
+                    print('Action ' + str(i + 1))
+                    make_new_data_1(data_folder, kinect_folder, kinect_folder_augmented, subjects[n], actions[i])
+            if (method == 2):
+                for i in range(len(actions)):
+                    print('Action ' + str(i + 1))
+                    make_new_data_2(data_folder, kinect_folder, kinect_folder_augmented, subjects[n], actions[i],
+                                    final_pos)
+            if (method == 3):
+                for i in range(len(actions)):
+                    print('Action ' + str(i + 1))
+                    make_new_data_3_not_aug(data_folder, kinect_folder, kinect_folder_augmented, subjects[n],
+                                            actions[i], n)
 
-for kinect in Kinects:
-    kinect_folder=kinect+'_original'
-    kinect_folder_augmented=kinect+'_original_not_aug_'+str(method)
-    print('Begin augment data with method '+str(method)+' for ' + kinect)
+    print('Finish.')
 
-    for n in range(len(subjects)):
-        print('Augment subject '+subjects[n])
-        if (method == 1):
-            for i in range(len(actions)):
-                print('Action '+str(i+1))
-                make_new_data_1(data_folder, kinect_folder, kinect_folder_augmented, subjects[n], actions[i])
-        if (method == 2):
-            for i in range(len(actions)):
-                print('Action '+str(i+1))
-                make_new_data_2(data_folder, kinect_folder, kinect_folder_augmented, subjects[n], actions[i], final_pos)
-        if (method == 3):
-            for i in range(len(actions)):
-                print('Action '+str(i+1))
-                make_new_data_3_not_aug(data_folder, kinect_folder, kinect_folder_augmented, subjects[n], actions[i], n)
 
-print('Finish.')
