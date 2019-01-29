@@ -456,4 +456,4 @@ if __name__ == "__main__":
                 delimiter=' ',
                 fmt="%f")
 
-        summary_result(os.path.join(c3d_params.output_dir, output_result_dir))
+        summary_result(os.path.join(c3d_params.output_dir, output_result_dir), subjects=c3d_params.subject_list)

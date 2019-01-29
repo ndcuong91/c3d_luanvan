@@ -12,7 +12,7 @@ data_type_train='original'
 data_type_test='original'
 subject_list='Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen'
 subject_test='Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen'
-Kinects=['K1,K2,K3,K4,K5']
+Kinects='K1,K2,K3,K4,K5'
 batch_size_test=20
 batch_size_finetune=20
 

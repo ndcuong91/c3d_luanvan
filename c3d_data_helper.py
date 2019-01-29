@@ -20,13 +20,13 @@ def get_list_file_in_folder(dir, ext='jpg'):
                   if any(fn.endswith(ext) for ext in included_extensions)]
     return file_names
 
-def summary_result(folder, subjects=['Binh,Giang,Hung,Tan,Thuan'], data_type=['fc6_linear,fc6_rbf,fc7_linear,fc7_rbf,prob']):
+def summary_result(folder, subjects, data_type='fc6_linear,fc6_rbf,fc7_linear,fc7_rbf,prob'):
     print('Begin summarize result in '+folder)
     result=folder+'\n\n'
     subject_title=''
     field_title = ''
-    final_accuracy=[]
-    final_loss=[]
+    final_accuracy=dict()
+    final_loss=dict()
     subjects=subjects.split(',')
     data_type=data_type.split(',')
 
@@ -37,34 +37,38 @@ def summary_result(folder, subjects=['Binh,Giang,Hung,Tan,Thuan'], data_type=['f
         field_title+='loss\tacc \t'
         result_folder=os.path.join(folder,subjects[i])
 
-        accuracy=[]
-        loss=[]
+        final_accuracy[subjects[i]]=dict()
+
+        accuracy=dict()
+        loss=dict()
         for type in data_type:
             with open(os.path.join(result_folder, type+'_test_accuracy.txt')) as f:
                 lines = f.readlines()
                 x = np.array(lines)
-                accuracy.append(x.astype(np.float))
+                accuracy[type]= x.astype(np.float)
             with open(os.path.join(result_folder, type+'_test_loss.txt')) as f:
                 lines = f.readlines()
                 x = np.array(lines)
-                loss.append(x.astype(np.float))
+                loss[type]=x.astype(np.float)
 
-        final_accuracy.append(accuracy)
-        final_loss.append(loss)
+        final_accuracy[subjects[i]]=accuracy
+        final_loss[subjects[i]]=loss
 
-    for n in range(len(data_type)):
-        result +=data_type[n]+'\n' + subject_title + '\n' + field_title + '\n'
+    number_of_snapshot=len(final_accuracy[subjects[0]][data_type[0]])
+
+    for type in data_type:
+        result +=type+'\n' + subject_title + '\n' + field_title + '\n'
         final_acc = []
-        for j in range(len(final_accuracy[n][0])):
+        for i in range(number_of_snapshot):
             sum_acc = 0.
-            for k in range((len(final_accuracy[n]))):
-                sum_acc += final_accuracy[k][n][j]
-                res = "%.4f" % final_loss[k][n][j] + '\t' + "%.4f" % final_accuracy[k][n][j] + '\t'
+            for subject in subjects:
+                sum_acc += final_accuracy[subject][type][i]
+                res = "%.4f" % final_loss[subject][type][i] + '\t' + "%.4f" % final_accuracy[subject][type][i] + '\t'
                 result += res
-            avg_acc = sum_acc / len(final_accuracy[n])
+            avg_acc = sum_acc / len(subjects)
             final_acc.append(avg_acc)
             result += '\t' + "%.4f" % avg_acc + '\n'
-        result += data_type[n]+ '_accuracy:%.4f' % max(final_acc) + '\n\n'
+        result += type+ '_accuracy:%.4f' % max(final_acc) + '\n\n'
 
 
     with open(os.path.join(folder,'summary.txt'),'w') as f:
@@ -72,24 +76,29 @@ def summary_result(folder, subjects=['Binh,Giang,Hung,Tan,Thuan'], data_type=['f
     print('Save result to '+os.path.join(folder,'summary.txt'))
     return os.path.join(folder,'summary.txt')
 
-def summary_all_results_in_folder(folder):
+def summary_all_results_in_folder(folder,Kinects):
     sub_dir = get_list_dir_in_folder(folder)
-    names=['K1_K1','K1_K3','K1_K5','K3_K1','K3_K3','K3_K5','K5_K1','K5_K3','K5_K5']
+    names = []
+    for kinect_train in Kinects:
+        for kinect_test in Kinects:
+            name=kinect_train+'_'+kinect_test
+            names.append(name)
     for dir in sub_dir:
         for name in names:
             if(name in dir):
                 summary_result(os.path.join(folder,dir))
-    print('Finish.')
+    print('Finish. Summary_all_results_in_folder')
 
 
 
-def summary_9_results(folder, Kinects=['K1,K3,K5'],data_type=['fc6_linear,fc6_rbf,fc7_linear,fc7_rbf,prob']):
+def summary_all_results(folder, Kinects,data_type='fc6_linear,fc6_rbf,fc7_linear,fc7_rbf,prob'):
     sub_dir= get_list_dir_in_folder(folder)
     final_acc=[]
     header='\t\t'
     Kinects=Kinects.split(',')
     data_type=data_type.split(',')
     summary_dir=os.path.join(folder, 'final_summary')
+    num_kinect=len(Kinects)
     if not os.path.exists(summary_dir):
         os.makedirs(summary_dir)
     for kinect_train in Kinects:
@@ -112,11 +121,23 @@ def summary_9_results(folder, Kinects=['K1,K3,K5'],data_type=['fc6_linear,fc6_rb
     x = np.array(final_acc)
     final_acc=x.transpose(1,0).tolist()
 
-    single_view =[]
-    cross_view =[]
+    single_view =dict()
+    cross_view =dict()
+    total_view=dict()
+
     for i in range(len(data_type)):
-        single_view.append((final_acc[i][0]+final_acc[i][4]+final_acc[i][8])/3)
-        cross_view.append((final_acc[i][1]+final_acc[i][2]+final_acc[i][3]+final_acc[i][5]+final_acc[i][6]+final_acc[i][7])/6)
+        t_view=0
+        for j in range(len(final_acc[i])):
+            t_view+=final_acc[i][j]
+        total_view[data_type[i]]=t_view
+
+    for i in range(len(data_type)):
+        s_view=0
+        total_view=0
+        for j in range(num_kinect):
+            s_view+=final_acc[i][j*(num_kinect+1)]
+        single_view[data_type[i]]=s_view
+        cross_view[data_type[i]]=total_view[data_type[i]]-single_view[data_type[i]]
 
     result=''
     header += ' ||'
@@ -129,8 +150,9 @@ def summary_9_results(folder, Kinects=['K1,K3,K5'],data_type=['fc6_linear,fc6_rb
                 result+= '  %.2f' % (100*final_acc[i][count])+'   ||'
                 count+=1
             result +='\n'
-        result += '\t\tsingle-view: %.2f' % (100 * single_view[i])+'\n'
-        result += '\t\tcross-view:  %.2f' % (100 * cross_view[i])+'\n'
+        result += '\t\tsingle-view: %.2f' % (100 * single_view[data_type[i]]/num_kinect)+'\n'
+        result += '\t\tcross-view:  %.2f' % ((100 * cross_view[data_type[i]])/(num_kinect*(num_kinect-1)))+'\n'
+        result += '\t\ttotal-view:  %.2f' % ((100 * total_view[data_type[i]])/(num_kinect*num_kinect))+'\n'
         result +='\n'
 
 
@@ -402,17 +424,17 @@ def reorder_dataset(video_dir, new_video_dir):
 
 
 if __name__ == "__main__":
-    reorder_dataset('/home/titikid/PycharmProjects/12gestures_images',
-                    '/home/titikid/PycharmProjects/12gestures_images_new')
+    #reorder_dataset('/home/titikid/PycharmProjects/12gestures_images',
+    #                '/home/titikid/PycharmProjects/12gestures_images_new')
     #for i in range (5):
     #    rename_data_after_clean('K' +str(i+1))
     #summary_all_results_in_folder('output/result_26Jan')
     #summary_9_results('output/result/new')
     #extract_frames_from_video('/home/prdcv/PycharmProjects/gvh205/UCF-101/ApplyEyeMakeup/v_ApplyEyeMakeup_g01_c01.avi','/home/prdcv/PycharmProjects/gvh205/test')
-    data_dir='/home/prdcv/PycharmProjects/c3d_luanvan/data/'
+    #data_dir='/home/prdcv/PycharmProjects/c3d_luanvan/data/'
     #count_number_of_frame_and_save_to_file(data_dir +'12gestures_video')
-    convert_video_dataset_to_images(data_dir +'12gestures_video',data_dir +'12gestures_images')
-    # summary_result('output/K1_K1_2019-01-25_15.55')
+    #convert_video_dataset_to_images(data_dir +'12gestures_video',data_dir +'12gestures_images')
+    summary_result('output/result/Kinect_1_Kinect_1_2019-01-29_19.50',subjects=c3d_params.subject_list)
     # check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
 
     # summary_image_data(data_type='clean_1_augmented_padding_new')
