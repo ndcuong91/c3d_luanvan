@@ -18,8 +18,8 @@ def get_list_dir_in_folder (dir):
     sub_dir=[o for o in os.listdir(dir) if os.path.isdir(os.path.join(dir, o))]
     return sub_dir
 
-def get_list_jpg_in_folder(dir):
-    included_extensions = ['png']
+def get_list_file_in_folder(dir, ext='jpg'):
+    included_extensions = [ext]
     file_names = [fn for fn in os.listdir(dir)
                   if any(fn.endswith(ext) for ext in included_extensions)]
     return file_names
@@ -85,7 +85,7 @@ def summary_all_results_in_folder(folder):
 
 
 
-def summary_9_results(folder, Kinects=['1','K3','K5'],data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
+def summary_9_results(folder, Kinects=['K1','K3','K5'],data_type=['fc6_linear','fc6_rbf','fc7_linear','fc7_rbf','prob']):
     sub_dir= get_list_dir_in_folder(folder)
     final_acc=[]
     header='\t\t'
@@ -166,7 +166,7 @@ def summary_image_data(data_type='clean_1_rename'):
                 action_folder=os.path.join(image_data_dir,Kinect+'_'+data_type,subject,action)
                 samples = get_list_dir_in_folder(action_folder)
                 for sample in samples:
-                    image_list = get_list_jpg_in_folder(os.path.join(action_folder, sample))
+                    image_list = get_list_file_in_folder(os.path.join(action_folder, sample))
                     image_list.sort()
                     destination_name=action.zfill(2)+'_'+sample.zfill(2)+'.avi'
                     video = cv2.VideoWriter(os.path.join(destination_dir,destination_name), fourcc, 10, resolution)
@@ -187,7 +187,7 @@ def rename_data_after_clean(Kinect, leng=8):
             action_folder = os.path.join(image_data_dir, kinect_clean_dir, subject, action)
             samples = get_list_dir_in_folder(action_folder)
             for sample in samples:
-                image_list = get_list_jpg_in_folder(os.path.join(action_folder, sample))
+                image_list = get_list_file_in_folder(os.path.join(action_folder, sample))
                 image_list.sort()
                 if(len(image_list)<leng):
                     print('len smaller than '+str(leng)+' in '+os.path.join(action_folder, sample))
@@ -201,7 +201,7 @@ def rename_data_after_clean(Kinect, leng=8):
 
 
 def remove_nois_by_copy_roi(dir, roi, src_image):
-    image_list = get_list_jpg_in_folder(dir)
+    image_list = get_list_file_in_folder(dir)
     image_list.sort()
     img = cv2.imread(src_image)
     crop_roi = img[roi[1]:roi[1] + roi[3], roi[0]:roi[0] + roi[2]]
@@ -213,7 +213,7 @@ def remove_nois_by_copy_roi(dir, roi, src_image):
         kk=1
 
 def shift_image(dir, shift_data): #shift image x, y
-    image_list = get_list_jpg_in_folder(dir)
+    image_list = get_list_file_in_folder(dir)
     image_list.sort()
     x=max(-shift_data[0],0)
     y=max(-shift_data[1],0)
@@ -229,12 +229,162 @@ def shift_image(dir, shift_data): #shift image x, y
         new_image[new_y:new_y + new_h,new_x:new_x + new_w] = crop_roi
         cv2.imwrite(image_path, new_image)
 
+def count_number_of_frame(video_file):
+    vidcap = cv2.VideoCapture(video_file)
+    success, image = vidcap.read()
+    count = 1
+    success = True
+    while success:
+        success, image = vidcap.read()
+        # print 'Read a new frame: ', success
+        count += 1
+    return count
+
+def count_number_of_frame_and_save_to_file(video_dir):
+    subjects = get_list_dir_in_folder(video_dir)
+    subjects.sort()
+    for subject in subjects:
+        print subject
+        kinects = get_list_dir_in_folder(os.path.join(video_dir,subject))
+        kinects.sort()
+        for kinect in kinects:
+            print kinect
+            samples = get_list_dir_in_folder(os.path.join(video_dir,subject,kinect))
+            samples.sort()
+            for sample in samples:
+                num_frm=count_number_of_frame(os.path.join(video_dir, subject, kinect, sample, 'video.avi'))
+                shutil.move(os.path.join(video_dir, subject, kinect, sample, 'video.avi'),os.path.join(video_dir, subject, kinect, sample, 'video_'+str(num_frm)+'.avi'))
+
+
+def get_number_of_frame_from_video_name(video_file_dir):
+    video_file= get_list_file_in_folder(video_file_dir,'avi')
+    name,num_frm=video_file[0].split('_')
+    return int(num_frm.replace('.avi', ''))
+
+
+def extract_frames_from_video(video_file_dir,output_dir='',begin_frame=1, frame_to_extract=16, ext='jpg'):
+    video_file= get_list_file_in_folder(video_file_dir,'avi')
+    vidcap = cv2.VideoCapture(os.path.join(video_file_dir,video_file[0]))
+    success, image = vidcap.read()
+    count = 1
+    success = True
+
+    num_frm = get_number_of_frame_from_video_name(os.path.join(video_file_dir))
+    sampling_rate=(num_frm-begin_frame)/frame_to_extract
+    frame_id_extract=[]
+    for i in range(int(frame_to_extract)):
+        id=round(begin_frame+i*sampling_rate)
+        frame_id_extract.append(id)
+
+
+    while success:
+        for i in range(int(frame_to_extract)):
+            if(count==frame_id_extract[i]):
+                cv2.imwrite(os.path.join(output_dir, (str(i+1)).zfill(6))+'.'+ext, image)  # save frame as JPEG file
+        success, image = vidcap.read()
+        #print 'Read a new frame: ', success
+        count += 1
+
+
+def convert_video_dataset_to_images(video_dir, image_dir,base_num_frame=16):
+    drop_rate=dict()
+    drop_rate['Giang']=4
+    drop_rate['Hai']=3
+    drop_rate['Long']=4
+    drop_rate['Minh']=8
+    drop_rate['Thuan']=4
+    drop_rate['Thuy']=9
+    drop_rate['Tuyen']=4
+    if not os.path.exists(image_dir):
+        os.makedirs(image_dir)
+    subjects = get_list_dir_in_folder(video_dir)
+    subjects.sort()
+
+    #chuan hoa thoi gian thuc hien tung hanh dong
+    total_frame_normalize_for_each_action=[0,0,0,0,0,0,0,0,0,0,0,0]
+    for subject in subjects:
+        print subject
+        kinects = get_list_dir_in_folder(os.path.join(video_dir,subject))
+        kinects.sort()
+        for kinect in kinects:
+            print kinect
+            old_samples = get_list_dir_in_folder(os.path.join(video_dir,subject,kinect))
+            old_samples.sort()
+            first = old_samples[:9]
+            second = old_samples[9:36]
+            samples=[]
+            samples[:27]=second
+            samples[28:36]=first
+            for sample in samples:
+                action,id=sample.split('_')
+                num_frm= get_number_of_frame_from_video_name(os.path.join(video_dir,subject,kinect,sample))
+                total_frame_normalize_for_each_action[int(action)-1]+=num_frm/drop_rate[subject]
+
+    #action 1 always fastest
+    base_value= total_frame_normalize_for_each_action[0]/base_num_frame
+    frame_to_extract=[]
+    for i in range(12):
+        round_frame=round(total_frame_normalize_for_each_action[i]/base_value)
+        frame_to_extract.append(round_frame)
+        print('total frame normalize for action ' +str(i)+': '+str(total_frame_normalize_for_each_action[i])+', round frame: '+str(round_frame))
+
+    for subject in subjects:
+        print '\nExtract frame from: '+subject+', drop_rate: '+str(drop_rate[subject]),
+        kinects = get_list_dir_in_folder(os.path.join(video_dir,subject))
+        kinects.sort()
+        for kinect in kinects:
+            print '\n' , kinect,
+            old_samples = get_list_dir_in_folder(os.path.join(video_dir,subject,kinect))
+            old_samples.sort()
+            first = old_samples[:9]
+            second = old_samples[9:36]
+            samples=[]
+            samples[:27]=second
+            samples[28:36]=first
+            count=1
+            print 'Num_frame: ',
+            for sample in samples:
+                action,id=sample.split('_')
+                destination_dir=os.path.join(image_dir,subject,kinect,action,str(count))
+
+                if not os.path.exists(destination_dir):
+                    os.makedirs(destination_dir)
+                begin_frm=1
+                if(subject=='Thuan' and action=='3' and count==3):
+                    begin_frm=6
+                if(subject=='Thuy'):
+                    if (action=='3'):
+                        if(count==2):
+                            begin_frm=10
+                        if(count==3):
+                            begin_frm=20
+                    if (action=='6' and count==3):
+                        begin_frm=10
+                    if (action=='7' and count==3):
+                        begin_frm=10
+                print int(frame_to_extract[int(action)-1]),
+                extract_frames_from_video(os.path.join(video_dir,subject,kinect,sample),destination_dir,begin_frm, frame_to_extract=frame_to_extract[int(action)-1])
+                if(count%3==0):
+                    print ',',26
+                    count=1
+                else:
+                    count +=1
+    print('\nFinish.')
+
+
+
+
+
 
 if __name__ == "__main__":
-    for i in range (5):
-        rename_data_after_clean('K' +str(i+1))
+    #for i in range (5):
+    #    rename_data_after_clean('K' +str(i+1))
     #summary_all_results_in_folder('output/result_26Jan')
-    # summary_9_results('output/result_set_table_22Jan2019_segmented')
+    #summary_9_results('output/result/new')
+    #extract_frames_from_video('/home/prdcv/PycharmProjects/gvh205/UCF-101/ApplyEyeMakeup/v_ApplyEyeMakeup_g01_c01.avi','/home/prdcv/PycharmProjects/gvh205/test')
+    data_dir='/home/prdcv/PycharmProjects/c3d_luanvan/data/'
+    #count_number_of_frame_and_save_to_file(data_dir +'12gestures_video')
+    convert_video_dataset_to_images(data_dir +'12gestures_video',data_dir +'12gestures_images')
     # summary_result('output/K1_K1_2019-01-25_15.55')
     # check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
 

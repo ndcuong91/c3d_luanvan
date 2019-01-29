@@ -5,8 +5,13 @@ import c3d_params
 
 data_folder=c3d_params.c3d_data_root
 method=3
+#for old dataset with 5 gestures
 Kinects=['K1','K3','K5']
 subjects=['Binh','Giang','Hung','Tan','Thuan']
+
+#for new dataset with 12 gestures
+Kinects=['K1','K2','K3','K4','K5']
+subjects=['Giang','Hai','Long','Minh','Thuan','Thuy','Tuyen']
 actions=[1,2,3,4,5]
 old_res=[640,480]
 padding=[100,75]

@@ -23,25 +23,25 @@ def parse_args():
                         help='gamma for learning rate')
     parser.add_argument('--step_size', type=int, default=500,  # coco
                         help='Step to decrease learning rate.')
-    parser.add_argument('--max_iter', type=int, default=20,
+    parser.add_argument('--max_iter', type=int, default=500,
                         help='Maximum iteration to stop. ')
-    parser.add_argument('--snapshot', type=int, default=20,
+    parser.add_argument('--snapshot', type=int, default=100,
                         help='Number of periodic save params')
     parser.add_argument('--batch_size_test', type=int, default=20,
                         help='batch size for feature extraction.')
     parser.add_argument('--batch_size_finetune', type=int, default=20,
                         help='batch size for fine-tuning.')
-    parser.add_argument('--subject_list', type=str, default='All',
+    parser.add_argument('--subject_list', type=str, default='Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen',
                         help='subject to training and test')
-    parser.add_argument('--subject_test', type=str, default='All',
+    parser.add_argument('--subject_test', type=str, default='Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen',
                         help='subject to training and test')
     parser.add_argument('--kinect_train', type=str, default='K1',
                         help='trainning set')
     parser.add_argument('--kinect_test_list', type=str, default='K1',
                         help='List of Kinect view for test. e.g: "K1,K3,K5"')
-    parser.add_argument('--data_type_train', type=str, default='segmented_rename',
+    parser.add_argument('--data_type_train', type=str, default='',
                         help='original, segmented...')
-    parser.add_argument('--data_type_test', type=str, default='segmented_rename',
+    parser.add_argument('--data_type_test', type=str, default='',
                         help='original, segmented...')
     parser.add_argument('--average_feature', type=bool, default=False,
                         help='average feature or use only first x frames')
@@ -51,7 +51,7 @@ def parse_args():
                         help='input size of C3D')
     parser.add_argument('--crop', type=int, default=112,
                         help='crop size of C3D')
-    parser.add_argument('--num_frame', type=int, default=8,
+    parser.add_argument('--num_frame', type=int, default=16,
                         help='number of frame for input')
     parser.add_argument('--conv1a', type=int, default=64,
                         help='Number of filter in conv1a')
@@ -286,22 +286,20 @@ if __name__ == "__main__":
         train_list = []
         test_list = [test_subject]
 
-        if(test_subject=='All'):
-            train_list=[test_subject]
-        else:
-            # CuongND
-            continue_test = False
-            for subject in subject_test:
-                if (test_subject == subject):
-                    continue_test = True
-                    break
-            if (continue_test == False):
-                continue
+        # CuongND
+        continue_test = False
+        for subject in subject_test:
+            if (test_subject == subject):
+                continue_test = True
+                break
+        if (continue_test == False):
+            continue
 
-            for train_subject in subject_list:
-                if train_subject == test_subject:
-                    continue
-                train_list.append(train_subject)
+        for train_subject in subject_list:
+            if train_subject == test_subject:
+                continue
+            train_list.append(train_subject)
+
 
         print "\n\nTEST SUBJECT " + str(
             count) + ': ' + test_subject + ' ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
