@@ -1,0 +1,15 @@
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/4/3/ 4 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/9/1/ 9 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/9/2/ 9 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/4/2/ 4 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/12/3/ 12 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/10/1/ 10 9
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/4/1/ 4 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/12/1/ 12 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/11/1/ 11 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/2/2/ 2 8
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/10/3/ 10 2
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/12/2/ 12 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/11/3/ 11 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/11/2/ 11 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Giang/10/2/ 10 2
