@@ -15,7 +15,7 @@ layers {
     show_data: 0
     new_height: 128
     new_width: 171
-    new_length: 8
+    new_length: 16
     shuffle: false
   }
 }
@@ -351,7 +351,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 4096
+    num_output: 1024
     weight_filler {
       type: "gaussian"
       std: 0.005
@@ -387,7 +387,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 4096
+    num_output: 1024
     weight_filler {
     type: "gaussian"
       std: 0.005

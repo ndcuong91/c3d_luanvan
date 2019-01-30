@@ -23,7 +23,7 @@ def get_list_file_in_folder(dir, ext='jpg'):
     return file_names
 
 
-def summary_result(folder, subjects, suffix='', data_type='fc6_linear,fc6_rbf,fc7_linear,fc7_rbf,prob'):
+def summary_result(folder, subjects, suffix='', max_in_each_subject=True, data_type='fc6_linear,fc6_rbf,fc7_linear,fc7_rbf,prob'):
     print('Begin summarize result in ' + folder)
     result = folder + '\n\n'
     subject_title = ''
@@ -62,16 +62,30 @@ def summary_result(folder, subjects, suffix='', data_type='fc6_linear,fc6_rbf,fc
     for type in data_type:
         result += type + '\n' + subject_title + '\n' + field_title + '\n'
         final_acc = []
+        max_subject=dict()
+        for subject in subjects:
+            max_subject[subject]=0
         for i in range(number_of_snapshot):
             sum_acc = 0.
             for subject in subjects:
+                if(final_accuracy[subject][type][i]>max_subject[subject]):
+                    max_subject[subject]=final_accuracy[subject][type][i]
+
                 sum_acc += final_accuracy[subject][type][i]
                 res = "%.4f" % final_loss[subject][type][i] + '\t' + "%.4f" % final_accuracy[subject][type][i] + '\t'
                 result += res
             avg_acc = sum_acc / len(subjects)
             final_acc.append(avg_acc)
             result += '\t' + "%.4f" % avg_acc + '\n'
-        result += type + '_accuracy:%.4f' % max(final_acc) + '\n\n'
+
+        final_max_acc=0
+        for subject in subjects:
+            final_max_acc+=max_subject[subject]
+        final_max_avg_acc=final_max_acc/len(subjects)
+        if(max_in_each_subject==False):
+            result += type + '_accuracy:%.4f' % max(final_acc) + '\n\n'
+        else:
+            result += type + '_accuracy:%.4f' % final_max_avg_acc + '\n\n'
 
     file_name = 'summary_' + suffix + '.txt'
     with open(os.path.join(folder, file_name), 'w') as f:
@@ -460,9 +474,8 @@ if __name__ == "__main__":
     # data_dir='/home/prdcv/PycharmProjects/c3d_luanvan/data/'
     # count_number_of_frame_and_save_to_file(data_dir +'12gestures_video')
     # convert_video_dataset_to_images(data_dir +'12gestures_video',data_dir +'12gestures_images')
-    # summary_result('output/result/Kinect_1_Kinect_1_2019-01-29_19.50', subjects=c3d_params.subject_list)
-    summary_all_results('output/result_backup/table_30Jan2019_original_12gestures', subjects=c3d_params.subject_list,
-                        Kinects=c3d_params.Kinects)
+    summary_all_results('output/result_backup/table_30Jan2019_original_12gestures', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
+    #summary_result('output/result/K1_K1_2019-01-30_13.13',max_in_each_subject=True, subjects=c3d_params.subject_list)
     # summary_image_data( subjects=c3d_params.subject_list,  Kinects=c3d_params.Kinects, data_type='original_pre_3')
     # rename_data_after_clean('Kinect_3')
     # remove_nois_by_copy_roi('/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_3_clean_1/Thuan/5/1',

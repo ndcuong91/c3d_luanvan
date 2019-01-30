@@ -1,55 +1,55 @@
 fc6_linear
 	K1   	K2   	K3   	K4   	K5   
-K1	54.37	16.67	16.27	35.32	17.06	
-K2	18.25	58.73	23.81	    	    	
+K1	55.16	18.65	18.65	40.87	19.05	
+K2	19.84	61.51	28.97	    	    	
 K3	    	    	    	    	    	
 K4	    	    	    	    	    	
 K5	    	    	    	    	    	
-single-view: 56.55
-cross-view:  21.23
-total-view:  30.06
+single-view: 58.34
+cross-view:  24.34
+total-view:  32.84
 
 fc6_rbf
 	K1   	K2   	K3   	K4   	K5   
-K1	55.56	16.27	15.87	37.30	14.29	
-K2	17.06	57.54	24.60	    	    	
+K1	58.73	19.05	19.44	42.86	17.46	
+K2	20.63	60.32	26.59	    	    	
 K3	    	    	    	    	    	
 K4	    	    	    	    	    	
 K5	    	    	    	    	    	
-single-view: 56.55
-cross-view:  20.90
-total-view:  29.81
+single-view: 59.53
+cross-view:  24.34
+total-view:  33.14
 
 fc7_linear
 	K1   	K2   	K3   	K4   	K5   
-K1	52.78	18.65	17.06	33.33	17.06	
-K2	15.87	56.35	25.40	    	    	
+K1	55.16	21.03	17.86	38.10	18.25	
+K2	17.46	59.52	28.17	    	    	
 K3	    	    	    	    	    	
 K4	    	    	    	    	    	
 K5	    	    	    	    	    	
-single-view: 54.56
-cross-view:  21.23
-total-view:  29.56
+single-view: 57.34
+cross-view:  23.48
+total-view:  31.94
 
 fc7_rbf
 	K1   	K2   	K3   	K4   	K5   
-K1	54.76	16.67	17.46	34.92	16.27	
-K2	18.65	57.14	24.21	    	    	
+K1	58.73	17.86	19.44	38.10	18.65	
+K2	21.03	59.92	26.59	    	    	
+K3	    	    	    	    	    	
+K4	    	    	    	    	    	
+K5	    	    	    	    	    	
+single-view: 59.33
+cross-view:  23.61
+total-view:  32.54
+
+prob
+	K1   	K2   	K3   	K4   	K5   
+K1	51.98	17.86	18.25	32.14	19.44	
+K2	11.90	59.92	26.59	    	    	
 K3	    	    	    	    	    	
 K4	    	    	    	    	    	
 K5	    	    	    	    	    	
 single-view: 55.95
-cross-view:  21.36
-total-view:  30.01
-
-prob
-	K1   	K2   	K3   	K4   	K5   
-K1	50.00	14.29	16.27	26.19	17.46	
-K2	11.11	56.35	26.19	    	    	
-K3	    	    	    	    	    	
-K4	    	    	    	    	    	
-K5	    	    	    	    	    	
-single-view: 53.17
-cross-view:  18.59
-total-view:  27.23
+cross-view:  21.03
+total-view:  29.76
 
