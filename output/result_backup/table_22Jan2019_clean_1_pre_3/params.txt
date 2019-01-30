@@ -8,7 +8,7 @@ batch_size_test: 20
 batch_size_finetune: 20
 subject_list: Binh,Giang,Hung,Tan,Thuan
 subject_test: Binh,Giang,Hung,Tan,Thuan
-data_type_train: clean_1_aug_3_pad
-data_type_test: clean_1_aug_3_pad
+data_type_train: clean_1_pre_3
+data_type_test: clean_1_pre_3
 average_feature: True
 use center crop in finetuning instead of random crop

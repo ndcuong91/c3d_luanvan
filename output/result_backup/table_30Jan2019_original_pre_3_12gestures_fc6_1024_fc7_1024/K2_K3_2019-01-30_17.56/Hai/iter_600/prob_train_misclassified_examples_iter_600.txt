@@ -1,0 +1,5 @@
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Thuan/5/2/ 5 12
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Thuy/5/1/ 5 12
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Long/12/3/ 12 5
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Minh/2/3/ 2 10
+/home/dangmanhtruong95/Cuong/c3d_luanvan/output/intermediate_output_vector/Thuan/5/1/ 5 12

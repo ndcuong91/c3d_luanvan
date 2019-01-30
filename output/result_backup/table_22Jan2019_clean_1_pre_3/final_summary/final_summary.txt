@@ -1,40 +1,45 @@
 fc6_linear
-		 || Kinect_1 || Kinect_3 || Kinect_5 ||
-Kinect_1 ||  87.21   ||  40.20   ||  47.66   ||
-Kinect_3 ||  53.20   ||  95.78   ||  94.19   ||
-Kinect_5 ||  50.54   ||  83.79   ||  98.40   ||
-		single-view: 93.80
-		cross-view:  61.60
+	K1   	K3   	K5   
+K1	87.40	41.02	49.07	
+K3	54.24	96.26	94.61	
+K5	50.92	84.15	98.40	
+single-view: 94.02
+cross-view:  62.34
+total-view:  72.90
 
 fc6_rbf
-		 || Kinect_1 || Kinect_3 || Kinect_5 ||
-Kinect_1 ||  87.97   ||  43.41   ||  49.95   ||
-Kinect_3 ||  51.39   ||  95.81   ||  93.69   ||
-Kinect_5 ||  43.62   ||  83.17   ||  98.17   ||
-		single-view: 93.98
-		cross-view:  60.87
+	K1   	K3   	K5   
+K1	88.16	45.15	51.90	
+K3	53.73	95.81	94.17	
+K5	44.39	83.79	98.30	
+single-view: 94.09
+cross-view:  62.19
+total-view:  72.82
 
 fc7_linear
-		 || Kinect_1 || Kinect_3 || Kinect_5 ||
-Kinect_1 ||  87.06   ||  37.08   ||  50.56   ||
-Kinect_3 ||  52.94   ||  96.09   ||  92.68   ||
-Kinect_5 ||  49.49   ||  82.97   ||  98.80   ||
-		single-view: 93.98
-		cross-view:  60.95
+	K1   	K3   	K5   
+K1	87.23	37.27	50.96	
+K3	55.09	96.09	94.11	
+K5	50.38	83.69	98.80	
+single-view: 94.04
+cross-view:  61.92
+total-view:  72.62
 
 fc7_rbf
-		 || Kinect_1 || Kinect_3 || Kinect_5 ||
-Kinect_1 ||  87.65   ||  36.00   ||  46.86   ||
-Kinect_3 ||  51.40   ||  95.62   ||  93.09   ||
-Kinect_5 ||  44.45   ||  83.32   ||  98.53   ||
-		single-view: 93.93
-		cross-view:  59.19
+	K1   	K3   	K5   
+K1	88.03	37.32	47.55	
+K3	54.05	96.00	93.49	
+K5	45.32	84.11	98.53	
+single-view: 94.19
+cross-view:  60.31
+total-view:  71.60
 
 prob
-		 || Kinect_1 || Kinect_3 || Kinect_5 ||
-Kinect_1 ||  87.43   ||  56.66   ||  68.28   ||
-Kinect_3 ||  54.55   ||  95.55   ||  90.68   ||
-Kinect_5 ||  58.16   ||  84.67   ||  98.53   ||
-		single-view: 93.84
-		cross-view:  68.83
+	K1   	K3   	K5   
+K1	87.56	56.66	69.13	
+K3	56.09	96.01	91.47	
+K5	58.35	85.77	99.07	
+single-view: 94.21
+cross-view:  69.58
+total-view:  77.79
 
