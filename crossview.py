@@ -110,7 +110,9 @@ class C3DNetwork(object):
         """
 
         # Sh file
-        input_params = ( os.path.join(tool_dir,'compute_volume_mean_from_list.bin') , input_file, num_frame, resize_h, resize_w, output_volume_mean_file)
+        input_params = (
+        os.path.join(tool_dir, 'compute_volume_mean_from_list.bin'), input_file, num_frame, resize_h, resize_w,
+        output_volume_mean_file)
         self.__print_params_to_file__(input_params, self.template_compute_volume_mean_sh_file, \
                                       compute_volume_mean_sh_file)
 
@@ -201,7 +203,7 @@ class C3DNetwork(object):
         self.__print_params_to_file__(input_params, self.template_finetuning_prototxt_file, finetuning_prototxt_file)
 
         # Sh file
-        input_params = (os.path.join(tool_dir,'finetune_net.bin'), finetuning_solver_file, pretrained_model_file)
+        input_params = (os.path.join(tool_dir, 'finetune_net.bin'), finetuning_solver_file, pretrained_model_file)
         self.__print_params_to_file__(input_params, self.template_finetuning_sh_file, finetuning_sh_file)
 
         # CuongND. Check for GPU
@@ -240,8 +242,10 @@ class C3DNetwork(object):
                                       feature_extraction_prototxt_file)
 
         # Sh file
-        input_params = (os.path.join(tool_dir,'extract_image_features.bin'), feature_extraction_prototxt_file, pretrained_model_file, batch_size, num_of_batches, \
-                        output_file)
+        input_params = (
+        os.path.join(tool_dir, 'extract_image_features.bin'), feature_extraction_prototxt_file, pretrained_model_file,
+        batch_size, num_of_batches, \
+        output_file)
         self.__print_params_to_file__(input_params, self.template_feature_extraction_sh_file,
                                       feature_extraction_sh_file)
 
@@ -310,7 +314,8 @@ class KinectRunner(object):
         self.c3d_test_data_dir = 0
 
 
-def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name, num_of_actions, image_type, feature_extraction=False):
+def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name, num_of_actions, image_type,
+                     feature_extraction=False):
     in_name = name + ".lst"
     out_name = name + "_output.lst"
     in_fullpath = os.path.join(c3d_files_dir, in_name)
@@ -360,7 +365,7 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
                     # Example: 23 images, then it would be 1-16 and 8-23
 
                     counter = 1
-                    if(feature_extraction==False): #when finetuning, use all dataset
+                    if (feature_extraction == False):  # when finetuning, use all dataset
                         for _ in range(num_of_batches_of_num_images):
                             # Input
                             in_text = "%s/ %d %d\n" % (
@@ -378,7 +383,7 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
                             # Last batch: last 16 images
 
                         if (num_of_batches_of_num_images * config_params.num_frame) < num_of_images:
-                            counter = num_of_images - config_params.num_frame +1
+                            counter = num_of_images - config_params.num_frame + 1
                             # Input
                             in_text = "%s/ %d %d\n" % (
                                 fullpath_subject_action_epoch, counter, action_id - 1)  # CuongND. New folder for input
@@ -390,7 +395,7 @@ def create_lst_files(config_params, c3d_files_dir, data_dir, subject_list, name,
 
                             num_of_lines = num_of_lines + 1
                             counter = counter + config_params.num_frame
-                    else:  #when testing, extract only first 16 frames feature
+                    else:  # when testing, extract only first 16 frames feature
                         in_text = "%s/ %d %d\n" % (
                             fullpath_subject_action_epoch, counter, action_id - 1)  # CuongND.
                         f_in.write(in_text)
@@ -578,7 +583,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
     # Create train_01.lst5, train_01_output.lst, test_01.lst, test_01_output.lst
     c3d_train_data_dir = os.path.join(c3d_data_root, kinect_train + "_" + config_params.data_type_train)
 
-    #for finetuning, train all of dataset
+    # for finetuning, train all of dataset
     print('CuongND. Create list for finetuning')
     train_numlines = create_lst_files(config_params, c3d_files_dir, c3d_train_data_dir, train_list, "train_01",
                                       num_of_actions, image_type)
@@ -614,7 +619,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
         config_params.c3d_template_feature_extractor_sh
     )
 
-    begin_total_time=time.time()
+    begin_total_time = time.time()
 
     # Compute volume mean
     if (c3d_params.compute_volume_mean == True):
@@ -664,10 +669,10 @@ def c3d_train_and_test(train_list, test_list, config_params):
         elapsed_train = time.time() - start_train
         print "\nCuongND. Finetuning time: %d" % (elapsed_train)
 
-    #for feature extraction, no need to test all
+    # for feature extraction, no need to test all
     print('CuongND. Re-create feature extraction list')
     train_numlines = create_lst_files(config_params, c3d_files_dir, c3d_train_data_dir, train_list, "train_01",
-                                      num_of_actions, image_type,feature_extraction=True)
+                                      num_of_actions, image_type, feature_extraction=True)
     num_of_train_batches = train_numlines / batch_size
     if (num_of_train_batches * batch_size < train_numlines):
         num_of_train_batches = num_of_train_batches + 1
@@ -710,7 +715,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
 
         c3d_pretrained_model = config_params.snapshot_prefix + "_iter_" + str(iter_)
 
-        if (c3d_params.feature_extract  == True):
+        if (c3d_params.feature_extract == True):
             print "EXTRACT FEATURES ON TRAIN SET"
             print "Snapshot: %s" % (c3d_pretrained_model)
             original_network.feature_extraction(
@@ -934,7 +939,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                     np.savetxt(
                         os.path.join(
                             output_dir,
-                            os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)),
+                            os.path.join('result', "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)),
                             test_subject,
                             "iter_%d" % (iter_),
                             file_name),
@@ -951,7 +956,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                         r2_.misclassified_dict,
                         os.path.join(
                             output_dir,
-                            os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)),
+                            os.path.join('result', "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time)),
                             test_subject,
                             "iter_%d" % (iter_),
                             file_name))
@@ -967,4 +972,3 @@ def c3d_train_and_test(train_list, test_list, config_params):
     total_time = time.time() - begin_total_time
     print "\nCuongND. TOTAL TRAIN TEST TIME: %d" % (total_time)
     return result_list
-

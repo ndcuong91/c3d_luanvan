@@ -1,0 +1,8 @@
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hung/3/3/ 3 4
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hung/3/2/ 3 4
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hung/2/2/ 2 1
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hung/3/1/ 3 4
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hung/2/3/ 2 1
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hung/2/1/ 2 1
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hung/2/5/ 2 1
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hung/2/4/ 2 1

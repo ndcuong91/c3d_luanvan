@@ -1,1 +1,1 @@
-python run_crossview.py --step_size=500 --max_iter=300 --snapshot=100 --kinect_train='K1' --kinect_test_list='K1' --num_action=12
+python run_crossview.py --step_size=500 --max_iter=300 --snapshot=100 --kinect_train='K1' --kinect_test_list='K1'

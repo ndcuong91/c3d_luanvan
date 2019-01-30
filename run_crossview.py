@@ -10,13 +10,12 @@ from c3d_helper import delete_files_with_extension_in_folder, dump_plot_to_image
 import c3d_params
 from c3d_data_helper import summary_result
 
+
 def parse_args():
     """
     Written by by CuongND (nguyenduycuong2004@gmail.com)
     """
     parser = argparse.ArgumentParser(description='Train C3D hand-gesture networks by CuongND')
-    parser.add_argument('--num_action', type=int, default=12,
-                        help="Number of action.")
     parser.add_argument('--step_size', type=int, default=500,  # coco
                         help='Step to decrease learning rate.')
     parser.add_argument('--max_iter', type=int, default=500,
@@ -30,7 +29,9 @@ def parse_args():
     parser.add_argument('--average_feature', type=bool, default=False,
                         help='average feature or use only first x frames')
 
-    #optional params (already in c3d_params.py)
+    # optional params (already in c3d_params.py)
+    parser.add_argument('--num_action', type=int, default=12,
+                        help="Number of action.")
     parser.add_argument('--data_type_train', type=str, default='',
                         help='original, segmented...')
     parser.add_argument('--data_type_test', type=str, default='',
@@ -85,44 +86,47 @@ class ConfigParams(object):
     """
     args = parse_args()
     image_type = "jpg"
-    num_of_actions = args.num_action
     base_lr = args.base_lr
     gamma = args.gamma
     step_size = args.step_size
     max_iter = args.max_iter
     snapshot = args.snapshot
 
-    if(args.base_lr!=0.0):
+    if (args.num_action != 0):
+        num_of_actions = args.num_action
+    else:
+        num_of_actions = len(c3d_params.actions)
+    if (args.base_lr != 0.0):
         base_lr = args.base_lr
     else:
         base_lr = c3d_params.base_lr
-    if(args.gamma!=0.0):
+    if (args.gamma != 0.0):
         gamma = args.gamma
     else:
         gamma = c3d_params.gamma
-    if(args.batch_size_test!=0):
+    if (args.batch_size_test != 0):
         batch_size = args.batch_size_test  # For feature extraction
     else:
         batch_size = c3d_params.batch_size_test  # For feature extraction
-    if(args.batch_size_finetune!=0):
+    if (args.batch_size_finetune != 0):
         batch_size_finetune = args.batch_size_finetune  # For finetuning
     else:
         batch_size_finetune = c3d_params.batch_size_finetune  # For finetuning
 
-    if(args.subject_list!=''):
+    if (args.subject_list != ''):
         subject_list = [x.strip() for x in args.subject_list.split(',')]
     else:
         subject_list = [x.strip() for x in c3d_params.subject_list.split(',')]
 
-    if(args.subject_test!=''):
+    if (args.subject_test != ''):
         subject_test = [x.strip() for x in args.subject_test.split(',')]
     else:
         subject_test = [x.strip() for x in c3d_params.subject_test.split(',')]
-    if(args.data_type_train!=''):
+    if (args.data_type_train != ''):
         data_type_train = args.data_type_train
     else:
         data_type_train = c3d_params.data_type_train
-    if(args.data_type_test!=''):
+    if (args.data_type_test != ''):
         data_type_test = args.data_type_test
     else:
         data_type_test = c3d_params.data_type_test
@@ -278,7 +282,7 @@ if __name__ == "__main__":
     params_info = get_params_info(config_params)
 
     for kinect_test in config_params.kinect_test_list:
-        output_result_dir = os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
+        output_result_dir = os.path.join('result', "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
         create_folder(os.path.join(config_params.output_dir, output_result_dir))
 
         # CuongND. Save arguments.
@@ -326,7 +330,6 @@ if __name__ == "__main__":
                 continue
             train_list.append(train_subject)
 
-
         print "\n\nTEST SUBJECT " + str(
             count) + ': ' + test_subject + ' ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
         print "BEGINS\n\n"
@@ -335,8 +338,8 @@ if __name__ == "__main__":
         (result_list) = c3d_train_and_test(train_list, test_list, config_params)
 
         # Output to text files
-        output_result_dir = os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
-        print "\n\nWrite result to folder output/" + output_result_dir +'/'+test_subject +'\n\n'
+        output_result_dir = os.path.join('result', "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
+        print "\n\nWrite result to folder output/" + output_result_dir + '/' + test_subject + '\n\n'
         for kinect_test, r0_ in result_list.iteritems():
             for classification_method, r1_ in r0_.iteritems():
                 # Plot loss
@@ -423,7 +426,7 @@ if __name__ == "__main__":
     print ""
     # pdb.set_trace()
     for kinect_test, r0_ in avg_result.iteritems():
-        output_result_dir = os.path.join('result',"%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
+        output_result_dir = os.path.join('result', "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
         for classification_method, r1_ in r0_.iteritems():
             file_name = "%s_avg_acc.png" % (classification_method)
             # pdb.set_trace()
