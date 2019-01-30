@@ -92,13 +92,13 @@ def summary_all_results_in_folder(folder, Kinects, subjects):
         for name in names:
             if (name in dir):
                 summary_result(os.path.join(folder, dir), subjects=subjects, suffix=name)
-    print('Finish. Summary_all_results_in_folder '+folder)
+    print('Finish. Summary_all_results_in_folder ' + folder)
 
 
-def summary_all_results(folder, Kinects, data_type='fc6_linear,fc6_rbf,fc7_linear,fc7_rbf,prob'):
+def summary_all_results(folder, subjects, Kinects, data_type='fc6_linear,fc6_rbf,fc7_linear,fc7_rbf,prob'):
     sub_dir = get_list_dir_in_folder(folder)
-    final_acc = []
-    header = '\t\t'
+    final_acc = dict()
+    header = ''
     Kinects = Kinects.split(',')
     data_type = data_type.split(',')
     summary_dir = os.path.join(folder, 'final_summary')
@@ -106,57 +106,73 @@ def summary_all_results(folder, Kinects, data_type='fc6_linear,fc6_rbf,fc7_linea
     if not os.path.exists(summary_dir):
         os.makedirs(summary_dir)
     for kinect_train in Kinects:
-        header += ' || ' + kinect_train
+        header += '\t' + kinect_train+'   '
         for kinect_test in Kinects:
             folder_prefix = kinect_train + '_' + kinect_test
+            is_folder_exist = False
+            acc = []
             for dir in sub_dir:
                 if (folder_prefix in dir):
-                    result_file = summary_result(os.path.join(folder, dir))
+                    is_folder_exist = True
+                    result_file = summary_result(os.path.join(folder, dir), subjects=subjects, suffix=folder_prefix)
                     shutil.copy(result_file, os.path.join(summary_dir, folder_prefix))
                     with open(result_file) as f:
                         lines = f.readlines()
-                    acc = []
                     for i in range(len(data_type)):
                         result_line = len(lines) / len(data_type)
                         max_acc_str = lines[result_line * (i + 1)].split(':')
                         max_acc = float(max_acc_str[1].replace('\n', ''))
                         acc.append(max_acc)
-            final_acc.append(acc)
-    x = np.array(final_acc)
-    final_acc = x.transpose(1, 0).tolist()
+            if (is_folder_exist == True):
+                final_acc[folder_prefix] = acc
+            else:
+                final_acc[folder_prefix] = None
 
     single_view = dict()
     cross_view = dict()
     total_view = dict()
 
+    num_total_view =len(data_type)* num_kinect * num_kinect
+    num_single_view =len(data_type)* num_kinect
     for i in range(len(data_type)):
         t_view = 0
-        for j in range(len(final_acc[i])):
-            t_view += final_acc[i][j]
-        total_view[data_type[i]] = t_view
-
-    for i in range(len(data_type)):
         s_view = 0
-        total_view = 0
-        for j in range(num_kinect):
-            s_view += final_acc[i][j * (num_kinect + 1)]
+        for kinect_train in Kinects:
+            for kinect_test in Kinects:
+                folder_prefix = kinect_train + '_' + kinect_test
+                if (final_acc[folder_prefix] != None):
+                    t_view += final_acc[folder_prefix][i]
+                    if (kinect_test == kinect_train):
+                        s_view += final_acc[folder_prefix][i]
+                else:
+                    num_total_view=num_total_view-1
+                    if (kinect_test == kinect_train):
+                        num_single_view =num_single_view-1
+
+        total_view[data_type[i]] = t_view
         single_view[data_type[i]] = s_view
         cross_view[data_type[i]] = total_view[data_type[i]] - single_view[data_type[i]]
 
+    num_total_view=num_total_view/len(data_type)
+    num_single_view=num_single_view/len(data_type)
+    num_cross_view = num_total_view - num_single_view
+
     result = ''
-    header += ' ||'
+    #header
     for i in range(len(data_type)):
         result += data_type[i] + '\n' + header + '\n'
-        count = 0
         for kinect_train in Kinects:
-            result += kinect_train + ' ||'
+            result += kinect_train + '\t'
             for kinect_test in Kinects:
-                result += '  %.2f' % (100 * final_acc[i][count]) + '   ||'
-                count += 1
+                folder_prefix = kinect_train + '_' + kinect_test
+                if(final_acc[folder_prefix]!=None):
+                    result += '%.2f' % (100 * final_acc[folder_prefix][i]) + '\t'
+                else:
+                    result += '    \t'
             result += '\n'
-        result += '\t\tsingle-view: %.2f' % (100 * single_view[data_type[i]] / num_kinect) + '\n'
-        result += '\t\tcross-view:  %.2f' % ((100 * cross_view[data_type[i]]) / (num_kinect * (num_kinect - 1))) + '\n'
-        result += '\t\ttotal-view:  %.2f' % ((100 * total_view[data_type[i]]) / (num_kinect * num_kinect)) + '\n'
+        result += 'single-view: %.2f' % (100 * single_view[data_type[i]] / num_single_view) + '\n'
+        result += 'cross-view:  %.2f' % (100 * cross_view[data_type[i]] / num_cross_view) + '\n'
+        result += 'total-view:  %.2f' % (100 * total_view[data_type[i]] / num_total_view) + '\n'
         result += '\n'
 
     with open(os.path.join(summary_dir, 'final_summary.txt'), 'w') as f:
@@ -188,7 +204,7 @@ def summary_image_data(subjects, Kinects, data_type='clean_1_rename'):
     for Kinect in Kinects:
         for subject in subjects:
             print('Make video samples from images in ' + subject + '_' + Kinect)
-            destination_dir = os.path.join(image_data_dir, Kinect + '_' + data_type + '_summary', subject)
+            destination_dir = os.path.join(image_data_dir, Kinect + '_' + data_type + '_video_from_images', subject)
             if not os.path.exists(destination_dir):
                 os.makedirs(destination_dir)
             for action in actions:
@@ -445,10 +461,9 @@ if __name__ == "__main__":
     # count_number_of_frame_and_save_to_file(data_dir +'12gestures_video')
     # convert_video_dataset_to_images(data_dir +'12gestures_video',data_dir +'12gestures_images')
     # summary_result('output/result/Kinect_1_Kinect_1_2019-01-29_19.50', subjects=c3d_params.subject_list)
-    summary_all_results_in_folder('output/result', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
-    # check_gpu_ready(allocate_mem=1330,total_gpu_mem=2002,log_time=60)
-
-    # summary_image_data(data_type='clean_1_augmented_padding_new')
+    summary_all_results('output/result_backup/table_30Jan2019_original_12gestures', subjects=c3d_params.subject_list,
+                        Kinects=c3d_params.Kinects)
+    # summary_image_data( subjects=c3d_params.subject_list,  Kinects=c3d_params.Kinects, data_type='original_pre_3')
     # rename_data_after_clean('Kinect_3')
     # remove_nois_by_copy_roi('/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_3_clean_1/Thuan/5/1',
     #                      [211,194,200,180],

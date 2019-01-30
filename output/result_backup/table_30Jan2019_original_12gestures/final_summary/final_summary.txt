@@ -1,0 +1,55 @@
+fc6_linear
+	K1   	K2   	K3   	K4   	K5   
+K1	54.37	16.67	16.27	35.32	17.06	
+K2	18.25	58.73	23.81	    	    	
+K3	    	    	    	    	    	
+K4	    	    	    	    	    	
+K5	    	    	    	    	    	
+single-view: 56.55
+cross-view:  21.23
+total-view:  30.06
+
+fc6_rbf
+	K1   	K2   	K3   	K4   	K5   
+K1	55.56	16.27	15.87	37.30	14.29	
+K2	17.06	57.54	24.60	    	    	
+K3	    	    	    	    	    	
+K4	    	    	    	    	    	
+K5	    	    	    	    	    	
+single-view: 56.55
+cross-view:  20.90
+total-view:  29.81
+
+fc7_linear
+	K1   	K2   	K3   	K4   	K5   
+K1	52.78	18.65	17.06	33.33	17.06	
+K2	15.87	56.35	25.40	    	    	
+K3	    	    	    	    	    	
+K4	    	    	    	    	    	
+K5	    	    	    	    	    	
+single-view: 54.56
+cross-view:  21.23
+total-view:  29.56
+
+fc7_rbf
+	K1   	K2   	K3   	K4   	K5   
+K1	54.76	16.67	17.46	34.92	16.27	
+K2	18.65	57.14	24.21	    	    	
+K3	    	    	    	    	    	
+K4	    	    	    	    	    	
+K5	    	    	    	    	    	
+single-view: 55.95
+cross-view:  21.36
+total-view:  30.01
+
+prob
+	K1   	K2   	K3   	K4   	K5   
+K1	50.00	14.29	16.27	26.19	17.46	
+K2	11.11	56.35	26.19	    	    	
+K3	    	    	    	    	    	
+K4	    	    	    	    	    	
+K5	    	    	    	    	    	
+single-view: 53.17
+cross-view:  18.59
+total-view:  27.23
+
