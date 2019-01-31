@@ -6,7 +6,7 @@ from subprocess import call
 from os import listdir
 from os.path import isfile, isdir, join
 
-C3D_HOME='/home/prdcv/PycharmProjects/luanvan/C3D'
+C3D_HOME='/home/prdcv/PycharmProjects/c3d_luanvan/C3D_code'
 
 def extract_files(vid_folders):
     """After we have all of our videos split between train and test, and
@@ -22,13 +22,20 @@ def extract_files(vid_folders):
 
     Extracting can be done with ffmpeg:
     `ffmpeg -i video.mpg image-%04d.jpg`
+
+    need to install ffmpeg
+    sudo add-apt-repository ppa:jonathonf/ffmpeg-4
+    sudo apt-get update
+    sudo apt-get install ffmpeg
     """
 
     class_folders = [f for f in listdir(vid_folders) if isdir(join(vid_folders, f))]
+    class_folders.sort()
 
     for vid_class in class_folders:
 
         class_files = [f for f in listdir(vid_folders+'/'+vid_class) if isfile(join(vid_folders+'/'+vid_class, f))]
+        class_files.sort()
 
         for vid_file in class_files:
 
@@ -44,6 +51,7 @@ def extract_files(vid_folders):
                 continue
 
             dest = dest_dir + '/%06d.jpg'
+
             call(["ffmpeg", "-i", src, dest])
 
              # Now get how many frames it is.
@@ -54,7 +62,7 @@ def extract_files(vid_folders):
 
 def mod_file_list(frm_file):
     with open(frm_file, 'r') as myfile:
-        data = myfile.read().replace('/data/users/trandu/datasets/ucf101',C3D_HOME+'/C3D-v1.1/data/UCF-101')
+        data = myfile.read().replace('/data/users/trandu/datasets/ucf101',C3D_HOME+'/C3D-v1.0/data/UCF-101')
         myfile.close()
     with open(frm_file, 'w') as myfile:
         myfile.write(data)
@@ -63,7 +71,7 @@ def mod_file_list(frm_file):
 
 def mod_file_prefix(frm_file):
     with open(frm_file, 'r') as myfile:
-        data = myfile.read().replace('/data/users/trandu/datasets/ucf101/c3d_resnet18_r2',C3D_HOME+'/C3D-v1.1/data/UCF-101/frm')
+        data = myfile.read().replace('/data/users/trandu/datasets/ucf101/c3d_resnet18_r2',C3D_HOME+'/C3D-v1.0/data/UCF-101/frm')
         myfile.close()
     with open(frm_file, 'w') as myfile:
         myfile.write(data)
@@ -72,11 +80,11 @@ def mod_file_prefix(frm_file):
 
 def main():
     #extract frame from UCF101 videos
-    extract_files(C3D_HOME+'/C3D-v1.1/data/UCF-101/vids')
+    extract_files(C3D_HOME+'/C3D-v1.0/data/UCF-101/vids')
 
     #modify file ucf101_video_frame.list and ucf101_video_frame.list
-    mod_file_list(C3D_HOME+'/C3D-v1.1/examples/c3d_ucf101_feature_extraction/ucf101_video_frame.list')
-    mod_file_prefix(C3D_HOME+'/C3D-v1.1/examples/c3d_ucf101_feature_extraction/ucf101_video_frame.prefix')
+    #mod_file_list(C3D_HOME+'/C3D-v1.1/examples/c3d_ucf101_feature_extraction/ucf101_video_frame.list')
+    #mod_file_prefix(C3D_HOME+'/C3D-v1.1/examples/c3d_ucf101_feature_extraction/ucf101_video_frame.prefix')
     mod_file_list(C3D_HOME+'/C3D-v1.0/examples/c3d_finetuning/test_01.lst')
     mod_file_list(C3D_HOME+'/C3D-v1.0/examples/c3d_finetuning/train_01.lst')
 if __name__ == '__main__':

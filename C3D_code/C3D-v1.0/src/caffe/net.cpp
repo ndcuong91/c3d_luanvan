@@ -326,12 +326,16 @@ void Net<Dtype>::CopyTrainedLayersFrom(const NetParameter& param) {
     CHECK_EQ(target_blobs.size(), source_layer.blobs_size())
         << "Incompatible number of blobs for layer " << source_layer_name;
     for (int j = 0; j < target_blobs.size(); ++j) {
-      CHECK_EQ(target_blobs[j]->num(), source_layer.blobs(j).num());
-      CHECK_EQ(target_blobs[j]->channels(), source_layer.blobs(j).channels());
-      if (source_layer.blobs(j).length()) //  only check new train model
-    	  CHECK_EQ(target_blobs[j]->length(), source_layer.blobs(j).length());
-      CHECK_EQ(target_blobs[j]->height(), source_layer.blobs(j).height());
-      CHECK_EQ(target_blobs[j]->width(), source_layer.blobs(j).width());
+      if( target_blobs[j]->num()!= source_layer.blobs(j).num())
+    {
+      LOG(INFO)<<"CuongND.CopyTrainedLayersFrom. " << source_layer_name <<": Different number of filter between pre-trained and new prototxt model ";
+    }
+      // CHECK_EQ(target_blobs[j]->num(), source_layer.blobs(j).num());
+      // CHECK_EQ(target_blobs[j]->channels(), source_layer.blobs(j).channels());
+      // if (source_layer.blobs(j).length()) //  only check new train model
+    	//   CHECK_EQ(target_blobs[j]->length(), source_layer.blobs(j).length());
+      // CHECK_EQ(target_blobs[j]->height(), source_layer.blobs(j).height());
+      // CHECK_EQ(target_blobs[j]->width(), source_layer.blobs(j).width());
       target_blobs[j]->FromProto(source_layer.blobs(j));
     }
   }

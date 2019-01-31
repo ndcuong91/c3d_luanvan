@@ -1,4 +1,4 @@
-name: "DeepConv3DNet_ucf101_finetuning"
+name: "DeepConv3DNet_sport1m_finetuning"
 layers {
   name: "data"
   type: VIDEO_DATA
@@ -27,6 +27,8 @@ layers {
   top: "conv1a"
   blobs_lr: 1
   blobs_lr: 2
+  # blobs_lr: 0 
+  # blobs_lr: 0
   weight_decay: 1
   weight_decay: 0
   convolution_param {
@@ -72,6 +74,8 @@ layers {
   top: "conv2a"
   blobs_lr: 1
   blobs_lr: 2
+  #blobs_lr: 0
+  #blobs_lr: 0
   weight_decay: 1
   weight_decay: 0
   convolution_param {
@@ -117,6 +121,8 @@ layers {
   top: "conv3a"
   blobs_lr: 1
   blobs_lr: 2
+  #blobs_lr: 0
+  #blobs_lr: 0
   weight_decay: 1
   weight_decay: 0
   convolution_param {
@@ -148,6 +154,8 @@ layers {
   top: "conv3b"
   blobs_lr: 1
   blobs_lr: 2
+  #blobs_lr: 0
+  #blobs_lr: 0
   weight_decay: 1
   weight_decay: 0
   convolution_param {
@@ -194,6 +202,8 @@ layers {
   top: "conv4a"
   blobs_lr: 1
   blobs_lr: 2
+  #blobs_lr: 0
+  #blobs_lr: 0
   weight_decay: 1
   weight_decay: 0
   convolution_param {
@@ -225,6 +235,8 @@ layers {
   top: "conv4b"
   blobs_lr: 1
   blobs_lr: 2
+  #blobs_lr: 0
+  #blobs_lr: 0
   weight_decay: 1
   weight_decay: 0
   convolution_param {
@@ -269,8 +281,10 @@ layers {
   type: CONVOLUTION3D
   bottom: "pool4"
   top: "conv5a"
-  blobs_lr: 1
+  blobs_lr: 1 
   blobs_lr: 2
+  #blobs_lr: 0
+  #blobs_lr: 0
   weight_decay: 1
   weight_decay: 0
   convolution_param {
@@ -302,6 +316,8 @@ layers {
   top: "conv5b"
   blobs_lr: 1
   blobs_lr: 2
+  #blobs_lr: 0
+  #blobs_lr: 0
   weight_decay: 1
   weight_decay: 0
   convolution_param {
@@ -351,7 +367,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 1024
+    num_output: 4096
     weight_filler {
       type: "gaussian"
       std: 0.005
@@ -387,7 +403,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 1024
+    num_output: 4096
     weight_filler {
     type: "gaussian"
       std: 0.005
@@ -423,7 +439,7 @@ layers {
   weight_decay: 1
   weight_decay: 0
   inner_product_param {
-    num_output: 101
+    num_output: 12
     weight_filler {
       type: "gaussian"
       std: 0.01

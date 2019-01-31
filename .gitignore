@@ -14,6 +14,9 @@ output/intermediate_model_snapshot/
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000_mod
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000_new
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000_origin
+*.solverstate
+*c3d_ucf101_finetune_whole_iter*
+*conv3d_deepnetA_sport1m_iter*
 
 #DATA
 
@@ -57,6 +60,7 @@ data/12gestures_images_RGB/K5_original_pre_3/
 data/K1_original_pre_3/
 data/K5_clean_1_pre_3/
 data/K5_original_pre_3/
+C3D_code/C3D-v1.0/data/UCF-101/
 
 
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000

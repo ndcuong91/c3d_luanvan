@@ -9,6 +9,7 @@ from datetime import datetime
 from c3d_helper import delete_files_with_extension_in_folder, dump_plot_to_image_file, get_params_info
 import c3d_params
 from c3d_data_helper import summary_result
+import time
 
 
 def parse_args():
@@ -292,6 +293,7 @@ if __name__ == "__main__":
     max_iter = config_params.max_iter
 
     params_info = get_params_info(config_params)
+    time.sleep(5)  # prevent create new folder
 
     for kinect_test in config_params.kinect_test_list:
         output_result_dir = os.path.join('result', "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))
