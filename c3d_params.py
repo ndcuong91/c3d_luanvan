@@ -44,7 +44,7 @@ if (pc_name == 'japan'):
     if (num_action == 5):
         c3d_data_root = "/home/prdcv/PycharmProjects/c3d_luanvan/data"
     c3d_files_dir = "/home/prdcv/PycharmProjects/c3d_luanvan/c3d_files"
-    tool_dir = '/home/prdcv/PycharmProjects/c3d_luanvan/C3D_sourcecode/C3D-v1.0/build/tools'
+    tool_dir = 'C3D_code/C3D-v1.0/build/tools'
 
 if (pc_name == 'duycuong'):
     compute_volume_mean = False

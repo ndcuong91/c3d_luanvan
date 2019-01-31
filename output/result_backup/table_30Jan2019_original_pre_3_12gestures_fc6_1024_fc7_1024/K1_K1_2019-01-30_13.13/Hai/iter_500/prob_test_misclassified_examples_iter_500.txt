@@ -1,0 +1,13 @@
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/5/2/ 5 12
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/5/3/ 5 12
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/10/1/ 10 9
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/11/3/ 11 4
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/11/1/ 11 12
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/2/1/ 2 8
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/6/1/ 6 7
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/2/2/ 2 9
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/3/1/ 3 8
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/9/3/ 9 10
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/2/3/ 2 9
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/5/1/ 5 12
+/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/10/3/ 10 9

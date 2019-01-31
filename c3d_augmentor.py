@@ -139,6 +139,7 @@ def pre_3(data_folder, kinect_folder, target_folder, subject, action, subject_id
             cv2.imwrite(os.path.join(action_folder_augmented, sample, image), shift_image)
 
 
+
 if __name__ == "__main__":
     Kinects = c3d_params.Kinects.split(',')
     subjects = c3d_params.subject_list.split(',')
