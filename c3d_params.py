@@ -1,6 +1,6 @@
 pc_name = 'japan'  # japan, 300, mica: for running # duycuong: for coding
 
-compute_volume_mean = False
+compute_volume_mean = True
 finetuning = True
 feature_extract = True
 num_action=12
@@ -36,7 +36,7 @@ if (num_action == 5):
     c3d_data_root = "data"
 
 tool_dir='C3D_code/C3D-v1.0/build/tools'
-#tool_dir = '/home/dangmanhtruong95/C3D-master_JPG/build_CuongND/tools'
+tool_dir = '/home/dangmanhtruong95/C3D-master_JPG/build_CuongND/tools'
 
 if (pc_name == 'japan'):
     tool_dir = 'C3D_code/C3D-v1.0/build/tools'
