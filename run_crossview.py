@@ -184,6 +184,18 @@ class ConfigParams(object):
     c3d_feature_extraction_for_test_dir = os.path.join(c3d_files_dir, "feature_extraction_for_test")
     c3d_intermediate_model_snapshot_dir = os.path.join(output_dir, "intermediate_model_snapshot")
 
+    if not os.path.exists(c3d_pretrained_model_and_volume_mean_dir):
+        os.makedirs(c3d_pretrained_model_and_volume_mean_dir)
+    if not os.path.exists(c3d_finetuning_dir):
+        os.makedirs(c3d_finetuning_dir)
+    if not os.path.exists(c3d_feature_extraction_for_train_dir):
+        os.makedirs(c3d_feature_extraction_for_train_dir)
+    if not os.path.exists(c3d_feature_extraction_for_test_dir):
+        os.makedirs(c3d_feature_extraction_for_test_dir)
+    if not os.path.exists(c3d_intermediate_model_snapshot_dir):
+        os.makedirs(c3d_intermediate_model_snapshot_dir)
+
+
     c3d_compute_volume_mean_sh = os.path.join(c3d_pretrained_model_and_volume_mean_dir,
                                               "c3d_sport1m_compute_volume_mean.sh")
     c3d_pretrained_model = os.path.join(c3d_pretrained_model_and_volume_mean_dir,
