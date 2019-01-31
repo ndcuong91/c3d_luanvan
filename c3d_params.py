@@ -1,7 +1,7 @@
 pc_name = 'japan'  # japan, 300, mica: for running # duycuong: for coding
 
 compute_volume_mean = True
-finetuning = True
+finetuning = False
 feature_extract = True
 num_action=12
 

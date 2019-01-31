@@ -1,2 +1,0 @@
-GLOG_minloglevel=2 /home/prdcv/PycharmProjects/c3d_luanvan/C3D_sourcecode/C3D-v1.0/build/tools/extract_image_features.bin /home/prdcv/PycharmProjects/c3d_luanvan/c3d_files/feature_extraction_for_test/c3d_sport1m_feature_extractor_frm_test_Kinect_2.prototxt /home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_model_snapshot/c3d_sport1m_finetune_whole_iter_600 0 20 2 /home/prdcv/PycharmProjects/c3d_luanvan/c3d_files/test_01_Kinect_2_output.lst fc7 fc6 prob
-

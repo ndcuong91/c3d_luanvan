@@ -1,2 +1,0 @@
-GLOG_logtostderr=1 /home/dangmanhtruong95/C3D-master_JPG/build/tools/extract_image_features.bin /home/dangmanhtruong95/Cuong/Cuong_C3D_files/feature_extraction_for_test/c3d_sport1m_feature_extractor_frm_test_Kinect_3.prototxt /home/dangmanhtruong95/Cuong/Cuong_C3D_files/intermediate_model_snapshot/c3d_sport1m_finetune_whole_iter_400 0 20 3 /home/dangmanhtruong95/Cuong/Cuong_C3D_files/test_01_Kinect_3_output.lst fc7 fc6 prob 
-
