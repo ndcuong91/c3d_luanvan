@@ -3,16 +3,8 @@
 copy_from_server
 copy_result_from_server
 copy_to_server
-c3d_files/test_01_Kinect_1.lst
-c3d_files/test_01_Kinect_1_output.lst
-c3d_files/train_01.lst
-c3d_files/train_01_output.lst
-c3d_files/test_01_K1.lst
-c3d_files/test_01_K1_output.lst
-c3d_files/test_01_K3.lst
-c3d_files/test_01_K3_output.lst
-c3d_files/test_01_K5.lst
-c3d_files/test_01_K5_output.lst
+*.lst
+.idea/
 output/result_sample/
 output/result/
 C3D_sourcecode/C3D-v1.0/examples/c3d_feature_extraction/conv3d_deepnetA_sport1m_iter_1900000
@@ -57,6 +49,14 @@ data/12gestures/K2_segmented_old/
 data/12gestures/K3_segmented_old/
 data/12gestures/K4_segmented_old/
 data/12gestures/K5_segmented_old/
+data/12gestures_images_RGB/K1_original_pre_3/
+data/12gestures_images_RGB/K2_original_pre_3/
+data/12gestures_images_RGB/K3_original_pre_3/
+data/12gestures_images_RGB/K4_original_pre_3/
+data/12gestures_images_RGB/K5_original_pre_3/
+data/K1_original_pre_3/
+data/K5_clean_1_pre_3/
+data/K5_original_pre_3/
 
 
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000
