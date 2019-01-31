@@ -1,0 +1,3 @@
+output/intermediate_output_vector/Tuyen/2/2/ 2 10
+output/intermediate_output_vector/Long/2/2/ 2 10
+output/intermediate_output_vector/Hai/10/3/ 10 9

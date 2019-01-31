@@ -1,0 +1,31 @@
+num_action: 12
+base_lr: 0.0001
+gamma: 0.1
+step_size: 500
+max_iter: 600
+snapshot: 100
+batch_size_test: 20
+batch_size_finetune: 20
+subject_list: Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen
+subject_test: Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen
+kinect_train: K2
+kinect_test_list: K1
+data_type_train: original_pre_3
+data_type_test: original_pre_3
+average_feature: False
+
+C3D Structure (default vaule --> new value): 
+resize: 171,128 --> 171,128
+crop: 112 --> 112
+num_frame: 16 --> 16
+conv1a: 64 --> 64
+conv2a: 128 --> 128
+conv3a: 256 --> 256
+conv3b: 256 --> 256
+conv4a: 512 --> 512
+conv4b: 512 --> 512
+conv5a: 512 --> 512
+conv5b: 512 --> 512
+fc6: 4096 --> 1024
+fc7: 4096 --> 1024
+use center crop in finetuning instead of random crop
