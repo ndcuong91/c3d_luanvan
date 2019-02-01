@@ -8,8 +8,8 @@ num_action=12
 # optional
 base_lr = 0.0001
 gamma = 0.1
-data_type_train = 'original_pre_3'
-data_type_test = 'original_pre_3'
+data_type_train = 'original'
+data_type_test = 'original'
 batch_size_test = 20
 batch_size_finetune = 20
 
