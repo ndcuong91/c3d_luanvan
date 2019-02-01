@@ -1,4 +1,4 @@
-pc_name = 'japan'  # japan, 300, mica: for running # duycuong: for coding
+pc_name = 'mica'  # 300, mica: for running # duycuong: for coding
 
 compute_volume_mean = True
 finetuning = True
@@ -8,10 +8,12 @@ num_action=12
 # optional
 base_lr = 0.0001
 gamma = 0.1
-data_type_train = 'original'
-data_type_test = 'original'
+data_type_train = 'original_pre_3'
+data_type_test = 'original_pre_3'
 batch_size_test = 20
 batch_size_finetune = 20
+#pretrained_model='conv3d_deepnetA_sport1m_iter_1900000'
+pretrained_model='c3d_ucf101_finetune_whole_iter_20000_fc6_1024_fc7_1024'
 
 if (num_action==12):
     subject_list = 'Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen'
@@ -37,9 +39,6 @@ if (num_action == 5):
 
 tool_dir='C3D_code/C3D-v1.0/build/tools'
 #tool_dir = '/home/dangmanhtruong95/C3D-master_JPG/build_CuongND/tools'
-
-if (pc_name == 'japan'):
-    tool_dir = 'C3D_code/C3D-v1.0/build/tools'
 
 if (pc_name == 'duycuong'):
     compute_volume_mean = False

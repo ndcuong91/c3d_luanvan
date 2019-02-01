@@ -199,8 +199,7 @@ class ConfigParams(object):
 
     c3d_compute_volume_mean_sh = os.path.join(c3d_pretrained_model_and_volume_mean_dir,
                                               "c3d_sport1m_compute_volume_mean.sh")
-    c3d_pretrained_model = os.path.join(c3d_pretrained_model_and_volume_mean_dir,
-                                        "conv3d_deepnetA_sport1m_iter_1900000")
+    c3d_pretrained_model = os.path.join(c3d_pretrained_model_and_volume_mean_dir,c3d_params.pretrained_model)
     c3d_volume_mean_file = os.path.join(c3d_pretrained_model_and_volume_mean_dir, "c3d_sport1m_volume_mean.binaryproto")
 
     c3d_finetuning_solver = os.path.join(c3d_finetuning_dir, "c3d_sport1m_finetuning_solver.prototxt")
