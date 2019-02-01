@@ -1,4 +1,4 @@
-scp -P 8001 c3d_helper.py dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/
+scp -P 8001 c3d_ucf101_finetune_whole_iter_20000_fc6_1024 dangmanhtruong95@mica.edu.vn:~/Cuong/c3d_luanvan/c3d_files
 #scp -P 8001 data/Kinect_1_clean_1_rename/crop_aug_3 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data/Kinect_1_clean_1_rename/
 #scp -P 8001 data/Kinect_3_clean_1_rename/crop_aug_3 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data/Kinect_3_clean_1_rename/
 #scp -P 8001 data/Kinect_3_clean_1_rename/crop_aug_3 dangmanhtruong95@mica.edu.vn:/media/data2/users/dangmanhtruong95/Cuong_data/Kinect_5_clean_1_rename/

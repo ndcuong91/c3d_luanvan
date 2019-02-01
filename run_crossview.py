@@ -96,7 +96,7 @@ class ConfigParams(object):
     if (args.num_action != 0):
         num_of_actions = args.num_action
     else:
-        num_of_actions = len(c3d_params.actions)
+        num_of_actions = c3d_params.num_action
     if (args.base_lr != 0.0):
         base_lr = args.base_lr
     else:
@@ -473,4 +473,4 @@ if __name__ == "__main__":
                 delimiter=' ',
                 fmt="%f")
 
-        summary_result(os.path.join(c3d_params.output_dir, output_result_dir), subjects=c3d_params.subject_list)
+        summary_result(os.path.join(c3d_params.output_dir, output_result_dir),suffix = kinect_train+'_'+ kinect_test, subjects=c3d_params.subject_list)
