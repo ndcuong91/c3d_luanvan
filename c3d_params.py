@@ -12,8 +12,8 @@ data_type_train = 'original_pre_3'
 data_type_test = 'original_pre_3'
 batch_size_test = 20
 batch_size_finetune = 20
-#pretrained_model='conv3d_deepnetA_sport1m_iter_1900000'
-pretrained_model='c3d_ucf101_finetune_whole_iter_20000_fc6_1024_fc7_1024'
+pretrained_model='conv3d_deepnetA_sport1m_iter_1900000'
+#pretrained_model='c3d_ucf101_finetune_whole_iter_20000_fc6_1024_fc7_1024'
 
 if (num_action==12):
     subject_list = 'Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen'

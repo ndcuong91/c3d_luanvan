@@ -1,0 +1,2 @@
+output/intermediate_output_vector/Thuan/4/2/ 4 1
+output/intermediate_output_vector/Long/12/3/ 12 5
