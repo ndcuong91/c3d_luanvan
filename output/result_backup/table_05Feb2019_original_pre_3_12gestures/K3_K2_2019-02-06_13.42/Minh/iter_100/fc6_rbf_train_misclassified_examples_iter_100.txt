@@ -1,0 +1,1 @@
+output/intermediate_output_vector/Tuyen/2/1/ 2 10

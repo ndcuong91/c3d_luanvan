@@ -1,0 +1,17 @@
+output/intermediate_output_vector/Tuyen/10/1/ 10 4
+output/intermediate_output_vector/Tuyen/9/1/ 9 2
+output/intermediate_output_vector/Tuyen/11/2/ 11 12
+output/intermediate_output_vector/Tuyen/11/3/ 11 4
+output/intermediate_output_vector/Tuyen/11/1/ 11 12
+output/intermediate_output_vector/Tuyen/4/3/ 4 12
+output/intermediate_output_vector/Tuyen/9/3/ 9 4
+output/intermediate_output_vector/Tuyen/5/1/ 5 12
+output/intermediate_output_vector/Tuyen/7/1/ 7 6
+output/intermediate_output_vector/Tuyen/7/3/ 7 8
+output/intermediate_output_vector/Tuyen/5/2/ 5 4
+output/intermediate_output_vector/Tuyen/7/2/ 7 8
+output/intermediate_output_vector/Tuyen/2/2/ 2 4
+output/intermediate_output_vector/Tuyen/5/3/ 5 4
+output/intermediate_output_vector/Tuyen/2/3/ 2 4
+output/intermediate_output_vector/Tuyen/2/1/ 2 10
+output/intermediate_output_vector/Tuyen/9/2/ 9 4

@@ -1,0 +1,4 @@
+output/intermediate_output_vector/Thuy/5/1/ 5 1
+output/intermediate_output_vector/Long/11/2/ 11 12
+output/intermediate_output_vector/Thuan/2/2/ 2 8
+output/intermediate_output_vector/Hai/10/3/ 10 9

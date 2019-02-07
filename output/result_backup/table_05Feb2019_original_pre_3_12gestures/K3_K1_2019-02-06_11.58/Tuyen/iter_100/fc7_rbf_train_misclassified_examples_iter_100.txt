@@ -1,0 +1,2 @@
+output/intermediate_output_vector/Minh/11/2/ 11 7
+output/intermediate_output_vector/Thuan/5/1/ 5 12

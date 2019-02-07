@@ -1,0 +1,2 @@
+output/intermediate_output_vector/Tuyen/10/2/ 10 9
+output/intermediate_output_vector/Hai/10/3/ 10 2
