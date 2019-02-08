@@ -145,8 +145,11 @@ void* VideoDataLayerPrefetch(void* layer_pointer) {
       int h_off, w_off;
       // We only do random crop when we do training.
       if (layer->phase_ == Caffe::TRAIN) {
-        h_off = layer->PrefetchRand() % (height - crop_size);
-        w_off = layer->PrefetchRand() % (width - crop_size);
+      LOG(INFO)<<"CuongND. Use center crop instead of random crop in training"
+        h_off = (height - crop_size) / 2;
+        w_off = (width - crop_size) / 2;
+//        h_off = layer->PrefetchRand() % (height - crop_size);
+//        w_off = layer->PrefetchRand() % (width - crop_size);
       } else {
         h_off = (height - crop_size) / 2;
         w_off = (width - crop_size) / 2;
