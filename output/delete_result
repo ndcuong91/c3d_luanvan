@@ -1,0 +1,4 @@
+rm result.tar 
+rm -R result/
+mkdir result
+

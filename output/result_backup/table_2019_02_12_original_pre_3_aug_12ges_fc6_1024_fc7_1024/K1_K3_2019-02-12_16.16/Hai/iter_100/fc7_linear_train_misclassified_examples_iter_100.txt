@@ -1,0 +1,3 @@
+output/intermediate_output_vector/Minh/11/3_4/ 11 4
+output/intermediate_output_vector/Giang/4/1_3/ 4 11
+output/intermediate_output_vector/Giang/4/3_5/ 4 11

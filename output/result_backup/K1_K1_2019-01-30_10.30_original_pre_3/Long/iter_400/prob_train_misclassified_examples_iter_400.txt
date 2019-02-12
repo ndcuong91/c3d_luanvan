@@ -1,3 +1,0 @@
-/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Thuan/5/1/ 5 12
-/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Tuyen/10/2/ 10 9
-/home/prdcv/PycharmProjects/c3d_luanvan/output/intermediate_output_vector/Hai/10/3/ 10 9

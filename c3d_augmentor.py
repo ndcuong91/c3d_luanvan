@@ -164,11 +164,11 @@ if __name__ == "__main__":
                     pre_aug_2(data_folder, kinect_folder, target_folder, subjects[n], actions[i],
                                     final_pos)
             if (method == 3):
-                suffix='pre_3_aug'
+                suffix='pre_3'
                 target_folder = kinect + '_'+data_type+'_'+suffix
                 for i in range(len(actions)):
                     print(str(i + 1)),
-                    pre_3_aug(data_folder, kinect_folder, target_folder, subjects[n],
+                    pre_3(data_folder, kinect_folder, target_folder, subjects[n],
                           actions[i], n)
 
     print('Finish.')

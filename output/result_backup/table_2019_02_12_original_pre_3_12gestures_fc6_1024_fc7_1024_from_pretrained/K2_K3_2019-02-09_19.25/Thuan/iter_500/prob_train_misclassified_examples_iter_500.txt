@@ -1,0 +1,3 @@
+output/intermediate_output_vector/Thuy/2/3/ 2 10
+output/intermediate_output_vector/Giang/2/3/ 2 10
+output/intermediate_output_vector/Thuy/12/3/ 12 5

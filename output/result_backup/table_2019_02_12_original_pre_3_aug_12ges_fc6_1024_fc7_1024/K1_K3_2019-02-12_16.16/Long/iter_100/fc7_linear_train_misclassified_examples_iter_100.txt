@@ -1,0 +1,10 @@
+output/intermediate_output_vector/Hai/5/1_5/ 5 12
+output/intermediate_output_vector/Giang/4/1_5/ 4 11
+output/intermediate_output_vector/Giang/4/1_2/ 4 11
+output/intermediate_output_vector/Giang/4/1_3/ 4 11
+output/intermediate_output_vector/Hai/4/3_3/ 4 11
+output/intermediate_output_vector/Minh/11/3_4/ 11 4
+output/intermediate_output_vector/Giang/4/1_1/ 4 11
+output/intermediate_output_vector/Giang/4/3_5/ 4 11
+output/intermediate_output_vector/Giang/11/1_5/ 11 4
+output/intermediate_output_vector/Hai/4/3_1/ 4 11
