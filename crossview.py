@@ -12,7 +12,7 @@ from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import SVC
 from sklearn import preprocessing
 from sklearn.metrics import log_loss, confusion_matrix
-from c3d_helper import find_files_to_read, load_data_for_classification, check_gpu_ready
+from c3d_helper import find_files_to_read, load_data_for_classification, check_gpu_ready, write_matlab_file
 
 import c3d_params
 
@@ -796,7 +796,20 @@ def c3d_train_and_test(train_list, test_list, config_params):
                     find_files_to_read_func,
                     average_feature=config_params.average_feature)
 
-            # pdb.set_trace()
+            # write matlab file for prob
+            print('CuongND. Write matlab file for fc6')
+            file_name = "%s_%s_fc6_%s" % (kinect_train, kinect_test, test_list[0])
+            output_vector_result_dir = os.path.join(config_params.output_dir,
+                                                    'result',
+                                                    "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time),
+                                                    test_list[0],
+                                                    'iter_%d' % (iter_),
+                                                    'output_vector')
+
+            if not os.path.exists(output_vector_result_dir):
+                os.makedirs(output_vector_result_dir)
+
+            write_matlab_file(X_test, Y_test, output_vector_result_dir, file_name)
 
             (acc_train, acc_test, loss_train, loss_test, confmat_train, confmat_test, \
              dict_train_instances_misclassified, dict_test_instances_misclassified, svm_train_time, svm_test_time) = \
@@ -905,6 +918,7 @@ def c3d_train_and_test(train_list, test_list, config_params):
                     "prob",
                     num_of_actions,
                     find_files_to_read_func)
+
             (acc_train, acc_test, loss_train, loss_test, confmat_train, confmat_test, \
              dict_train_instances_misclassified, dict_test_instances_misclassified, _, _) = \
                 classification_routine(

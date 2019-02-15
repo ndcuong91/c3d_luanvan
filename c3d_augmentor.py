@@ -171,4 +171,4 @@ if __name__ == "__main__":
                     pre_3(data_folder, kinect_folder, target_folder, subjects[n],
                           actions[i], n)
 
-    print('Finish.')
+    print('\nFinish.')

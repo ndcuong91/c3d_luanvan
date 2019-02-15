@@ -19,9 +19,9 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train C3D hand-gesture networks by CuongND')
     parser.add_argument('--step_size', type=int, default=500,  # coco
                         help='Step to decrease learning rate.')
-    parser.add_argument('--max_iter', type=int, default=500,
+    parser.add_argument('--max_iter', type=int, default=50,
                         help='Maximum iteration to stop. ')
-    parser.add_argument('--snapshot', type=int, default=100,
+    parser.add_argument('--snapshot', type=int, default=50,
                         help='Number of periodic save params')
     parser.add_argument('--kinect_train', type=str, default='K1',
                         help='trainning set')
@@ -292,7 +292,7 @@ if __name__ == "__main__":
     max_iter = config_params.max_iter
 
     params_info = get_params_info(config_params)
-    time.sleep(5)  # prevent create new folder
+    time.sleep(2)  # prevent create new folder
 
     for kinect_test in config_params.kinect_test_list:
         output_result_dir = os.path.join('result', "%s_%s_%s" % (kinect_train, kinect_test, config_params.date_time))

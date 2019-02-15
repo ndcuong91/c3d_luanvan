@@ -7,6 +7,7 @@ from sklearn import preprocessing
 from sklearn.metrics import log_loss, confusion_matrix
 import os
 import matplotlib.pyplot as plt
+import scipy.io
 
 plt.switch_backend('agg')
 from sklearn import datasets
@@ -458,6 +459,10 @@ def delete_files_with_extension_in_folder(folder, extension):
                 os.remove(os.path.join(path, name))
     print('Finish delete all ' + extension + ' files in folder ' + folder)
 
+def write_matlab_file(X_test, Y_test,output_folder,file_name):
+    X_test=X_test.transpose(1,0)
+    scipy.io.savemat(os.path.join(output_folder,file_name+'.mat'), {file_name: X_test})
+    scipy.io.savemat(os.path.join(output_folder,file_name+'_label.mat'), {file_name+'_label': Y_test})
 
 if __name__ == "__main__":
     # Test modules
