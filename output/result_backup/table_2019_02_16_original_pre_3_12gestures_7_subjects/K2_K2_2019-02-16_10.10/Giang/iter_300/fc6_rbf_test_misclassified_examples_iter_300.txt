@@ -1,0 +1,13 @@
+output/intermediate_output_vector/Giang/6/1/ 6 12
+output/intermediate_output_vector/Giang/5/1/ 5 12
+output/intermediate_output_vector/Giang/8/1/ 8 4
+output/intermediate_output_vector/Giang/8/2/ 8 4
+output/intermediate_output_vector/Giang/10/2/ 10 2
+output/intermediate_output_vector/Giang/10/3/ 10 4
+output/intermediate_output_vector/Giang/5/3/ 5 12
+output/intermediate_output_vector/Giang/10/1/ 10 2
+output/intermediate_output_vector/Giang/9/3/ 9 4
+output/intermediate_output_vector/Giang/11/3/ 11 4
+output/intermediate_output_vector/Giang/11/2/ 11 12
+output/intermediate_output_vector/Giang/9/1/ 9 7
+output/intermediate_output_vector/Giang/11/1/ 11 4

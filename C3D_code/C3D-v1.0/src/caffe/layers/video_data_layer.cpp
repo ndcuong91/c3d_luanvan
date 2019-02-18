@@ -145,10 +145,10 @@ void* VideoDataLayerPrefetch(void* layer_pointer) {
       int h_off, w_off;
       // We only do random crop when we do training.
       if (layer->phase_ == Caffe::TRAIN) {
-        h_off = (height - crop_size) / 2;
-        w_off = (width - crop_size) / 2;
-//        h_off = layer->PrefetchRand() % (height - crop_size);
-//        w_off = layer->PrefetchRand() % (width - crop_size);
+        //h_off = (height - crop_size) / 2;
+       // w_off = (width - crop_size) / 2;
+       h_off = layer->PrefetchRand() % (height - crop_size);
+       w_off = layer->PrefetchRand() % (width - crop_size);
       } else {
         h_off = (height - crop_size) / 2;
         w_off = (width - crop_size) / 2;
@@ -283,7 +283,7 @@ void VideoDataLayer<Dtype>::SetUp(const vector<Blob<Dtype>*>& bottom,
   const bool use_temporal_jitter = this->layer_param_.image_data_param().use_temporal_jitter();
   const bool use_image = this->layer_param_.image_data_param().use_image();
 
-  LOG(INFO)<<"CuongND. Use center crop instead of random crop in training";
+  //LOG(INFO)<<"CuongND. Use center crop instead of random crop in training";
   LOG(INFO) << "Opening file " << source;
   std::ifstream infile(source.c_str());
   int count = 0;

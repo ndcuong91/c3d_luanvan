@@ -1,0 +1,4 @@
+output/intermediate_output_vector/Hai/6/1/ 6 7
+output/intermediate_output_vector/Tuyen/11/3/ 11 4
+output/intermediate_output_vector/Long/11/1/ 11 4
+output/intermediate_output_vector/Minh/2/1/ 2 10

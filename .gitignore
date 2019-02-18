@@ -58,6 +58,11 @@ data/12gestures_images_RGB/K2_original_pre_3/
 data/12gestures_images_RGB/K3_original_pre_3/
 data/12gestures_images_RGB/K4_original_pre_3/
 data/12gestures_images_RGB/K5_original_pre_3/
+data/12gestures_images_RGB/K1_original_pre_3_aug/
+data/12gestures_images_RGB/K2_original_pre_3_aug/
+data/12gestures_images_RGB/K3_original_pre_3_aug/
+data/12gestures_images_RGB/K4_original_pre_3_aug/
+data/12gestures_images_RGB/K5_original_pre_3_aug/
 data/K1_original_pre_3/
 data/K5_clean_1_pre_3/
 data/K5_original_pre_3/

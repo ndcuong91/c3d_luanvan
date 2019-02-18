@@ -1,0 +1,2 @@
+output/intermediate_output_vector/Giang/5/1/ 5 12
+output/intermediate_output_vector/Long/2/2/ 2 10

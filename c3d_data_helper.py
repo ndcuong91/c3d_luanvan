@@ -474,7 +474,7 @@ if __name__ == "__main__":
     # data_dir='/home/prdcv/PycharmProjects/c3d_luanvan/data/'
     # count_number_of_frame_and_save_to_file(data_dir +'12gestures_video')
     # convert_video_dataset_to_images(data_dir +'12gestures_video',data_dir +'12gestures_images')
-    summary_all_results('output/result_backup/table_2019_02_12_original_pre_3_12gestures_fc6_1024_fc7_1024_from_pretrained', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
+    summary_all_results('output/result/table_2019_02_16_12gestures_6_subjects', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
     #summary_result('output/result/K1_K1_2019-01-30_13.13',max_in_each_subject=True, subjects=c3d_params.subject_list)
     # summary_image_data( subjects=c3d_params.subject_list,  Kinects=c3d_params.Kinects, data_type='original_pre_3')
     # rename_data_after_clean('Kinect_3')

@@ -16,8 +16,8 @@ pretrained_model='conv3d_deepnetA_sport1m_iter_1900000'
 #pretrained_model='c3d_ucf101_finetune_whole_iter_20000_fc6_1024_fc7_1024'
 
 if (num_action==12):
-    subject_list = 'Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen'
-    subject_test = 'Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen'
+    subject_list = 'Giang,Hai,Long,Minh,Thuy,Tuyen'
+    subject_test = 'Giang,Hai,Long,Minh,Thuy,Tuyen'
     Kinects = 'K1,K2,K3,K4,K5'
     actions=[1,2,3,4,5,6,7,8,9,10,11,12]
 

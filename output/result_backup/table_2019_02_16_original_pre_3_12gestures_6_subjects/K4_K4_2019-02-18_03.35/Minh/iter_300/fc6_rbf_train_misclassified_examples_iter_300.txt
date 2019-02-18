@@ -1,0 +1,2 @@
+output/intermediate_output_vector/Long/10/3/ 10 8
+output/intermediate_output_vector/Tuyen/2/3/ 2 8
