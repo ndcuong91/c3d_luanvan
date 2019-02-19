@@ -3,6 +3,7 @@ import numpy as np
 import shutil
 import cv2
 import c3d_params
+from c3d_helper import write_matlab_file
 
 video_data_dir = os.path.join(c3d_params.c3d_data_root, 'Dataset_hand_gesture')
 image_data_dir = c3d_params.c3d_data_root
@@ -462,6 +463,59 @@ def reorder_dataset(video_dir, new_video_dir):
                     for image in images:
                         shutil.copy(os.path.join(action_dir, sample, image), os.path.join(destination_dir, image))
 
+def summary_matlab_result(table_set_result_folder,subjects, Kinects, data_type='fc6', max_iter=700, snapshot=100):
+    sub_dir = get_list_dir_in_folder(table_set_result_folder)
+    Kinects = Kinects.split(',')
+    Subjects = subjects.split(',')
+    data_type = data_type.split(',')
+    num_kinect = len(Kinects)
+
+    feature_vector=dict()
+    label_vector=dict()
+    feature_init=dict()
+    label_init=dict()
+    for kinect_test in Kinects:
+        feature_init[kinect_test]=False
+        label_init[kinect_test]=False
+
+    import scipy.io
+    for kinect_train in Kinects:
+        for kinect_test in Kinects:
+            folder_prefix = kinect_train + '_' + kinect_test
+            is_folder_exist = False
+            acc = []
+            for dir in sub_dir:
+                if (folder_prefix in dir):
+                    print(dir)
+                    for subject in Subjects:
+                        for iter in range(snapshot,max_iter+1,snapshot):
+                            matlab_file_dir=os.path.join(table_set_result_folder,dir,subject,'iter_'+str(iter),'output_vector')
+                            matlab_file=get_list_file_in_folder(matlab_file_dir, ext='mat')
+                            for file in matlab_file:
+                                if 'label' in file:
+                                    label=scipy.io.loadmat(os.path.join(matlab_file_dir,file))
+                                    if (label_init[kinect_test] == True):
+                                        label_vector[kinect_test] = np.concatenate(
+                                            (label_vector[kinect_test], label[file.replace('.mat', '')]), axis=1)
+                                    else:
+                                        label_vector[kinect_test] = label[file.replace('.mat', '')]
+                                        label_init[kinect_test] = True
+                                else:
+                                    feature = scipy.io.loadmat(os.path.join(matlab_file_dir, file))
+                                    if (feature_init[kinect_test] == True):
+                                        feature_vector[kinect_test] = np.concatenate(
+                                            (feature_vector[kinect_test], feature[file.replace('.mat', '')]), axis=1)
+                                    else:
+                                        feature_vector[kinect_test] = feature[file.replace('.mat', '')]
+                                        feature_init[kinect_test] = True
+
+    for kinect in Kinects:
+        print('Save matlab file for: ' +kinect)
+        write_matlab_file(feature_vector[kinect], label_vector[kinect], table_set_result_folder, kinect)
+    print('Finish.')
+
+
+
 
 if __name__ == "__main__":
     # reorder_dataset('/home/titikid/PycharmProjects/12gestures_images',
@@ -474,7 +528,8 @@ if __name__ == "__main__":
     # data_dir='/home/prdcv/PycharmProjects/c3d_luanvan/data/'
     # count_number_of_frame_and_save_to_file(data_dir +'12gestures_video')
     # convert_video_dataset_to_images(data_dir +'12gestures_video',data_dir +'12gestures_images')
-    summary_all_results('output/result/table_2019_02_16_12gestures_6_subjects', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
+    summary_matlab_result('output/result_backup/table_2019_02_16_original_pre_3_12gestures_6_subjects', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
+    #summary_all_results('output/result/table_2019_02_16_12gestures_6_subjects', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
     #summary_result('output/result/K1_K1_2019-01-30_13.13',max_in_each_subject=True, subjects=c3d_params.subject_list)
     # summary_image_data( subjects=c3d_params.subject_list,  Kinects=c3d_params.Kinects, data_type='original_pre_3')
     # rename_data_after_clean('Kinect_3')
