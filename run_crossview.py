@@ -1,10 +1,8 @@
-from crossview import c3d_train_and_test, Result
-import crossview
+from crossview import c3d_train_and_test
 import argparse
-import os, shutil
-from python_utils import list_all_folders_in_a_directory, create_folder
+import os
+from python_utils import create_folder
 import numpy as np
-import random
 from datetime import datetime
 from c3d_helper import delete_files_with_extension_in_folder, dump_plot_to_image_file, get_params_info
 import c3d_params
@@ -135,6 +133,9 @@ class ConfigParams(object):
     kinect_train = args.kinect_train
     kinect_test_list = [x.strip() for x in args.kinect_test_list.split(',')]
     average_feature = args.average_feature
+    center_crop=c3d_params.center_crop
+    pretrained_model=c3d_params.pretrained_model
+
 
     # CuongND. Modify C3D structure
     c3d_default = dict()
@@ -199,7 +200,7 @@ class ConfigParams(object):
 
     c3d_compute_volume_mean_sh = os.path.join(c3d_pretrained_model_and_volume_mean_dir,
                                               "c3d_sport1m_compute_volume_mean.sh")
-    c3d_pretrained_model = os.path.join(c3d_pretrained_model_and_volume_mean_dir,c3d_params.pretrained_model)
+    c3d_pretrained_model = os.path.join(c3d_pretrained_model_and_volume_mean_dir,pretrained_model)
     c3d_volume_mean_file = os.path.join(c3d_pretrained_model_and_volume_mean_dir, "c3d_sport1m_volume_mean.binaryproto")
 
     c3d_finetuning_solver = os.path.join(c3d_finetuning_dir, "c3d_sport1m_finetuning_solver.prototxt")

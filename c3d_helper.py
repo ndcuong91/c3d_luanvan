@@ -32,7 +32,9 @@ def get_params_info(config_params):
                   'kinect_test_list: ' + ",".join(str(x) for x in config_params.kinect_test_list) + '\n' + \
                   'data_type_train: ' + config_params.data_type_train + '\n' + \
                   'data_type_test: ' + config_params.data_type_test + '\n' + \
-                  'average_feature: ' + str(config_params.average_feature) + '\n\n' + \
+                  'average_feature: ' + str(config_params.average_feature) + '\n' + \
+                  'center_crop_in_training: ' + str(config_params.center_crop) + '\n' + \
+                  'finetuning_model: ' + config_params.pretrained_model + '\n\n' + \
                   'C3D Structure (default vaule --> new value): \n' + \
                   'resize: ' + str(config_params.c3d_default['resize_w']) + ',' + str(
         config_params.c3d_default['resize_h']) + ' --> ' + str(config_params.resize_w) + ',' + str(

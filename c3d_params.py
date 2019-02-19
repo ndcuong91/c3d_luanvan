@@ -12,6 +12,7 @@ data_type_train = 'original_pre_3'
 data_type_test = 'original_pre_3'
 batch_size_test = 20
 batch_size_finetune = 20
+center_crop=False
 pretrained_model='conv3d_deepnetA_sport1m_iter_1900000'
 #pretrained_model='c3d_ucf101_finetune_whole_iter_20000_fc6_1024_fc7_1024'
 
@@ -37,13 +38,13 @@ if (num_action==12):
 if (num_action == 5):
     c3d_data_root = "data"
 
-tool_dir='C3D_code/C3D-v1.0/build/tools'
+if(center_crop==True):
+    tool_dir='C3D_code/C3D-v1.0/build_center_crop/tools'
+else: #random crop in training
+    tool_dir='C3D_code/C3D-v1.0/build/tools'
 #tool_dir = '/home/dangmanhtruong95/C3D-master_JPG/build_CuongND/tools'
 
 if (pc_name == 'duycuong'):
     compute_volume_mean = False
     finetuning = False
     feature_extract = False
-
-if (pc_name == '300'):
-    tool_dir = 'C3D_code/C3D-v1.0/build/tools'
