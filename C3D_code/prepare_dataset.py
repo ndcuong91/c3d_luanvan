@@ -6,7 +6,7 @@ from subprocess import call
 from os import listdir
 from os.path import isfile, isdir, join
 
-C3D_HOME=''
+C3D_HOME='/home/prdcv/PycharmProjects/c3d_luanvan/C3D_code/'
 
 def extract_files(vid_folders):
     """After we have all of our videos split between train and test, and
@@ -85,7 +85,7 @@ def main():
     #modify file ucf101_video_frame.list and ucf101_video_frame.list
     #mod_file_list(C3D_HOME+'/C3D-v1.1/examples/c3d_ucf101_feature_extraction/ucf101_video_frame.list')
     #mod_file_prefix(C3D_HOME+'/C3D-v1.1/examples/c3d_ucf101_feature_extraction/ucf101_video_frame.prefix')
-    mod_file_list(C3D_HOME+'C3D-v1.0/examples/c3d_finetuning/test_01.lst')
-    mod_file_list(C3D_HOME+'C3D-v1.0/examples/c3d_finetuning/train_01.lst')
+    mod_file_list(C3D_HOME+'/C3D-v1.0/examples/c3d_finetuning/test_01.lst')
+    mod_file_list(C3D_HOME+'/C3D-v1.0/examples/c3d_finetuning/train_01.lst')
 if __name__ == '__main__':
     main()

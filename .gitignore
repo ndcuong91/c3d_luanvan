@@ -3,7 +3,7 @@
 copy_from_server
 copy_result_from_server
 copy_to_server
-*.lst
+*.new
 .idea/
 output/result_sample/
 output/result/
@@ -20,7 +20,7 @@ c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000_
 C3D_code/C3D-v1.0/Makefile.config
 C3D_code/C3D-v1.0/data/UCF101.rar
 #DATA
-
+C3D_code/C3D-v1.0/src/caffe/proto/origin_weight_bin/
 output/result_sample.tar.gz
 data/Kinect_1_original_augmented_padding_100/
 data/Kinect_3_original_augmented_padding_100/
