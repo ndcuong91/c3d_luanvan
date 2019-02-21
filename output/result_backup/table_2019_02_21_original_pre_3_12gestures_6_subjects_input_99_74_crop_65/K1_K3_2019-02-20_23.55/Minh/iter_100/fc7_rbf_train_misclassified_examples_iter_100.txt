@@ -1,0 +1,8 @@
+output/intermediate_output_vector/Giang/4/3/ 4 11
+output/intermediate_output_vector/Long/10/3/ 10 8
+output/intermediate_output_vector/Tuyen/4/3/ 4 1
+output/intermediate_output_vector/Tuyen/9/3/ 9 10
+output/intermediate_output_vector/Thuy/4/1/ 4 11
+output/intermediate_output_vector/Tuyen/5/2/ 5 12
+output/intermediate_output_vector/Tuyen/9/2/ 9 10
+output/intermediate_output_vector/Long/2/2/ 2 9

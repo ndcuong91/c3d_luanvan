@@ -4,6 +4,7 @@ import os
 
 caffe_model='/home/prdcv/PycharmProjects/c3d_luanvan/c3d_files/pretrained_model_and_volume_mean/c3d_ucf101_finetune_whole_iter_20000_fc6_1024_77.26%'
 target_model='c3d_ucf101_finetune_whole_fc6_1024_fc7_1024'
+temp_model='c3d_ucf101_finetune_whole_iter_100'
 origin_weight_folder='origin_weight_bin'
 modify_weight_folder='modify_weight_bin'
 layer_names = ['conv1a', 'conv2a', 'conv3a', 'conv3b', 'conv4a', 'conv4b', 'conv5a', 'conv5b']
@@ -42,7 +43,7 @@ def read_data(filename, len_to_read=-1, dtype='float32'):  # read .bin or .txt d
 
 def modify_caffemodel(layers_to_modify=['conv4b'], save_data=True):
 
-    with open(caffe_model, 'r') as f:
+    with open('final_c3d_ucf101_finetune_whole_iter_100', 'r') as f:
         cq2 = caffe_pb2.NetParameter()
         cq2.ParseFromString(f.read())
 
@@ -50,6 +51,9 @@ def modify_caffemodel(layers_to_modify=['conv4b'], save_data=True):
     save_model=target_model
     for lc in layers:
         name = lc.name
+        if (name == 'pre_pool4'):
+            print lc
+        print name
         for layer_name in layer_names:
             if (name == layer_name):
                 weight = np.float32(np.array(lc.blobs[0].data))
@@ -60,7 +64,8 @@ def modify_caffemodel(layers_to_modify=['conv4b'], save_data=True):
                     print 'Finish save data to layer '+name
                 else:
                     for layer in layers_to_modify:
-                        if (name == layer):
+                        if (name == 'pre_pool4'):
+                            print lc
                             save_model+='_'+name
                             lc.blobs[0].width = 1
                             lc.blobs[0].height = 1
@@ -73,7 +78,8 @@ def modify_caffemodel(layers_to_modify=['conv4b'], save_data=True):
     with open(save_model, 'wb') as f:
         f.write(cq2.SerializeToString())
 
-def modify_weight(layers_to_modify=['conv4b']):
+
+def modify_weight(layers_to_modify=['conv2a']):
     for layer in layers_to_modify:
         print layer
         weight=read_data(os.path.join(origin_weight_folder,layer+'_weight.bin')).reshape(weight_shapes[layer])
@@ -96,9 +102,37 @@ def modify_weight(layers_to_modify=['conv4b']):
 
         new_weight.tofile(os.path.join(modify_weight_folder,layer+'_weight.bin'))
 
+def assign_data():
+    print 'src data ' + target_model
+    with open(target_model, 'r') as f:
+        src_data = caffe_pb2.NetParameter()
+        src_data.ParseFromString(f.read())
+    src_layers = src_data.layers
 
+    print 'dst data ' + temp_model
+    with open(temp_model, 'r') as f:
+        dst_data = caffe_pb2.NetParameter()
+        dst_data.ParseFromString(f.read())
+    dst_layers = dst_data.layers
+
+    for layer_name in layer_names:
+        for src_layer in src_layers:
+            if (src_layer.name==layer_name):
+                src_layer_data=src_layer
+        for dst_layer in dst_layers:
+            if (dst_layer.name==layer_name):
+                dst_layer_data=dst_layer
+
+        dst_layer_data.blobs[0].data[:]=np.float32(np.array(src_layer_data.blobs[0].data))
+        dst_layer_data.blobs[1].data[:]=np.float32(np.array(src_layer_data.blobs[1].data))
+        print 'Finish assign data from src for layer '+layer_name
+
+    print 'Save all parameters to file '+'final_'+temp_model
+    with open('final_'+temp_model, 'wb') as f:
+        f.write(dst_data.SerializeToString())
 
 if __name__ == "__main__":
+    #assign_data()
     modify_caffemodel(save_data=False)
     #modify_weight()
     print('\nFinish.')

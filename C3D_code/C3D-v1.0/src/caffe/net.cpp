@@ -320,6 +320,8 @@ void Net<Dtype>::CopyTrainedLayersFrom(const NetParameter& param) {
       DLOG(INFO) << "Ignoring source layer " << source_layer_name;
       continue;
     }
+
+    LOG(INFO)<<"CuongND.Copying source layer. " << source_layer_name;
     DLOG(INFO) << "Copying source layer " << source_layer_name;
     vector<shared_ptr<Blob<Dtype> > >& target_blobs =
         layers_[target_layer_id]->blobs();

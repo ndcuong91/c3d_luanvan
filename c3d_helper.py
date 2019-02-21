@@ -51,8 +51,7 @@ def get_params_info(config_params):
                   'conv5a: ' + str(config_params.c3d_default['conv5a']) + ' --> ' + str(config_params.conv5a) + '\n' + \
                   'conv5b: ' + str(config_params.c3d_default['conv5b']) + ' --> ' + str(config_params.conv5b) + '\n' + \
                   'fc6: ' + str(config_params.c3d_default['fc6']) + ' --> ' + str(config_params.fc6) + '\n' + \
-                  'fc7: ' + str(config_params.c3d_default['fc7']) + ' --> ' + str(config_params.fc7) + '\n' + \
-                  'use center crop in finetuning instead of random crop\n'
+                  'fc7: ' + str(config_params.c3d_default['fc7']) + ' --> ' + str(config_params.fc7) + '\n'
     print("\nCuongND. Configs for this training:\n" + params_info)
     return params_info
 
