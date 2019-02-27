@@ -7,14 +7,14 @@ layers {
   image_data_param {
     source: "train_01.lst"
     use_image: true
-    mean_file: "train01_16_74_99_mean.binaryproto"
+    mean_file: "train01_16_111_148_mean.binaryproto"
     use_temporal_jitter: false
     batch_size: 20
-    crop_size: 65
+    crop_size: 97
     mirror: true
     show_data: 0
-    new_height: 74
-    new_width: 99
+    new_height: 111
+    new_width: 148
     new_length: 16
     shuffle: true
   }

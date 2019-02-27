@@ -1,2 +1,0 @@
-output/intermediate_output_vector/Thuy/5/1/ 5 12
-output/intermediate_output_vector/Hai/12/2/ 12 5

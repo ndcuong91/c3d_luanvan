@@ -1,0 +1,7 @@
+output/intermediate_output_vector/Minh/7/2/ 7 6
+output/intermediate_output_vector/Minh/5/1/ 5 12
+output/intermediate_output_vector/Minh/5/3/ 5 12
+output/intermediate_output_vector/Minh/2/3/ 2 10
+output/intermediate_output_vector/Minh/7/3/ 7 6
+output/intermediate_output_vector/Minh/5/2/ 5 12
+output/intermediate_output_vector/Minh/6/2/ 6 4

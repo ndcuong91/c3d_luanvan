@@ -1,2 +1,1 @@
-#GLOG_logtostderr=1 ../../build/tools/finetune_net.bin c3d_ucf101_finetuning_solver.prototxt ../c3d_feature_extraction/conv3d_deepnetA_sport1m_iter_1900000
-GLOG_logtostderr=1 ../../build/tools/finetune_net.bin c3d_ucf101_finetuning_solver.prototxt c3d_ucf101_finetune_whole_iter_2000
+GLOG_logtostderr=1 ../../build/tools/finetune_net.bin c3d_ucf101_finetuning_solver.prototxt c3d_ucf101_finetune_whole_iter_20000_fc6_1024_fc7_1024_77.26%

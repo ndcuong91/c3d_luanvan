@@ -1,1 +1,0 @@
-output/intermediate_output_vector/Minh/2/1/ 2 10

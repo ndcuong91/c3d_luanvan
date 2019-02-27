@@ -1,9 +1,0 @@
-output/intermediate_output_vector/Hai/11/3/ 11 4
-output/intermediate_output_vector/Long/11/3/ 11 4
-output/intermediate_output_vector/Long/11/1/ 11 4
-output/intermediate_output_vector/Minh/11/3/ 11 4
-output/intermediate_output_vector/Long/11/2/ 11 4
-output/intermediate_output_vector/Giang/11/3/ 11 4
-output/intermediate_output_vector/Giang/11/2/ 11 4
-output/intermediate_output_vector/Minh/11/1/ 11 4
-output/intermediate_output_vector/Giang/11/1/ 11 4

@@ -1,0 +1,16 @@
+output/intermediate_output_vector/Minh/9/3/ 9 2
+output/intermediate_output_vector/Minh/9/2/ 9 2
+output/intermediate_output_vector/Minh/10/3/ 10 2
+output/intermediate_output_vector/Minh/6/3/ 6 11
+output/intermediate_output_vector/Minh/10/2/ 10 2
+output/intermediate_output_vector/Minh/5/1/ 5 11
+output/intermediate_output_vector/Minh/8/3/ 8 2
+output/intermediate_output_vector/Minh/5/3/ 5 12
+output/intermediate_output_vector/Minh/10/1/ 10 8
+output/intermediate_output_vector/Minh/9/1/ 9 2
+output/intermediate_output_vector/Minh/5/2/ 5 12
+output/intermediate_output_vector/Minh/11/3/ 11 4
+output/intermediate_output_vector/Minh/8/1/ 8 2
+output/intermediate_output_vector/Minh/11/2/ 11 4
+output/intermediate_output_vector/Minh/6/1/ 6 11
+output/intermediate_output_vector/Minh/11/1/ 11 4

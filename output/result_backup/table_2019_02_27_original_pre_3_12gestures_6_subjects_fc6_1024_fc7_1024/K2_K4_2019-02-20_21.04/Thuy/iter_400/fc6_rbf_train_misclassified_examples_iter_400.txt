@@ -1,0 +1,2 @@
+output/intermediate_output_vector/Giang/10/1/ 10 2
+output/intermediate_output_vector/Hai/12/3/ 12 5

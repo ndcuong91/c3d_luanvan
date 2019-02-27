@@ -481,6 +481,8 @@ def summary_matlab_result(table_set_result_folder,subjects, Kinects, data_type='
     import scipy.io
     for kinect_train in Kinects:
         for kinect_test in Kinects:
+            if(kinect_test!=kinect_train):
+                continue
             folder_prefix = kinect_train + '_' + kinect_test
             is_folder_exist = False
             acc = []
@@ -490,6 +492,8 @@ def summary_matlab_result(table_set_result_folder,subjects, Kinects, data_type='
                     for subject in Subjects:
                         for iter in range(snapshot,max_iter+1,snapshot):
                             matlab_file_dir=os.path.join(table_set_result_folder,dir,subject,'iter_'+str(iter),'output_vector')
+                            if not os.path.exists(matlab_file_dir):
+                                continue
                             matlab_file=get_list_file_in_folder(matlab_file_dir, ext='mat')
                             for file in matlab_file:
                                 if 'label' in file:
@@ -528,8 +532,8 @@ if __name__ == "__main__":
     # data_dir='/home/prdcv/PycharmProjects/c3d_luanvan/data/'
     # count_number_of_frame_and_save_to_file(data_dir +'12gestures_video')
     # convert_video_dataset_to_images(data_dir +'12gestures_video',data_dir +'12gestures_images')
-    summary_matlab_result('output/result_backup/table_2019_02_16_original_pre_3_12gestures_6_subjects', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
-    #summary_all_results('output/result/table_2019_02_16_12gestures_6_subjects', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
+    #summary_matlab_result('output/result_backup/table_2019_02_16_original_pre_3_12gestures_6_subjects', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
+    summary_all_results('output/result_backup/table_2019_02_27_original_pre_3_12gestures_6_subjects_fc6_1024_fc7_1024', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
     #summary_result('output/result/K1_K1_2019-01-30_13.13',max_in_each_subject=True, subjects=c3d_params.subject_list)
     # summary_image_data( subjects=c3d_params.subject_list,  Kinects=c3d_params.Kinects, data_type='original_pre_3')
     # rename_data_after_clean('Kinect_3')

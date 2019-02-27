@@ -49,9 +49,9 @@ def parse_args():
                         help='batch size for fine-tuning.')
 
     # 23Jan. CuongND. Add parameters for modify c3d
-    parser.add_argument('--resize', type=str, default='148,111', #'171,128','148,111' '99,74'
+    parser.add_argument('--resize', type=str, default='171,128', #'171,128','148,111' '99,74'
                         help='input size of C3D')
-    parser.add_argument('--crop', type=int, default=97, #112, 97, 65
+    parser.add_argument('--crop', type=int, default=112, #112, 97, 65
                         help='crop size of C3D')
     parser.add_argument('--num_frame', type=int, default=16,
                         help='number of frame for input')

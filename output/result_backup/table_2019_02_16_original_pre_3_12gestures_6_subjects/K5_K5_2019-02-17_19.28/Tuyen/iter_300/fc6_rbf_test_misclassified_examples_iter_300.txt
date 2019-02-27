@@ -1,5 +1,0 @@
-output/intermediate_output_vector/Tuyen/4/2/ 4 11
-output/intermediate_output_vector/Tuyen/2/3/ 2 10
-output/intermediate_output_vector/Tuyen/5/2/ 5 12
-output/intermediate_output_vector/Tuyen/4/1/ 4 11
-output/intermediate_output_vector/Tuyen/8/1/ 8 2

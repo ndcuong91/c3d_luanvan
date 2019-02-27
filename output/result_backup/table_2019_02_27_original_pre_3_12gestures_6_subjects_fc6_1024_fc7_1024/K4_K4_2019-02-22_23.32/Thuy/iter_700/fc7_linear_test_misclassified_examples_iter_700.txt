@@ -1,0 +1,12 @@
+output/intermediate_output_vector/Thuy/8/2/ 8 10
+output/intermediate_output_vector/Thuy/9/2/ 9 10
+output/intermediate_output_vector/Thuy/8/1/ 8 2
+output/intermediate_output_vector/Thuy/5/1/ 5 12
+output/intermediate_output_vector/Thuy/10/1/ 10 2
+output/intermediate_output_vector/Thuy/10/3/ 10 2
+output/intermediate_output_vector/Thuy/8/3/ 8 10
+output/intermediate_output_vector/Thuy/5/2/ 5 12
+output/intermediate_output_vector/Thuy/10/2/ 10 2
+output/intermediate_output_vector/Thuy/4/1/ 4 11
+output/intermediate_output_vector/Thuy/9/3/ 9 10
+output/intermediate_output_vector/Thuy/9/1/ 9 10
