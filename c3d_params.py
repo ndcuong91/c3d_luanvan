@@ -34,7 +34,7 @@ template_dir = "template"
 c3d_files_dir = "c3d_files"
 
 if (num_action==12):
-    c3d_data_root = "data/12gestures_images_RGB"
+    c3d_data_root = "data/12gestures_images_segmented"
 if (num_action == 5):
     c3d_data_root = "data"
 

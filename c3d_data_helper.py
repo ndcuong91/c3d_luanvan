@@ -515,8 +515,74 @@ def summary_matlab_result(table_set_result_folder,subjects, Kinects, data_type='
 
     for kinect in Kinects:
         print('Save matlab file for: ' +kinect)
-        write_matlab_file(feature_vector[kinect], label_vector[kinect], table_set_result_folder, kinect)
+
+        label_transpose = label_vector[kinect].transpose(1, 0)
+        feature_transpose = feature_vector[kinect].transpose(1, 0)
+
+        label_vector_sorted_idx=np.argsort(label_transpose,axis=0)
+
+        label_vector_sorted=label_transpose[label_vector_sorted_idx]
+        feature_vector_sorted=feature_transpose[label_vector_sorted_idx]
+        label_vector_sorted_write=label_vector_sorted.reshape(216,1)
+        feature_vector_sorted_write=feature_vector_sorted.reshape(216,4096)
+        write_matlab_file(feature_vector_sorted_write, label_vector_sorted_write, table_set_result_folder, kinect)
     print('Finish.')
+
+def extract_segmented_image():
+    import cv2
+    input_RGB = '/home/prdcv/PycharmProjects/c3d_luanvan/data/12gestures_images_RGB'
+    input_mask = '/home/prdcv/PycharmProjects/c3d_luanvan/data/12gestures_images_mask'
+    output_segmented = '/home/prdcv/PycharmProjects/c3d_luanvan/data/12gestures_images_segmented'
+    subject_list = 'Giang,Hai,Long,Minh,Thuan,Thuy,Tuyen'
+    subjects = subject_list.split(',')
+    kinects = 'K2'
+    kinects = kinects.split(',')
+    gestures = 12
+    sample_per_ges = 3
+    data_type = 'original'
+
+    success=0
+    failed=0
+    for kinect in kinects:
+        print(kinect)
+        for subject in subjects:
+            print(subject)
+            for gesture in range(gestures):
+                for sample in range(sample_per_ges):
+                    sample_path = os.path.join(kinect + '_' + data_type, subject, str(gesture + 1), str(sample + 1))
+                    sample_RGB_dir = os.path.join(input_RGB, sample_path)
+                    sample_mask_dir = os.path.join(input_mask, sample_path)
+                    sample_segemented_dir = os.path.join(output_segmented, sample_path)
+
+                    if not os.path.exists(sample_segemented_dir):
+                        os.makedirs(sample_segemented_dir)
+
+                    images_RGB = get_list_file_in_folder(sample_RGB_dir)
+                    images_RGB.sort()
+                    images_mask = get_list_file_in_folder(sample_mask_dir)
+                    images_mask.sort()
+                    for idx in range (len(images_mask)):
+                        statinfo = os.stat(os.path.join(sample_mask_dir,images_mask[idx]))
+                        sz=statinfo.st_size
+                        if(sz==0):
+                            failed+=1
+                            continue
+                        else:
+                            success+=1
+                            img_rgb=cv2.imread(os.path.join(sample_RGB_dir,images_RGB[idx]), -1)
+                            mask=cv2.imread(os.path.join(sample_mask_dir,images_mask[idx]))
+                            final =cv2.bitwise_and(img_rgb, mask)
+                            cv2.imwrite(os.path.join(sample_segemented_dir,images_mask[idx]),final)
+
+    print(str(success))
+    print(str(failed))
+    print(str(failed+success))
+    success_rate=(float)(success)/(float)(failed+success)
+    print('Finish. success rate = '+str(success_rate))
+
+
+
+
 
 
 
@@ -532,10 +598,11 @@ if __name__ == "__main__":
     # data_dir='/home/prdcv/PycharmProjects/c3d_luanvan/data/'
     # count_number_of_frame_and_save_to_file(data_dir +'12gestures_video')
     # convert_video_dataset_to_images(data_dir +'12gestures_video',data_dir +'12gestures_images')
+    #extract_segmented_image()
     #summary_matlab_result('output/result_backup/table_2019_02_16_original_pre_3_12gestures_6_subjects', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
-    summary_all_results('output/result_backup/table_2019_02_27_original_pre_3_12gestures_6_subjects_fc6_1024_fc7_1024', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
+    #summary_all_results('output/result_backup/table_2019_02_27_original_pre_3_12gestures_6_subjects_fc6_1024_fc7_1024', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
     #summary_result('output/result/K1_K1_2019-01-30_13.13',max_in_each_subject=True, subjects=c3d_params.subject_list)
-    # summary_image_data( subjects=c3d_params.subject_list,  Kinects=c3d_params.Kinects, data_type='original_pre_3')
+    summary_image_data( subjects=c3d_params.subject_list,  Kinects=c3d_params.Kinects, data_type='original')
     # rename_data_after_clean('Kinect_3')
     # remove_nois_by_copy_roi('/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_3_clean_1/Thuan/5/1',
     #                      [211,194,200,180],

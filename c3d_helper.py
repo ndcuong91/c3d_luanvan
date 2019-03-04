@@ -462,8 +462,9 @@ def delete_files_with_extension_in_folder(folder, extension):
 
 def write_matlab_file(X_test, Y_test,output_folder,file_name):
     X_test=X_test.transpose(1,0)
-    scipy.io.savemat(os.path.join(output_folder,file_name+'.mat'), {file_name: X_test})
-    scipy.io.savemat(os.path.join(output_folder,file_name+'_label.mat'), {file_name+'_label': Y_test})
+    Y_test=Y_test.transpose(1,0)
+    scipy.io.savemat(os.path.join(output_folder,file_name+'_sorted.mat'), {file_name: X_test})
+    scipy.io.savemat(os.path.join(output_folder,file_name+'_sorted_label.mat'), {file_name+'_label': Y_test})
 
 if __name__ == "__main__":
     # Test modules

@@ -67,6 +67,9 @@ data/K1_original_pre_3/
 data/K5_clean_1_pre_3/
 data/K5_original_pre_3/
 C3D_code/C3D-v1.0/data/UCF-101/
+Mask_RCNN_CuongND/
+data/12gestures_video/
+data/12gestures_video.tar
 
 
 c3d_files/pretrained_model_and_volume_mean/conv3d_deepnetA_sport1m_iter_1900000
