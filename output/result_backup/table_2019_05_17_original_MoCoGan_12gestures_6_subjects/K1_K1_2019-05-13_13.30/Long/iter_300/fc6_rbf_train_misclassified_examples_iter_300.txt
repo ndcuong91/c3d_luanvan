@@ -1,0 +1,12 @@
+output/intermediate_output_vector/Minh/2/2/ 2 10
+output/intermediate_output_vector/Thuy/12/7/ 12 1
+output/intermediate_output_vector/Tuyen/9/1/ 9 10
+output/intermediate_output_vector/Minh/2/1/ 2 10
+output/intermediate_output_vector/Tuyen/9/2/ 9 10
+output/intermediate_output_vector/Hai/10/7/ 10 2
+output/intermediate_output_vector/Minh/8/3/ 8 10
+output/intermediate_output_vector/Minh/2/3/ 2 10
+output/intermediate_output_vector/Thuy/4/1/ 4 11
+output/intermediate_output_vector/Tuyen/2/6/ 2 10
+output/intermediate_output_vector/Hai/5/3/ 5 1
+output/intermediate_output_vector/Tuyen/8/1/ 8 10

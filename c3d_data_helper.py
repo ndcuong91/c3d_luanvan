@@ -601,8 +601,8 @@ if __name__ == "__main__":
     #extract_segmented_image()
     #summary_matlab_result('output/result_backup/table_2019_02_16_original_pre_3_12gestures_6_subjects', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
     #summary_all_results('output/result_backup/table_2019_02_27_original_pre_3_12gestures_6_subjects_fc6_1024_fc7_1024', Kinects=c3d_params.Kinects, subjects=c3d_params.subject_list)
-    #summary_result('output/result/K1_K1_2019-01-30_13.13',max_in_each_subject=True, subjects=c3d_params.subject_list)
-    summary_image_data( subjects=c3d_params.subject_list,  Kinects=c3d_params.Kinects, data_type='original')
+    summary_result('output/result/K1_K1_2019-05-13_13.30',max_in_each_subject=True, subjects=c3d_params.subject_list)
+    #summary_image_data( subjects=c3d_params.subject_list,  Kinects=c3d_params.Kinects, data_type='original')
     # rename_data_after_clean('Kinect_3')
     # remove_nois_by_copy_roi('/home/titikid/PycharmProjects/c3d_luanvan/data/Kinect_3_clean_1/Thuan/5/1',
     #                      [211,194,200,180],
