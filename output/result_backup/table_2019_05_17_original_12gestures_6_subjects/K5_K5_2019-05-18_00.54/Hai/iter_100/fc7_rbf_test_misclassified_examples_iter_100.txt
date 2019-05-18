@@ -1,0 +1,3 @@
+output/intermediate_output_vector/Hai/12/1/ 12 1
+output/intermediate_output_vector/Hai/5/3/ 5 12
+output/intermediate_output_vector/Hai/12/2/ 12 1
