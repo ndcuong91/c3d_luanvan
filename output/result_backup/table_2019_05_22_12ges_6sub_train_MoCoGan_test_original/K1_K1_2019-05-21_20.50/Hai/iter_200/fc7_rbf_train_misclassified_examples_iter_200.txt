@@ -1,0 +1,14 @@
+output/intermediate_output_vector/Long/9/2/ 9 10
+output/intermediate_output_vector/Minh/2/2/ 2 10
+output/intermediate_output_vector/Thuy/12/7/ 12 1
+output/intermediate_output_vector/Long/2/2/ 2 10
+output/intermediate_output_vector/Long/10/1/ 10 8
+output/intermediate_output_vector/Minh/8/3/ 8 10
+output/intermediate_output_vector/Minh/2/3/ 2 10
+output/intermediate_output_vector/Long/5/4/ 5 1
+output/intermediate_output_vector/Minh/10/6/ 10 2
+output/intermediate_output_vector/Giang/10/4/ 10 2
+output/intermediate_output_vector/Long/9/1/ 9 8
+output/intermediate_output_vector/Thuy/9/3/ 9 10
+output/intermediate_output_vector/Tuyen/10/1/ 10 8
+output/intermediate_output_vector/Minh/11/7/ 11 4

@@ -1,0 +1,7 @@
+output/intermediate_output_vector/Long/4/7/ 4 11
+output/intermediate_output_vector/Giang/4/3/ 4 11
+output/intermediate_output_vector/Hai/5/9/ 5 3
+output/intermediate_output_vector/Giang/10/5/ 10 2
+output/intermediate_output_vector/Long/6/1/ 6 7
+output/intermediate_output_vector/Thuy/3/7/ 3 6
+output/intermediate_output_vector/Hai/6/6/ 6 4
