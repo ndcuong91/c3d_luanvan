@@ -1,0 +1,6 @@
+output/intermediate_output_vector/Giang/5/1/ 5 12
+output/intermediate_output_vector/Minh/5/1/ 5 12
+output/intermediate_output_vector/Minh/5/3/ 5 12
+output/intermediate_output_vector/Minh/5/2/ 5 12
+output/intermediate_output_vector/Giang/5/2/ 5 12
+output/intermediate_output_vector/Giang/5/3/ 5 12

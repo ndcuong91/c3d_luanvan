@@ -1,0 +1,2 @@
+output/intermediate_output_vector/Long/11/2/ 11 4
+output/intermediate_output_vector/Minh/10/3/ 10 2
